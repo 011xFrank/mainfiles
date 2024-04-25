@@ -29,64 +29,71 @@ family = "IosevkaTerm Nerd Font"
 style = "Bold Italic"
 
 [font]
-size = 10.0
+size = 11.0
 
 #------------------------------------------
-
-[colors.bright]
-black = "#6e6a86"
-blue = "#9ccfd8"
-cyan = "#ea9a97"
-magenta = "#c4a7e7"
-red = "#eb6f92"
-white = "#e0def4"
-yellow = "#f6c177"
-
-[colors.dim]
-black = "#6e6a86"
-blue = "#9ccfd8"
-cyan = "#ea9a97"
-magenta = "#c4a7e7"
-red = "#eb6f92"
-white = "#e0def4"
-yellow = "#f6c177"
-
-[colors.footer_bar]
-background = "#2a273f"
-foreground = "#e0def4"
-
-[colors.hints.end]
-background = "#2a273f"
-foreground = "#6e6a86"
-
-[colors.hints.start]
-background = "#2a273f"
-foreground = "#908caa"
-
-[colors.line_indicator]
-background = "none"
-foreground = "none"
-
-[colors.normal]
-black = "#393552"
-blue = "#9ccfd8"
-cyan = "#ea9a97"
-magenta = "#c4a7e7"
-red = "#eb6f92"
-white = "#e0def4"
-yellow = "#f6c177"
 
 [colors.primary]
 background = "#282b30"
 
-[colors.search.focused_match]
-background = "#ea9a97"
-foreground = "#232136"
+[colors.vi_mode_cursor]
+text = "#e0def4"
+cursor = "#56526e"
 
 [colors.search.matches]
-background = "#393552"
 foreground = "#908caa"
+background = "#393552"
+
+[colors.search.focused_match]
+foreground = "#232136"
+background = "#ea9a97"
+
+[colors.hints.start]
+foreground = "#908caa"
+background = "#2a273f"
+
+[colors.hints.end]
+foreground = "#6e6a86"
+background = "#2a273f"
+
+[colors.line_indicator]
+foreground = "None"
+background = "None"
+
+[colors.footer_bar]
+foreground = "#e0def4"
+background = "#2a273f"
 
 [colors.selection]
-background = "#44415a"
 text = "#e0def4"
+background = "#44415a"
+
+[colors.normal]
+black = "#393552"
+red = "#eb6f92"
+green = "#3e8fb0"
+yellow = "#f6c177"
+blue = "#9ccfd8"
+magenta = "#c4a7e7"
+cyan = "#ea9a97"
+white = "#e0def4"
+
+[colors.bright]
+black = "#6e6a86"
+red = "#eb6f92"
+green = "#3e8fb0"
+yellow = "#f6c177"
+blue = "#9ccfd8"
+magenta = "#c4a7e7"
+cyan = "#ea9a97"
+white = "#e0def4"
+
+[colors.dim]
+black = "#6e6a86"
+red = "#eb6f92"
+green = "#3e8fb0"
+yellow = "#f6c177"
+blue = "#9ccfd8"
+magenta = "#c4a7e7"
+cyan = "#ea9a97"
+white = "#e0def4"
