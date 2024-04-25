@@ -1,0 +1,27 @@
+vim.g.mapleader = " "
+local set = vim.keymap.set
+
+----------------------------------------------------------------
+set('n', '<leader>n', ":Neotree toggle <CR>")
+----------------------------------------------------------------
+set('n', '<leader>x', ":bd <CR>")
+----------------------------------------------------------------
+set('n','<UP>',"<C-w>k")
+set('n','<DOWN>',"<C-w>j")
+set('n','<RIGHT>',"<C-w>l")
+set('n','<LEFT>',"<C-w>h")
+----------------------------------------------------------------
+set('n','<leader>-',":split <CR>")
+set('n','<leader>=',":vsplit <CR>")
+----------------------------------------------------------------
+set('n','<ESC>',":nohlsearch <CR>")
+----------------------------------------------------------------
+set('n','<leader>r',":source <CR>")
+----------------------------------------------------------------
+set('n','V',"0v$");
+set('n','Y',"v$")
+----------------------------------------------------------------
+set('n',"<leader>hm",":lua require('harpoon.mark').add_file() <CR>")
+set('n',"<leader>hM",":Telescope harpoon marks <CR>")
+set('n',"<leader>hp",":lua require('harpoon.ui').nav_prev() <CR>")
+set('n',"<leader>hn",":lua require('harpoon.ui').nav_next() <CR>")
