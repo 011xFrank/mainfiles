@@ -14,8 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 local options = { ui = { border = "double" } }
 
 local plugins = {
-  {'tamton-aquib/staline.nvim'},
-
   {'ThePrimeagen/harpoon'},
 
   { "lewis6991/gitsigns.nvim", },
