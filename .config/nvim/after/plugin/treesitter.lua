@@ -11,4 +11,9 @@ require'nvim-treesitter.configs'.setup {
 		enable = true,
 		additional_vim_regex_highlighting = false,
 	},
+	indent = { -- Configure indentation for Lua files
+		enable = true,
+		default_indent = 8,  -- Adjust this to 8 for 8 spaces
+		lowercase = false,
+	},
 }
