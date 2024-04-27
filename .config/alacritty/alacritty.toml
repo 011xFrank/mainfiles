@@ -4,7 +4,7 @@ TERM = "xterm-256color"
 #------------------------------------------
 
 [window]
-opacity = 0.9
+opacity = 0.5
 
 [window.padding]
 x = 5
