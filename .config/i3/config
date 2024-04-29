@@ -51,7 +51,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -b
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -197,10 +197,7 @@ client.background       #ffffff
 
 exec_always nitrogen --restore
 exec_always ~/.config/polybar/launch.sh
-exec --no-startup-id picom
-
-for_window [class="^.*"] border pixel 1
-
+exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 
 # gaps
 # disable window titlebars
