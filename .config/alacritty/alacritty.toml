@@ -4,7 +4,8 @@ TERM = "xterm-256color"
 #------------------------------------------
 
 [window]
-opacity = 0.5
+opacity = 0.9
+decorations = "none"
 
 [window.padding]
 x = 5
@@ -26,13 +27,13 @@ family = "IosevkaTerm Nerd Font"
 family = "IosevkaTerm Nerd Font"
 
 [font]
-size = 10.0
+size = 6.0
 
 #------------------------------------------
 
 [colors.primary]
-# background = "#282b30"
-background = "#272727"
+background = "#282b30"
+# background = "#272727"
 
 [colors.vi_mode_cursor]
 text = "#e0def4"
