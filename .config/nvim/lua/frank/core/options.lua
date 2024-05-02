@@ -37,3 +37,13 @@ opt.number = true
 opt.relativenumber = true
 opt.numberwidth = 2
 opt.ruler = false
+
+
+-- Enable Vim's settings
+vim.opt.compatible = false
+
+-- Enable filetype plugins
+vim.cmd('filetype plugin on')
+
+-- Enable syntax highlighting
+vim.cmd('syntax on')

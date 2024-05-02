@@ -160,10 +160,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -187,13 +187,7 @@ bindsym $mod+r mode "resize"
 
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #606060 #222222 #888888 #606060   #606060
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
-
-client.background       #ffffff
+client.focused          #ea9a97 #222222 #888888 #606060   #ea9a97
 
 exec_always nitrogen --restore
 exec_always ~/.config/polybar/launch.sh
@@ -201,10 +195,10 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 
 # gaps
 # disable window titlebars
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 
 gaps inner 6
-gaps outer 2
+gaps outer 6
 
 bindsym $mod+Shift+g gaps inner all set 6; gaps outer all set 2
 bindsym $mod+Shift+n gaps inner all set 0; gaps outer all set 0
@@ -213,7 +207,7 @@ bindsym $mod+Shift+n gaps inner all set 0; gaps outer all set 0
 smart_gaps on
 
 # Activate smart borders (always)
-#smart_borders on
+smart_borders on
 
 # Activate smart borders (only when there are effectively no gaps)
 #smart_borders no_gaps

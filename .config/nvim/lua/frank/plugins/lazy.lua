@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 local options = { ui = { border = "double" } }
 
 local plugins = {
+  {'vimwiki/vimwiki'},
+
   {'ThePrimeagen/harpoon'},
 
   { "lewis6991/gitsigns.nvim", },

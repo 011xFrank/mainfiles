@@ -40,7 +40,7 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 1
 line-color = #f00
 
 border-size = 4
@@ -228,10 +228,10 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = [ <animation-charging> <label-charging> ]
+format-charging = <animation-charging> <label-charging>
 # format-charging-underline = #ffb52a
 
-format-discharging = [ <animation-discharging> <label-discharging> ]
+format-discharging = <animation-discharging> <label-discharging>
 # format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
