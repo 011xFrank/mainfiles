@@ -1,9 +1,9 @@
-sudo apt update; sudo apt upgrade
+sudo apt update; sudo apt dist-upgrade
 
-# installing polybar
-sudo apt install polybar
+# installing polybar & i3
+sudo apt install polybar i3
 
-#installing i3gap
+#installing i3-gaps
 sudo apt install meson dh-autoreconf libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev libxcb-shape0 libxcb-shape0-dev
 git clone https://github.com/Airblader/i3 i3-gaps
 cd i3-gaps
@@ -20,3 +20,6 @@ cd picom
 meson setup --buildtype=release build
 ninja -C build
 ninja -C build install
+
+# Other Programs
+sudo apt install bat
