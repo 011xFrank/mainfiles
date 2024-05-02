@@ -112,6 +112,7 @@ alias neoconf="~/.config/nvim/"
 alias q="exit"
 alias cprog="~/Desktop/C/"
 alias tm="tmux"
+alias cat="batcat"
 
 alias ll='ls -alF'
 alias la='ls -A'
