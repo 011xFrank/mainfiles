@@ -51,7 +51,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -b
+bindsym $mod+space exec --no-startup-id dmenu_run -b
+
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -97,10 +98,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+# bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -190,7 +191,7 @@ bindsym $mod+r mode "resize"
 client.focused          #6e6a86 #222222 #888888 #606060   #6e6a86
 
 exec_always nitrogen --restore
-exec_always pkill -USR1 polybar
+exec_always ~/.config/polybar/launch.sh
 exec_always picom --config ~/.config/picom/picom.conf -b
 
 # gaps
