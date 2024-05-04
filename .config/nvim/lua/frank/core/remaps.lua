@@ -26,3 +26,4 @@ set('n',"<leader>hM",":Telescope harpoon marks <CR>")
 set('n',"<leader>hp",":lua require('harpoon.ui').nav_prev() <CR>")
 set('n',"<leader>hn",":lua require('harpoon.ui').nav_next() <CR>")
 -------------------------------------------------------------------------
+set('n',"E","ea")

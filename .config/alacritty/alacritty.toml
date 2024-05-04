@@ -19,15 +19,15 @@ style = "Medium"
 
 [font.italic]
 family = "IosevkaTerm Nerd Font"
-style = "italic"
+style = "Italic"
 
 [font.bold]
 family = "IosevkaTerm Nerd Font"
-style = "bold"
+style = "Bold"
 
 [font.bold_italic]
 family = "IosevkaTerm Nerd Font"
-style = "bold italic"
+style = "Bold Italic"
 
 [font]
 size = 6.0

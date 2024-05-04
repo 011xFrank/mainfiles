@@ -190,14 +190,14 @@ bindsym $mod+r mode "resize"
 client.focused          #6e6a86 #222222 #888888 #606060   #6e6a86
 
 exec_always nitrogen --restore
-exec_always ~/.config/polybar/launch.sh
-exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
+exec_always pkill -USR1 polybar
+exec_always picom --config ~/.config/picom/picom.conf -b
 
 # gaps
 # disable window titlebars
 for_window [class="^.*"] border pixel 1
 
-gaps inner 6
+gaps inner 4
 gaps outer 1
 
 bindsym $mod+Shift+g gaps inner all set 6; gaps outer all set 2
@@ -243,6 +243,7 @@ mode "$mode_gaps_inner" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
 mode "$mode_gaps_outer" {
         bindsym plus  gaps outer current plus 5
         bindsym minus gaps outer current minus 5
@@ -255,3 +256,5 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+
