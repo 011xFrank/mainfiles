@@ -22,4 +22,4 @@ ninja -C build
 ninja -C build install
 
 # Other Programs
-sudo apt install bat
+sudo apt install bat neofetch
