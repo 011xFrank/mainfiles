@@ -35,8 +35,8 @@ size = 6.0
 #------------------------------------------
 
 [colors.primary]
-background = "#282b30"
-# background = "#272727"
+# background = "#282b30"
+background = "#272727"
 
 [colors.vi_mode_cursor]
 text = "#e0def4"
