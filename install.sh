@@ -14,4 +14,4 @@ ninja -C build
 ninja -C build install
 
 # Other Programs
-sudo apt install bat neofetch nodejs npm nitrogen eza neovim
+sudo apt install git curl wget bat neofetch nodejs npm nitrogen eza neovim

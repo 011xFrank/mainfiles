@@ -117,7 +117,6 @@ alias cat="batcat"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias ls="eza --icons=always -1"
 
 alias nv='nvim'
 
