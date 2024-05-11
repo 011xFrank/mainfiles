@@ -117,6 +117,9 @@ alias cat="batcat"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ls="eza --icons=always -1"
+
+alias nv='nvim'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
