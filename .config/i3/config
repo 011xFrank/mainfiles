@@ -188,7 +188,7 @@ bindsym $mod+r mode "resize"
 
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #6e6a86 #222222 #888888 #606060   #6e6a86
+client.focused          #ea9a97 #222222 #888888 #606060   #ea9a97
 
 exec_always nitrogen --restore
 exec_always ~/.config/polybar/launch.sh

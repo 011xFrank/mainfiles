@@ -1,17 +1,25 @@
+# Update the system
 sudo apt update; sudo apt dist-upgrade
 
-# installing polybar & i3
-sudo apt install polybar i3
+# Install:
+sudo apt install polybar i3 bat git stow curl wget bat neofetch nodejs npm nitrogen eza neofetch vlc
 
-#installing picom
-# Download latest zip file from : https://github.com/yshui/picom/releases
-cd ~
+# Installing picom
 sudo apt install libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libepoxy-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev libxext-dev meson ninja-build uthash-dev
-git clone https://github.com/yshui/picom.git --branch v11.1
+git clone https://github.com/yshui/picom.git --branch v11.1 picom # latest version
 cd picom
 meson setup --buildtype=release build
 ninja -C build
 ninja -C build install
 
-# Other Programs
-sudo apt install git curl wget bat neofetch nodejs npm nitrogen eza neovim
+# Setting up git client
+git config --global user.name "011xFrank"
+git config --global user.name "011xFrank"
+git config --global init.defaultBranch main
+git config --global color.ui auto
+
+git config --get user.name
+git config --get user.email
+
+ssh-keygen -t ed25519
+cat ~/.ssh/id_ed25519.pub
