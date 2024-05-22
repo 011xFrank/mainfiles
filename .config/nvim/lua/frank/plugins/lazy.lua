@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 local options = { ui = { border = "double" } }
 
 local plugins = {
+  {"tris203/precognition.nvim"},
+
   {'vimwiki/vimwiki'},
 
   {'ThePrimeagen/harpoon'},
