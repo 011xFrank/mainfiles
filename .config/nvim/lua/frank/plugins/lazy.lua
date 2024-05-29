@@ -14,6 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 local options = { ui = { border = "double" } }
 
 local plugins = {
+  {'brenoprata10/nvim-highlight-colors', config = function() require('nvim-highlight-colors').setup({}) end},
+
+  {"ellisonleao/gruvbox.nvim"},
+
   {"tris203/precognition.nvim"},
 
   {'vimwiki/vimwiki'},
