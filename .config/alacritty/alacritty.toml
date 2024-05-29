@@ -48,7 +48,7 @@ foreground = '#d4be98'
 
 # Normal colors
 [colors.normal]
-black   = '#3c3836'
+black   = '#696047'
 red     = '#ea6962'
 green   = '#a9b665'
 yellow  = '#d8a657'
@@ -59,7 +59,7 @@ white   = '#d4be98'
 
 # Bright colors (same as normal colors)
 [colors.bright]
-black   = '#3c3836'
+black   = '#696047'
 red     = '#ea6962'
 green   = '#a9b665'
 yellow  = '#d8a657'
