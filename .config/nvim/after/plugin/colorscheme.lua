@@ -93,6 +93,7 @@ require("gruvbox").setup({
     },
     overrides = {
         string = {fg = "#a98467"},
+        strings = {fg = "#a98467"},
     },
     dim_inactive = false,
     transparent_mode = true,
