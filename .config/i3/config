@@ -113,8 +113,9 @@ mode "resize" {
 client.focused          #ea9a97 #222222 #888888 #606060   #ea9a97
 
 exec_always nitrogen --restore
+exec_always killall polybar
 exec_always ~/.config/polybar/launch.sh
-exec_always picom --config ~/.config/picom/picom.conf -b
+exec --no-startup-id picom
 
 # gaps
 # disable window titlebars
