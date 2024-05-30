@@ -6,6 +6,6 @@ require("ibl").setup({
         enabled = false
     },
     exclude = {
-        filetypes = {'make','vimwiki','gitconfig','c','cpp','rust','text'},
+        filetypes = {'asm','make','vimwiki','gitconfig','c','cpp','rust','text'},
     },
 })
