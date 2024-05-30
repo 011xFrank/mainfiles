@@ -65,7 +65,7 @@ require("rose-pine").setup({
     end,
 })
 
--- vim.cmd("colorscheme rose-pine-moon")
+vim.cmd("colorscheme rose-pine-moon")
 
 -- Default options:
 require("gruvbox").setup({
@@ -95,4 +95,4 @@ require("gruvbox").setup({
     transparent_mode = true,
 })
 
-vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme gruvbox")
