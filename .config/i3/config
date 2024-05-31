@@ -31,7 +31,6 @@ exec_always nitrogen --restore
 exec_always killall polybar
 exec_always ~/.config/polybar/launch.sh
 exec --no-startup-id picom
-exec --no-startup-id ~/battery.sh &
 
 # start a terminal
 bindsym $mod+Return exec alacritty
