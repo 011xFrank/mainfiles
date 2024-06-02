@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-	ensure_installed = { "asm","make","bash","c","cpp","python", "lua", "vim", "vimdoc", "query" },
+	ensure_installed = { "toml","json","asm","make","bash","c","cpp","python", "lua", "vim", "vimdoc", "query" },
 
 	sync_install = false,
 
