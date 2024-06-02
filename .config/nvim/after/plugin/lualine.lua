@@ -84,7 +84,7 @@ ins_left {
 ins_left {
     -- mode component
     function()
-        return '󰮊'
+        return ''
     end,
     color = function()
         -- auto change color according to neovims mode
@@ -116,18 +116,20 @@ ins_left {
 }
 
 ins_left {
-    -- filesize component
-    'filesize',
-    cond = conditions.buffer_not_empty,
-}
-
-ins_left {
     'filename',
     cond = conditions.buffer_not_empty,
     color = { fg = colors.ecru, gui = 'italic' },
 }
 
-ins_left { 'progress', color = { fg = colors.fg, gui = 'italic' } }
+ins_left {
+    'filesize',
+    cond = conditions.buffer_not_empty,
+}
+
+ins_left {
+    'progress',
+    color = { fg = colors.fg, gui = 'italic' }
+}
 
 ins_left {
     'diagnostics',
@@ -140,13 +142,29 @@ ins_left {
     },
 }
 
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
+ins_left {
+    'branch',
+    icon = '󰘬',
+    color = { fg = colors.violet, gui = 'italic' },
+}
 
+ins_left {
+    'diff',
+    -- Is it me or the symbol for modified us really weird
+    symbols = { added = ' ', modified = ' ', removed = ' ' },
+    diff_color = {
+        added = { fg = colors.aqua },
+        modified = { fg = colors.orange },
+        removed = { fg = colors.red },
+    },
+    cond = conditions.hide_in_width,
+}
+
+-- Add components to right sections
 ins_right {
     -- Lsp server name .
     function()
-        local msg = 'No Active Lsp'
+        local msg = '[ No Active Lsp ]'
         local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
         local clients = vim.lsp.get_active_clients()
         if next(clients) == nil then
@@ -160,27 +178,8 @@ ins_right {
         end
         return msg
     end,
-    icon = ' LSP:',
-    color = { fg = '#ffffff', gui = 'bold' },
-}
-
--- Add components to right sections
-ins_right {
-    'branch',
-    icon = '',
-    color = { fg = colors.violet, gui = 'bold' },
-}
-
-ins_right {
-    'diff',
-    -- Is it me or the symbol for modified us really weird
-    symbols = { added = ' ', modified = '󰝤 ', removed = ' ' },
-    diff_color = {
-        added = { fg = colors.aqua },
-        modified = { fg = colors.orange },
-        removed = { fg = colors.red },
-    },
-    cond = conditions.hide_in_width,
+    icon = '  LSP:',
+    color = { fg = colors.fg, gui = 'italic' },
 }
 
 ins_right {
