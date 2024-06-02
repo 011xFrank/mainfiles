@@ -27,7 +27,6 @@ alias cat="batcat"
 alias c="clear"
 alias nv='nvim'
 alias battery='./battery.sh'
-alias c='gcc'
 
 alias gh='history|grep'
 alias update='sudo apt-get update -y && sudo apt-get upgrade -y'
