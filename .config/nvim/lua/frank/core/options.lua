@@ -27,10 +27,10 @@ opt.timeoutlen = 400
 
 -- Indenting
 opt.expandtab = true
-opt.shiftwidth = 8
+opt.shiftwidth = 4
 opt.smartindent = true
-opt.tabstop = 8
-opt.softtabstop = 8
+opt.tabstop = 4
+opt.softtabstop = 4
 
 -- Numbers
 opt.number = true

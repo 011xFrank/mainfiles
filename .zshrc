@@ -27,10 +27,12 @@ alias cat="batcat"
 alias c="clear"
 alias nv='nvim'
 alias battery='./battery.sh'
+alias mkdir='mkdir -vp'
+alias mv='mv -iv'
+alias rm='rm -v'
 
 alias gh='history|grep'
 alias update='sudo apt-get update -y && sudo apt-get upgrade -y'
-alias rm='mv --force -t ~/.local/share/Trash/ '
 alias r='source ~/.zshrc'
 
 alias ls='ls -l --human-readable --size -1 -S --color=auto'

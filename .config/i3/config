@@ -115,7 +115,7 @@ mode "resize" {
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #ea9a97 #222222 #888888 #606060   #ea9a97
+client.focused          #8D7471 #222222 #888888 #606060   #8D7471
 
 
 # gaps
