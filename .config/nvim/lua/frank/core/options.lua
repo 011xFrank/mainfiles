@@ -20,7 +20,7 @@ opt.termguicolors = true
 opt.undofile = true
 
 opt.updatetime = 200
-opt.scrolloff = 15
+opt.scrolloff = 10
 opt.sidescrolloff = 5
 opt.laststatus = 3
 opt.timeoutlen = 400
