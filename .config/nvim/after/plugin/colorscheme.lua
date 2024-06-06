@@ -12,7 +12,7 @@ require("rose-pine").setup({
 
     styles = {
         bold = false,
-        italic = false,
+        italic = true,
         transparency = true,
     },
 
@@ -75,7 +75,7 @@ require("gruvbox").setup({
         strings = true,
         emphasis = true,
         comments = true,
-        operators = true,
+        operators = false,
         folds = true,
     },
     strikethrough = true,

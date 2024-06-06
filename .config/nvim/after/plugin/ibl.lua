@@ -1,5 +1,4 @@
 require("ibl").setup({
-    enabled = false,
     indent = {
         char = '│',
     },
@@ -7,6 +6,6 @@ require("ibl").setup({
         enabled = false
     },
     exclude = {
-        -- filetypes = {'lua','sh','asm','make','vimwiki','gitconfig','c','cpp','rust','text'},
+        filetypes = {'sh','asm','make','vimwiki','gitconfig','c','cpp','rust','text'},
     },
 })

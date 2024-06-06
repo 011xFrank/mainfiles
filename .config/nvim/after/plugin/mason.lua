@@ -27,7 +27,8 @@ mason.setup({
 mason_lspconfig.setup ({
     ensure_installed = {
         "lua_ls",
-        "clangd"
+        "clangd",
+        "pyright"
     },
 
     max_concurrent_installers = 10,

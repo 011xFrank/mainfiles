@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Battery Monitor Active..."
-
 while :
 do
 	POWER=$(acpi -b | grep "Battery 0" | grep -o '[0-9]\+%' | tr -d '%')
