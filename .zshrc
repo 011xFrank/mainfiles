@@ -30,6 +30,8 @@ alias battery='./battery.sh'
 alias mkdir='mkdir -vp'
 alias mv='mv -iv'
 alias rm='rm -v'
+alias music='./.music.py'
+alias install='sudo apt install'
 
 alias gh='history|grep'
 alias update='sudo apt-get update -y && sudo apt-get upgrade -y'
