@@ -37,11 +37,14 @@ alias gh='history|grep'
 alias update='sudo apt-get update -y && sudo apt-get upgrade -y'
 alias r='source ~/.zshrc'
 
-alias ls='ls -l --human-readable --size -1 -S --color=auto'
-alias la='ls -aF'
-alias l.='ls -d .*'
+# alias ls='ls -l --human-readable --size -1 -S --color=auto'
+# alias la='ls -aF'
+# alias l.='ls -d .*'
+
+alias eza='eza --icons=always --group-directories-first -lh'
+alias ls='eza -1'
+alias l.='eza -d .*'
+alias la='eza -a'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
