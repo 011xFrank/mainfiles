@@ -32,15 +32,13 @@ exec_always killall polybar
 exec_always ~/.config/polybar/launch.sh
 exec --no-startup-id picom
 
-# start a terminal
 bindsym $mod+Return exec kitty
 bindsym $mod+s exec spotify
+bindsym $mod+space exec --no-startup-id ~/.config/rofi/launcher.sh
 
 # kill focused window
 bindsym $mod+q kill
-
-# start dmenu (a program launcher)
-bindsym $mod+space exec --no-startup-id dmenu_run -b
+bindsym $mod+Shift+q exec shutdown
 
 # change focus
 bindsym $mod+Left focus left
