@@ -34,6 +34,7 @@ exec --no-startup-id picom
 
 # start a terminal
 bindsym $mod+Return exec kitty
+bindsym $mod+s exec spotify
 
 # kill focused window
 bindsym $mod+q kill
@@ -104,7 +105,7 @@ mode "resize" {
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #8D7471 #222222 #888888 #606060   #8D7471
+client.focused          #8D7471 #222222 #888888 #8D7471   #8D7471
 
 
 # gaps
@@ -113,9 +114,3 @@ for_window [class="^.*"] border pixel 2
 
 gaps inner 6
 gaps outer 2
-
-# Activate smart borders (always)
-smart_borders on
-
-# Hide edge borders only if there is one window with no gaps
-hide_edge_borders smart_no_gaps
