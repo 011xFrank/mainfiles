@@ -70,7 +70,7 @@ require("gruvbox").setup({
     terminal_colors = true, -- add neovim terminal colors
     undercurl = true,
     underline = true,
-    bold = true,
+    bold = false,
     italic = {
         strings = true,
         emphasis = true,
