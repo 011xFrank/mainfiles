@@ -37,6 +37,8 @@ alias gh='history|grep'
 alias update='sudo apt-get update -y && sudo apt-get upgrade -y'
 alias r='source ~/.zshrc'
 
+alias netdiscover='sudo netdiscover'
+
 # alias ls='ls -l --human-readable --size -1 -S --color=auto'
 # alias la='ls -aF'
 # alias l.='ls -d .*'
