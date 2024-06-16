@@ -25,23 +25,20 @@ alias q="exit"
 alias tm="tmux"
 alias cat="batcat"
 alias c="clear"
+
 alias nv='nvim'
-alias battery='./battery.sh'
 alias mkdir='mkdir -vp'
 alias mv='mv -iv'
 alias rm='rm -v'
+
 alias music='./.music.py'
 alias install='sudo apt install'
 alias uninstall='sudo apt purge'
 alias gh='history|grep'
 alias update='sudo apt-get update -y && sudo apt-get upgrade -y'
 alias r='source ~/.zshrc'
-
 alias netdiscover='sudo netdiscover'
-
-# alias ls='ls -l --human-readable --size -1 -S --color=auto'
-# alias la='ls -aF'
-# alias l.='ls -d .*'
+alias chtsh='tldr'
 
 alias eza='eza --icons=always --group-directories-first -lh'
 alias ls='eza -1'
