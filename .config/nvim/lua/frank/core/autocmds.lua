@@ -4,7 +4,6 @@ local api = vim.api
 -- Enable spell checking for certain file types
 api.nvim_create_autocmd(
         { "BufRead", "BufNewFile" },
-        -- { pattern = { "*.txt", "*.md", "*.tex" }, command = [[setlocal spell<cr> setlocal spelllang=en,de<cr>]] }
         {
                 pattern = { "*.txt", "*.md", "*.tex" },
                 callback = function()
@@ -14,34 +13,44 @@ api.nvim_create_autocmd(
         }
 )
 
--- this mean that when you open a file, you will be at the last position
-api.nvim_create_autocmd("BufReadPost", {
-        callback = function()
-                local mark = vim.api.nvim_buf_get_mark(0, '"')
-                local lcount = vim.api.nvim_buf_line_count(0)
-                if mark[1] > 0 and mark[1] <= lcount then
-                        pcall(vim.api.nvim_win_set_cursor, 0, mark)
-                end
-        end,
-})
 
--- show cursor line only in active window
+
+-- This mean that when you open a file, you will be at the last position
+api.nvim_create_autocmd(
+        "BufReadPost",
+        {
+                callback = function()
+                        local mark = vim.api.nvim_buf_get_mark(0, '"')
+                        local lcount = vim.api.nvim_buf_line_count(0)
+                        if mark[1] > 0 and mark[1] <= lcount then
+                                pcall(vim.api.nvim_win_set_cursor, 0, mark)
+                        end
+                end,
+        }
+)
+
+
+
+-- Show cursor line only in active window
 local cursorGrp = api.nvim_create_augroup("CursorLine", { clear = true })
-api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, {
-        pattern = "*",
-        command = "set cursorline",
-        group = cursorGrp,
-})
 
+api.nvim_create_autocmd(
+        { "InsertLeave", "WinEnter" },
+        { pattern = "*", command = "set cursorline", group = cursorGrp,}
+)
 api.nvim_create_autocmd(
         { "InsertEnter", "WinLeave" },
         { pattern = "*", command = "set nocursorline", group = cursorGrp }
 )
 
 
+
 -- highlight on yank
-api.nvim_create_autocmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
+api.nvim_create_autocmd(
+        "TextYankPost",
+        {
+                callback = function()
+                        vim.highlight.on_yank()
+                end,
+        }
+)
