@@ -16,6 +16,8 @@ local options = { ui = { border = "double" } }
 local plugins = {
   {"nvim-lualine/lualine.nvim"},
 
+  { "NStefan002/donut.nvim", version = "*", lazy = false, },
+
   { 'joshuadanpeterson/typewriter' },
 
   {'brenoprata10/nvim-highlight-colors', config = function() require('nvim-highlight-colors').setup({}) end},
