@@ -38,6 +38,10 @@ opt.relativenumber = true
 opt.numberwidth = 2
 opt.ruler = false
 
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
 -- Enable Vim's settings
 vim.opt.compatible = false
