@@ -39,6 +39,7 @@ alias update='sudo apt-get update -y && sudo apt-get upgrade -y'
 alias r='source ~/.zshrc'
 alias netdiscover='sudo netdiscover'
 alias chtsh='tldr'
+alias clone='git clone'
 
 alias eza='eza --icons=always --group-directories-first -lh'
 alias ls='eza -1'
