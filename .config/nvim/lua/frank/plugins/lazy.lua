@@ -14,39 +14,162 @@ vim.opt.rtp:prepend(lazypath)
 local options = { ui = { border = "double" } }
 
 local plugins = {
-  {"sainnhe/gruvbox-material"},
+  {
+    "sainnhe/gruvbox-material",
+    priority = 1000,
+    config = function ()
+      local option = vim.g
+      option.gruvbox_material_foreground = 'material'
+      option.gruvbox_material_enable_bold = 1
+      option.gruvbox_material_enable_italic = true
+      option.gruvbox_material_transparent_background = 1
+      option.gruvbox_material_float_style = 'dim'
 
-  {"Mofiqul/vscode.nvim"},
+      vim.cmd("colorscheme gruvbox-material")
+    end
+  },
+
+  {
+    "Mofiqul/vscode.nvim",
+    config = function ()
+      local c = require('vscode.colors').get_colors()
+      require('vscode').setup({
+        transparent = true,
+        italic_comments = true,
+        underline_links = true,
+        disable_nvimtree_bg = true,
+        color_overrides = {},
+        group_overrides = {
+          Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
+        }
+      })
+    end
+  },
 
   {"nvim-lualine/lualine.nvim"},
 
-  { "NStefan002/donut.nvim", version = "*", lazy = false, },
+  {
+    "joshuadanpeterson/typewriter",
+    config = function ()
+      require('typewriter').setup()
+      vim.cmd("TWEnable")
+    end
+  },
 
-  { 'joshuadanpeterson/typewriter' },
+  {
+    "brenoprata10/nvim-highlight-colors",
+    config = function()
+      require('nvim-highlight-colors').setup({})
+    end
+  },
 
-  {'brenoprata10/nvim-highlight-colors', config = function() require('nvim-highlight-colors').setup({}) end},
+  {
+    "tris203/precognition.nvim",
+    config = function ()
+      -- require("precognition").toggle()
+    end
+  },
 
-  {"ellisonleao/gruvbox.nvim"},
+  {
+    "ThePrimeagen/harpoon",
+    config = function ()
+      vim.g.mapleader = " "
+      local set = vim.keymap.set
+      local opts = { noremap = true, silent = true }
 
-  {"tris203/precognition.nvim"},
+      require("harpoon").setup()
 
-  {'vimwiki/vimwiki'},
+      set('n',"<leader>hm",":lua require('harpoon.mark').add_file() <CR>", opts)
+      set('n',"<leader>hM",":Telescope harpoon marks <CR>", opts)
+      set('n',"<leader>hp",":lua require('harpoon.ui').nav_prev() <CR>", opts)
+      set('n',"<leader>hn",":lua require('harpoon.ui').nav_next() <CR>", opts)
+    end
+  },
 
-  {'ThePrimeagen/harpoon'},
-
-  { "lewis6991/gitsigns.nvim", },
+  {
+          "lewis6991/gitsigns.nvim",
+          config = function()
+                  require("gitsigns").setup({
+                          signs = {
+                                  add = { text = "│" },
+                                  change = { text = "│" },
+                                  delete = { text = "" },
+                                  topdelete = { text = "‾" },
+                                  changedelete = { text = "~" },
+                                  untracked = { text = "│" },
+                          },
+                  })
+          end
+  },
 
   { "nvim-tree/nvim-web-devicons" },
 
-  { "numToStr/Comment.nvim", lazy = false, },
+  {
+    "numToStr/Comment.nvim",
+    lazy = false,
+    config = function ()
+      local comment = require("Comment")
 
-  { "rose-pine/neovim", name = "rose-pine", lazy = false },
+      comment.setup({
+        toggler = {
+          line = "<leader>/",
+        },
+        opleader = {
+          line = "<leader>/",
+          block = "<leader>/"
+        }
+      })
+    end
+  },
 
-  { "williamboman/mason.nvim", dependencies = { "williamboman/mason-lspconfig.nvim", } },
+  {
+    "williamboman/mason.nvim",
+    dependencies = "williamboman/mason-lspconfig.nvim"
+  },
 
-  { "nvim-treesitter/nvim-treesitter", build = function() require("nvim-treesitter.install").update({ with_sync = true })() end, },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = function()
+      require("nvim-treesitter.install").update({ with_sync = true })()
+    end,
+    config = function ()
+      require'nvim-treesitter.configs'.setup {
+        ensure_installed = { "toml","json","asm","make","bash","c","cpp","python", "lua", "vim", "vimdoc", "query" },
+        sync_install = false,
+        auto_install = true,
+        ignore_install = { "javascript" },
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
+        indent = { -- Configure indentation for Lua files
+          enable = true,
+          default_indent = 8,  -- Adjust this to 8 for 8 spaces
+          lowercase = false,
+        },
+      }
+    end
+  },
 
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, dependencies = 'tpope/vim-sleuth'},
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {},
+    dependencies = 'tpope/vim-sleuth',
+    config = function ()
+      require("ibl").setup({
+        indent = {
+          char = '│',
+        },
+        scope = {
+          enabled = false
+        },
+        exclude = {
+          filetypes = {'sh','asm','make','gitconfig','c','cpp','rust','text'},
+        },
+      })
+    end
+  },
 
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -96,6 +219,46 @@ local plugins = {
       "SmiteshP/nvim-navic",
       "nvim-tree/nvim-web-devicons",
     },
+    config = function ()
+      require("barbecue").setup({
+        exclude_filetypes = { "NvimTree" },
+        theme = {
+          normal = { fg = "#c4a089" }, -- Warm beige
+          ellipsis = { fg = "#8a6542" }, -- Dark brown
+          separator = { fg = "#8a6542" },
+          modified = { fg = "#8a6542" },
+          dirname = { fg = "#8a6542" },
+          basename = { bold = true },
+          context = {},
+          context_file = { fg = "#b58900" }, -- Golden brown
+          context_module = { fg = "#b58900" },
+          context_namespace = { fg = "#b58900" },
+          context_package = { fg = "#b58900" },
+          context_class = { fg = "#b58900" },
+          context_method = { fg = "#b58900" },
+          context_property = { fg = "#b58900" },
+          context_field = { fg = "#b58900" },
+          context_constructor = { fg = "#b58900" },
+          context_enum = { fg = "#b58900" },
+          context_interface = { fg = "#b58900" },
+          context_function = { fg = "#b58900" },
+          context_variable = { fg = "#b58900" },
+          context_constant = { fg = "#b58900" },
+          context_string = { fg = "#b58900" },
+          context_number = { fg = "#b58900" },
+          context_boolean = { fg = "#b58900" },
+          context_array = { fg = "#b58900" },
+          context_object = { fg = "#b58900" },
+          context_key = { fg = "#b58900" },
+          context_null = { fg = "#b58900" },
+          context_enum_member = { fg = "#b58900" },
+          context_struct = { fg = "#b58900" },
+          context_event = { fg = "#b58900" },
+          context_operator = { fg = "#b58900" },
+          context_type_parameter = { fg = "#b58900" },
+        },
+      })
+    end
   },
 
   {
