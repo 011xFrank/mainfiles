@@ -14,6 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 local options = { ui = { border = "double" } }
 
 local plugins = {
+  {"sainnhe/gruvbox-material"},
+
+  {"Mofiqul/vscode.nvim"},
+
   {"nvim-lualine/lualine.nvim"},
 
   { "NStefan002/donut.nvim", version = "*", lazy = false, },

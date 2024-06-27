@@ -1,6 +1,19 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
+local function border(hl_name)
+  return {
+    { "╭", hl_name },
+    { "─", hl_name },
+    { "╮", hl_name },
+    { "│", hl_name },
+    { "╯", hl_name },
+    { "─", hl_name },
+    { "╰", hl_name },
+    { "│", hl_name },
+  }
+end
+
 luasnip.setup {
     history = true,
     region_check_events = "InsertEnter",
@@ -14,8 +27,12 @@ cmp.setup({
         completeopt = "menu,menuone",
     },
     window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = {
+            border = border("CmpBorder")
+        },
+        documentation = {
+            border = border("CmpBorder")
+        },
     },
     snippet = {
         expand = function(args)
@@ -58,9 +75,9 @@ cmp.setup({
     },
     sources = cmp.config.sources ({
         { name = "nvim_lsp" },
-        { name = "nvim_lua" },
         { name = "luasnip" },
         { name = "buffer" },
+        { name = "nvim_lua" },
         { name = "path" },
         { name = "treesitter" },
     })

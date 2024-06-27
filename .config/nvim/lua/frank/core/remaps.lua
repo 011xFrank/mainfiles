@@ -14,8 +14,8 @@ set('n','<leader>wl',"<C-w>l", opts)
 set('n','<leader>wh',"<C-w>h", opts)
 -------------------------------------------------------------------------
 -- Splitting Windows
-set('n','<leader>-',":split <CR>", opts)
-set('n','<leader>=',":vsplit <CR>", opts)
+set('n','<leader>-',"<cmd> split <CR>", opts)
+set('n','<leader>=',"<cmd> vsplit <CR>", opts)
 -------------------------------------------------------------------------
 -- Highlight the whole line
 set('n','V',"0v$", opts);
@@ -28,14 +28,14 @@ set("v", "J", ":m '>+1<CR>gv=gv", opts)
 set("v", "K", ":m '<-2<CR>gv=gv", opts)
 -------------------------------------------------------------------------
 -- Buffer Operations
-set("n", "<Leader>w", ":write!<CR>", opts)
-set("n", "<Leader>q", ":q!<CR>", opts)
-set('n', '<leader>x', ":bd <CR>", opts)
+set("n", "<Leader>w", "<cmd> write!<CR>", opts)
+set("n", "<Leader>q", "<cmd> q!<CR>", opts)
+set('n', '<leader>x', "<cmd> bd <CR>", opts)
 -------------------------------------------------------------------------
 -- Select all
 set("n", "<leader>a", "ggVG", opts)
 -------------------------------------------------------------------------
 -- Others
-set('n','<ESC>',":nohlsearch <CR>", opts)
-set('n','<leader>r',":source <CR>", opts)
+set('n','<ESC>',"<cmd> nohlsearch <CR>", opts)
+set('n','<leader>r',"<cmd> source <CR>", opts)
 -------------------------------------------------------------------------

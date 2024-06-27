@@ -1,3 +1,5 @@
+local gruvboxMaterial = vim.g
+
 require("rose-pine").setup({
     variant = "moon", -- auto, main, moon, or dawn
     dark_variant = "moon", -- main, moon, or dawn
@@ -94,5 +96,42 @@ require("gruvbox").setup({
     transparent_mode = true,
 })
 
-vim.cmd("colorscheme gruvbox")
+local c = require('vscode.colors').get_colors()
+require('vscode').setup({
+    -- Alternatively set style in setup
+    -- style = 'light'
+
+    -- Enable transparent background
+    transparent = true,
+
+    -- Enable italic comment
+    italic_comments = true,
+
+    -- Underline `@markup.link.*` variants
+    underline_links = true,
+
+    -- Disable nvim-tree background color
+    disable_nvimtree_bg = true,
+
+    -- Override colors (see ./lua/vscode/colors.lua)
+    color_overrides = {},
+
+    -- Override highlight groups (see ./lua/vscode/theme.lua)
+    group_overrides = {
+        -- this supports the same val table as vim.api.nvim_set_hl
+        -- use colors from this colorscheme by requiring vscode.colors!
+        Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
+    }
+})
+
+-- gruvboxMaterial.gruvbox_material_background = 'soft'
+gruvboxMaterial.gruvbox_material_foreground = 'material'
+gruvboxMaterial.gruvbox_material_enable_bold = 1
+gruvboxMaterial.gruvbox_material_enable_italic = true
+gruvboxMaterial.gruvbox_material_transparent_background = 1
+gruvboxMaterial.gruvbox_material_float_style = 'dim'
+
+-- vim.cmd("colorscheme vscode")
+-- vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme gruvbox-material")
 -- vim.cmd("colorscheme rose-pine-moon")

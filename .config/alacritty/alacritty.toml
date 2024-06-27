@@ -15,30 +15,30 @@ y = 5
 
 [font.normal]
 # family = "IosevkaTerm Nerd Font"
-family = "FiraMono Nerd Font"
+family = "FiraCode Nerd Font"
 # family = "Maple Mono NF"
 style = "Medium"
 
 [font.italic]
 # family = "IosevkaTerm Nerd Font"
-family = "FiraMono Nerd Font"
+family = "FiraCode Nerd Font"
 # family = "Maple Mono NF"
 style = "Italic"
 
 [font.bold]
 # family = "IosevkaTerm Nerd Font"
-family = "FiraMono Nerd Font"
+family = "FiraCode Nerd Font"
 # family = "Maple Mono NF"
 style = "Bold"
 
 [font.bold_italic]
 # family = "IosevkaTerm Nerd Font"
-# family = "FiraMono Nerd Font"
-family = "Maple Mono NF"
+family = "FiraCode Nerd Font"
+# family = "Maple Mono NF"
 style = "Bold Italic"
 
 [font]
-size = 5.0
+size = 5.5
 
 #------------------------------------------
 # Default colors

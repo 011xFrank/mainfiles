@@ -2,7 +2,7 @@ require("neo-tree").setup({
     hijack_netrw_behavior = "open_current",
     popup_border_style = "double",
     window = {
-        position = "float",
+        position = "left",
         width = 40,
         mapping_options = {
             noremap = true,
