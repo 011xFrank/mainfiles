@@ -144,13 +144,13 @@ local plugins = {
     config = function ()
       require("ibl").setup({
         indent = {
-          char = '│',
+          char = '🭲',
         },
         scope = {
           enabled = false
         },
         exclude = {
-          filetypes = {'sh','asm','make','gitconfig','c','cpp','rust','text'},
+          filetypes = {'sh','asm','make','gitconfig','rust','text'},
         },
       })
     end
