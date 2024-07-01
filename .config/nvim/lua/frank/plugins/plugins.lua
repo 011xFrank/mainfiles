@@ -3,31 +3,13 @@ local plugins = {
     "sainnhe/gruvbox-material",
     priority = 1000,
     config = function ()
-      local option = vim.g
-      option.gruvbox_material_foreground = 'material'
-      option.gruvbox_material_enable_bold = 1
-      option.gruvbox_material_enable_italic = true
-      option.gruvbox_material_transparent_background = 1
-      option.gruvbox_material_float_style = 'dim'
+      vim.g.gruvbox_material_foreground = 'material'
+      vim.g.gruvbox_material_enable_bold = 1
+      vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_transparent_background = 1
+      vim.g.gruvbox_material_float_style = 'dim'
 
       vim.cmd("colorscheme gruvbox-material")
-    end
-  },
-
-  {
-    "Mofiqul/vscode.nvim",
-    config = function ()
-      local c = require('vscode.colors').get_colors()
-      require('vscode').setup({
-        transparent = true,
-        italic_comments = true,
-        underline_links = true,
-        disable_nvimtree_bg = true,
-        color_overrides = {},
-        group_overrides = {
-          Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
-        }
-      })
     end
   },
 
@@ -72,22 +54,22 @@ local plugins = {
   },
 
   {
-          "lewis6991/gitsigns.nvim",
-          config = function()
-                  require("gitsigns").setup({
-                          signs = {
-                                  add = { text = "│" },
-                                  change = { text = "│" },
-                                  delete = { text = "" },
-                                  topdelete = { text = "‾" },
-                                  changedelete = { text = "~" },
-                                  untracked = { text = "│" },
-                          },
-                  })
-          end
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup({
+        signs = {
+          add = { text = "│" },
+          change = { text = "│" },
+          delete = { text = "" },
+          topdelete = { text = "‾" },
+          changedelete = { text = "~" },
+          untracked = { text = "│" },
+        },
+      })
+    end
   },
 
-  { "nvim-tree/nvim-web-devicons" },
+  {"nvim-tree/nvim-web-devicons"},
 
   {
     "numToStr/Comment.nvim",
@@ -107,10 +89,7 @@ local plugins = {
     end
   },
 
-  {
-    "williamboman/mason.nvim",
-    dependencies = "williamboman/mason-lspconfig.nvim"
-  },
+  {"williamboman/mason.nvim", dependencies = "williamboman/mason-lspconfig.nvim"},
 
   {
     "nvim-treesitter/nvim-treesitter",
@@ -122,7 +101,6 @@ local plugins = {
         ensure_installed = { "toml","json","asm","make","bash","c","cpp","python", "lua", "vim", "vimdoc", "query" },
         sync_install = false,
         auto_install = true,
-        ignore_install = { "javascript" },
         highlight = {
           enable = true,
           additional_vim_regex_highlighting = false,
@@ -162,7 +140,6 @@ local plugins = {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
       {
