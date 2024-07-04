@@ -4,7 +4,7 @@ local plugins = {
     priority = 1000,
     config = function ()
       vim.g.gruvbox_material_foreground = 'material'
-      vim.g.gruvbox_material_enable_bold = 1
+      vim.g.gruvbox_material_enable_bold = 0
       vim.g.gruvbox_material_enable_italic = true
       vim.g.gruvbox_material_transparent_background = 1
       vim.g.gruvbox_material_float_style = 'dim'
@@ -14,14 +14,6 @@ local plugins = {
   },
 
   {"nvim-lualine/lualine.nvim"},
-
-  {
-    "joshuadanpeterson/typewriter",
-    config = function ()
-      require('typewriter').setup()
-      vim.cmd("TWEnable")
-    end
-  },
 
   {
     "brenoprata10/nvim-highlight-colors",
@@ -128,7 +120,7 @@ local plugins = {
           enabled = false
         },
         exclude = {
-          filetypes = {'sh','asm','make','gitconfig','rust','text'},
+          filetypes = {'c','cpp','sh','asm','make','gitconfig','rust','text'},
         },
       })
     end
