@@ -28,10 +28,10 @@ cmp.setup({
     },
     window = {
         completion = {
-            border = border("CmpBorder")
+            -- border = border("CmpBorder")
         },
         documentation = {
-            border = border("CmpBorder")
+            -- border = border("CmpBorder")
         },
     },
     snippet = {
