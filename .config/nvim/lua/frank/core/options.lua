@@ -1,4 +1,5 @@
 local opt = vim.opt
+local command = vim.cmd
 
 opt.fileencoding = "utf-8"
 opt.background = "dark"
@@ -47,7 +48,9 @@ opt.undofile = true
 vim.opt.compatible = false
 
 -- Enable filetype plugins
-vim.cmd('filetype plugin on')
+command('filetype plugin on')
 
 -- Enable syntax highlighting
-vim.cmd('syntax on')
+command('syntax on')
+
+command('highlight Pmenu guibg=NONE')
