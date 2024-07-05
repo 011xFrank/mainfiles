@@ -19,7 +19,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias neoconf='~/.config/nvim/'
 alias cprog='~/Desktop/C/'
-alias mainfiles'~/mainfiles/'
+alias mainfiles='~/mainfiles/'
 
 alias q="exit"
 alias tm="tmux"

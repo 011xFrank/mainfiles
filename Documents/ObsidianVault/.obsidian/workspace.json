@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ab08162483e1b7e8",
+        "id": "8550c6f301d0aa1d",
         "type": "tabs",
         "children": [
           {
-            "id": "849067430f8ea3b7",
+            "id": "afec54071a1aa47e",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -138,11 +138,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "849067430f8ea3b7",
+  "active": "afec54071a1aa47e",
   "lastOpenFiles": [
+    "Notes/Programming/C/TOPICS.md",
+    "Notes/Programming/Data Structures & Algorithms/ROADMAP.md",
+    "Notes/Programming/C/Strings.md",
     "Extras/Templates/Programming Notes Templ..md",
     "Notes/Programming/Data Structures & Algorithms/LINKED LISTS.md",
-    "Notes/Programming/C/TOPICS.md",
     "Notes/Other/Learning How to Learn.md",
     "Notes/Programming/C/STRINGS.md",
     "Notes/Programming/C/STRINGS.md",
