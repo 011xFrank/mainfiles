@@ -25,6 +25,7 @@ alias q="exit"
 alias tm="tmux"
 alias cat="batcat"
 alias c="clear"
+alias g="git"
 
 alias nv='nvim'
 alias mkdir='mkdir -vp'
