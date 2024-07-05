@@ -43,7 +43,7 @@ alias chtsh='tldr'
 alias clone='git clone'
 
 alias eza='eza --icons=always --group-directories-first -lh'
-alias ls='eza -1'
+alias ls='eza'
 alias l.='eza -d .*'
 alias la='eza -a'
 
