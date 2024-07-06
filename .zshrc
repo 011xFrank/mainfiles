@@ -27,7 +27,7 @@ alias cat="batcat"
 alias c="clear"
 alias g="git"
 
-alias nv='nvim'
+alias n='nvim'
 alias mkdir='mkdir -vp'
 alias mv='mv -iv'
 alias rm='rm -v'

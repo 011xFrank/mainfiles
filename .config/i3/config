@@ -34,6 +34,7 @@ exec --no-startup-id picom
 
 bindsym $mod+Return exec kitty
 bindsym $mod+space exec --no-startup-id ~/.config/rofi/launcher.sh
+bindsym $mod+o exec obsidian
 
 # kill focused window
 bindsym $mod+q kill

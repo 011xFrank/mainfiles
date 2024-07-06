@@ -6,5 +6,5 @@ do
 	if [[ $POWER -le 15 ]]; then
 		notify-send "Battery power is lower than 15%!"
 	fi
-sleep 30
+sleep 1
 done

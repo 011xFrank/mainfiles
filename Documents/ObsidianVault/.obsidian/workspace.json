@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "8550c6f301d0aa1d",
+        "id": "eb26b88b71399555",
         "type": "tabs",
         "children": [
           {
-            "id": "afec54071a1aa47e",
+            "id": "9d1418cbdce9fc81",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Notes/Other/Personal Developement/Learning How to Learn.md",
+                "mode": "preview",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Notes/Other/Personal Developement/Learning How to Learn.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Notes/Other/Personal Developement/Learning How to Learn.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Notes/Other/Personal Developement/Learning How to Learn.md"
+              }
             }
           }
         ]
@@ -138,14 +146,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "afec54071a1aa47e",
+  "active": "9d1418cbdce9fc81",
   "lastOpenFiles": [
+    "Notes/Other/Ideas",
+    "Notes/Other/Untitled.canvas",
+    "Notes/Other/Personal Developement",
+    "Notes/Other/Untitled.md",
     "Notes/Programming/C/TOPICS.md",
     "Notes/Programming/Data Structures & Algorithms/ROADMAP.md",
     "Notes/Programming/C/Strings.md",
     "Extras/Templates/Programming Notes Templ..md",
     "Notes/Programming/Data Structures & Algorithms/LINKED LISTS.md",
-    "Notes/Other/Learning How to Learn.md",
+    "Notes/Other/Personal Developement/Learning How to Learn.md",
     "Notes/Programming/C/STRINGS.md",
     "Notes/Programming/C/STRINGS.md",
     "Untitled.md",
@@ -164,7 +176,6 @@
     "Notes/Programming",
     "linked Note.md",
     "new.md",
-    "Notes/Programming",
-    "C"
+    "Notes/Programming"
   ]
 }
