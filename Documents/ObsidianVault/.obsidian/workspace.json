@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "eb26b88b71399555",
+        "id": "eaba417fae60a99a",
         "type": "tabs",
         "children": [
           {
-            "id": "9d1418cbdce9fc81",
+            "id": "e876c1e6f5478d14",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Notes/Other/Personal Developement/Learning How to Learn.md",
-                "mode": "preview",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -69,7 +65,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 289.5,
+    "collapsed": true
   },
   "right": {
     "id": "65b8bd46da123850",
@@ -85,7 +82,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Notes/Other/Personal Developement/Learning How to Learn.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +98,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Notes/Other/Personal Developement/Learning How to Learn.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +119,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Notes/Other/Personal Developement/Learning How to Learn.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,36 +139,48 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9d1418cbdce9fc81",
+  "active": "e876c1e6f5478d14",
   "lastOpenFiles": [
+    "Notes/Programming/Data Structures & Algorithms/ARRAYS/Arrays.md",
+    "Notes/Programming/Data Structures & Algorithms/LINKED LISTS/Intro to Linked Lists.md",
+    "Notes/Programming/Data Structures & Algorithms/LINKED LISTS/Singly Linked List.md",
+    "Notes/Programming/C/Structures/Structures.md",
+    "Notes/Programming/C/Structures",
+    "Extras/Images/Pasted image 20240708172851.png",
+    "Extras/Images/Pasted image 20240708171647.png",
+    "Extras/Templates/Programming Notes Templ..md",
+    "Notes/Programming/Data Structures & Algorithms/ARRAYS",
+    "2024-07-08.md",
+    "Notes/Programming/Data Structures & Algorithms/LINKED LISTS",
+    "To-do.md",
+    "Notes/Programming/C/Strings/String Functions.md",
+    "Notes/Programming/C/Operators.md",
+    "2024-07-07.md",
+    "Extras/Images/5771ec15-e86b-4c28-b00a-0477442e7ff8_3240x2056.webp",
+    "Notes/Programming/C/Operators/Relational Operators.md",
+    "Untitled.canvas",
+    "Notes/Programming/C/Operators",
+    "Notes/Other/Ideas/Untitled.md",
+    "strncat().md",
+    "Untitled.md",
+    "Notes/Programming/C/Strings/Untitled",
+    "Notes/Programming/C/Strings",
+    "Notes/Other/Personal Developement/Learning How to Learn.md",
     "Notes/Other/Ideas",
     "Notes/Other/Untitled.canvas",
     "Notes/Other/Personal Developement",
-    "Notes/Other/Untitled.md",
     "Notes/Programming/C/TOPICS.md",
     "Notes/Programming/Data Structures & Algorithms/ROADMAP.md",
     "Notes/Programming/C/Strings.md",
-    "Extras/Templates/Programming Notes Templ..md",
     "Notes/Programming/Data Structures & Algorithms/LINKED LISTS.md",
-    "Notes/Other/Personal Developement/Learning How to Learn.md",
     "Notes/Programming/C/STRINGS.md",
     "Notes/Programming/C/STRINGS.md",
-    "Untitled.md",
     "Notes",
     "Extras",
     "Templates/C PROGRAMMING.md",
     "Programming/C/STRINGS.md",
-    "Notes/Other",
     "PROGRAMMING/C/STRINGS.md",
     "Templates/--.md",
-    "Extras/Templates",
-    "NEW NOTE.md",
-    "Notes/Programming/Data Structures & Algorithms",
-    "Notes/Programming/Bash Scripting",
-    "Notes/Programming/C",
-    "Notes/Programming",
-    "linked Note.md",
-    "new.md",
-    "Notes/Programming"
+    "NEW NOTE.md"
   ]
 }
