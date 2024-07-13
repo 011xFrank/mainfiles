@@ -1,6 +1,5 @@
 local api = vim.api
 
-
 -- Enable spell checking for certain file types
 api.nvim_create_autocmd(
         { "BufRead", "BufNewFile" },
@@ -12,8 +11,6 @@ api.nvim_create_autocmd(
                 end,
         }
 )
-
-
 
 -- This mean that when you open a file, you will be at the last position
 api.nvim_create_autocmd(
@@ -29,8 +26,6 @@ api.nvim_create_autocmd(
         }
 )
 
-
-
 -- Show cursor line only in active window
 local cursorGrp = api.nvim_create_augroup("CursorLine", { clear = true })
 
@@ -42,8 +37,6 @@ api.nvim_create_autocmd(
         { "InsertEnter", "WinLeave" },
         { pattern = "*", command = "set nocursorline", group = cursorGrp }
 )
-
-
 
 -- highlight on yank
 api.nvim_create_autocmd(

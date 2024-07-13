@@ -20,6 +20,7 @@ source $ZSH/oh-my-zsh.sh
 alias neoconf='~/.config/nvim/'
 alias cprog='~/Desktop/C/'
 alias mainfiles='~/mainfiles/'
+alias neoconf='~/.config/nvim/'
 
 alias q="exit"
 alias tm="tmux"
@@ -39,7 +40,7 @@ alias gh='history|grep'
 alias update='sudo apt-get update -y && sudo apt-get upgrade -y'
 alias r='source ~/.zshrc'
 alias netdiscover='sudo netdiscover'
-alias chtsh='tldr'
+alias cht='tldr'
 alias clone='git clone'
 
 alias eza='eza --icons=always --group-directories-first -lh'

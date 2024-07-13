@@ -1,19 +1,6 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
-local function border(hl_name)
-  return {
-    { "╭", hl_name },
-    { "─", hl_name },
-    { "╮", hl_name },
-    { "│", hl_name },
-    { "╯", hl_name },
-    { "─", hl_name },
-    { "╰", hl_name },
-    { "│", hl_name },
-  }
-end
-
 luasnip.setup {
     history = true,
     region_check_events = "InsertEnter",
@@ -27,24 +14,19 @@ cmp.setup({
         completeopt = "menu,menuone",
     },
     window = {
-        completion = {
-            -- border = border("CmpBorder")
-        },
-        documentation = {
-            -- border = border("CmpBorder")
-        },
+        completion = {},
+        documentation = {},
     },
     snippet = {
         expand = function(args)
             require("luasnip").lsp_expand(args.body)
         end,
     },
-    --window.documentation = cmp.config.window.bordered()
     mapping = {
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
-        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),
         ["<C-e>"] = cmp.mapping.close(),
         ["<C-Space>"] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Insert,

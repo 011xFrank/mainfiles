@@ -11,5 +11,6 @@
   "spellcheck": false,
   "vimMode": true,
   "showIndentGuide": false,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "showInlineTitle": true
 }
