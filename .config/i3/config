@@ -105,6 +105,9 @@ mode "resize" {
 
 
 bar {
+        colors {
+                background #21252d
+        }
         status_command i3status
         position top
         font pango:JetbrainsMono Nerd Font 9

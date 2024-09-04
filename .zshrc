@@ -31,7 +31,7 @@ alias g="git"
 alias n='nvim'
 alias mkdir='mkdir -vp'
 alias mv='mv -iv'
-alias rm='rm -v'
+alias rm='trash -v'
 
 alias music='./.music.py'
 alias install='sudo apt install'
