@@ -1,0 +1,39 @@
+general {
+        colors = true
+        interval = 5
+        color_bad = "#458588"
+}
+
+order += "battery 0"
+order += "volume master"
+order += "cpu_usage"
+order += "tztime local"
+
+
+battery 0 {
+        format = "BAT: %percentage (%status)"
+        format_down = "No battery"
+        status_chr = "CHARGING"
+        status_bat = "BAT"
+        status_unk = "? UNK"
+        status_full = "☻ FULL"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+cpu_usage {
+  format = "CPU: %usage"
+}
+
+volume master {
+        format = "VOL: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+
+tztime local {
+        format = "%Y-%m-%d %H:%M   "
+}

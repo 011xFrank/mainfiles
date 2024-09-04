@@ -39,3 +39,4 @@ set("n", "<leader>a", "ggVG", opts)
 set('n','<ESC>',"<cmd> nohlsearch <CR>", opts)
 set('n','<leader>r',"<cmd> source <CR>", opts)
 -------------------------------------------------------------------------
+set('n','<leader><leader>', ':lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) <CR>')

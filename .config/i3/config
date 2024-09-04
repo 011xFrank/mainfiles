@@ -28,17 +28,17 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 exec_always nitrogen --restore
-exec_always killall polybar
-exec_always ~/.config/polybar/launch.sh
 exec --no-startup-id picom
 
 bindsym $mod+Return exec kitty
-bindsym $mod+space exec --no-startup-id ~/.config/rofi/launcher.sh
-bindsym $mod+o exec obsidian
+bindsym $mod+b exec firefox
+bindsym $Mod+f exec nautilus
+bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono Nerd Font-10" -b
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop 
 
-# kill focused window
 bindsym $mod+q kill
 bindsym $mod+Shift+q exec shutdown
+bindsym $mod+Shift+f fullscreen toggle 
 
 # change focus
 bindsym $mod+Left focus left
@@ -62,6 +62,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
+
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -102,8 +103,17 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+
+bar {
+        status_command i3status
+        position top
+        font pango:JetbrainsMono Nerd Font 9
+        separator_symbol "--"
+        output primary
+}
+
 # class                 border  backgr. text    indicator child_border
-client.focused          #F0C674 #222222 #888888 #F0C674   #F0C674
+client.focused          #458588 #222222 #888888 #458588   #458588
 
 
 # gaps
@@ -111,4 +121,3 @@ client.focused          #F0C674 #222222 #888888 #F0C674   #F0C674
 for_window [class="^.*"] border pixel 2
 
 gaps inner 6
-gaps outer 2
