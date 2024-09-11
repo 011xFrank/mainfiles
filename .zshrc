@@ -27,6 +27,7 @@ alias tm="tmux"
 alias cat="batcat"
 alias c="clear"
 alias g="git"
+alias lg="lazygit"
 
 alias n='nvim'
 alias mkdir='mkdir -vp'
