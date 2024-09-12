@@ -14,7 +14,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local options = {
+require("lazy").setup({
+  spec = { import = "plugins"},
   ui = {
     border = "double",
     icons = {
@@ -43,8 +44,4 @@ local options = {
       },
     }
   },
-}
-
-local plugins = require ("frank.plugins.plugins")
-
-require("lazy").setup(plugins,options)
+})
