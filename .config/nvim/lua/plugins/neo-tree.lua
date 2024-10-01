@@ -33,8 +33,8 @@ return {
       hijack_netrw_behavior = "open_current",
       popup_border_style = "double",
       window = {
-        position = "float",
-        width = 40,
+        position = "current",
+        width = 1000,
         mapping_options = {
           noremap = true,
           nowait = true,
@@ -80,5 +80,11 @@ return {
         }
       }
     })
+
+
+    local set = vim.keymap.set
+    local opts = { noremap = true, silent = true }
+
+    set('n', '<leader>n', ":Neotree toggle <CR>", opts)
   end
 }

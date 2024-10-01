@@ -25,7 +25,7 @@ return   {
       keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
 
       opts.desc = "See available code actions"
-      keymap.set({ "n", "v" }, "<leader>ca",vim.lsp.buf.code_action, opts)
+      keymap.set({ "n", "v" }, "<leader><leader>",vim.lsp.buf.code_action, opts)
 
       opts.desc = "Smart rename"
       keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename

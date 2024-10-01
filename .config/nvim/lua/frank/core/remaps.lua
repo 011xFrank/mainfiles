@@ -4,9 +4,6 @@ local set = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -------------------------------------------------------------------------
--- Toggle Neotree
-set('n', '<leader>n', ":Neotree toggle <CR>", opts)
--------------------------------------------------------------------------
 -- Window navigation
 set('n','<leader>wk',"<C-w>k", opts)
 set('n','<leader>wj',"<C-w>j", opts)
@@ -39,4 +36,3 @@ set("n", "<leader>a", "ggVG", opts)
 set('n','<ESC>',"<cmd> nohlsearch <CR>", opts)
 set('n','<leader>r',"<cmd> source <CR>", opts)
 -------------------------------------------------------------------------
-set('n','<leader><leader>', ':lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) <CR>')

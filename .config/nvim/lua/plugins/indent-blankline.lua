@@ -7,13 +7,12 @@ return {
     require("ibl").setup({
       indent = {
         char = '🭲',
+        -- char = '┆'
         -- char = '├'
       },
-      scope = {
-        enabled = false
-      },
+      scope = { enabled = false },
       exclude = {
-        filetypes = {'cpp','sh','asm','make','gitconfig','rust','text'},
+        filetypes = {'c','cpp','sh','asm','make','gitconfig','rust','text'},
       },
     })
   end
