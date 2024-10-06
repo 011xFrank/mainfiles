@@ -2,7 +2,8 @@
 sudo apt update; sudo apt dist-upgrade
 
 # Install:
-sudo apt install trash-cli i3 bat git stow curl wget nodejs npm nitrogen eza neofetch vlc tmux neovim okular cmake tree zsh whois btop acpi net-tools netdiscover
+sudo apt install trash-cli i3 bat git stow curl wget nodejs npm nitrogen eza neofetch vlc tmux neovim okular cmake tree zsh whois btop acpi net-tools netdiscover pip
+sudo snap install nvim
 pip3 install tldr
 
 # Installing picom
