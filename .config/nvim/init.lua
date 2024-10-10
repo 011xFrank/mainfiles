@@ -3,5 +3,5 @@ vim.g.localmapleader = " "
 
 require("frank")
 
-vim.cmd("colorscheme gruvbox-material")
--- vim.cmd("colorscheme vague")
+-- vim.cmd("colorscheme gruvbox-material")
+vim.cmd("colorscheme vague")
