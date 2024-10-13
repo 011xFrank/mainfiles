@@ -7,8 +7,6 @@ return {
     require("ibl").setup({
       indent = {
         char = '🭲',
-        -- char = '┆'
-        -- char = '├'
       },
       scope = { enabled = false },
       exclude = {
