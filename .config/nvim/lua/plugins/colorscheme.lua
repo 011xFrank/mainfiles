@@ -1,13 +1,5 @@
 return {
     {
-        "sainnhe/gruvbox-material",
-        config = function ()
-            vim.g.gruvbox_material_background = 'hard'
-            vim.g.gruvbox_material_transparent_background = '1'
-        end
-    },
-
-    {
         "vague2k/vague.nvim",
         config = function()
             require("vague").setup({
