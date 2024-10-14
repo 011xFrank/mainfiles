@@ -6,5 +6,4 @@ require("config.options")
 require("config.remaps")
 require("config.autocmds")
 
--- vim.cmd("colorscheme gruvbox-material")
 vim.cmd("colorscheme vague")
