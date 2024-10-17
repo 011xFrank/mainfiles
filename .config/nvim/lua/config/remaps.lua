@@ -4,6 +4,8 @@ local set = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -------------------------------------------------------------------------
+set('i', 'jk', "<ESC>")
+
 -- Window navigation
 set('n','<leader>wk',"<C-w>k", opts)
 set('n','<leader>wj',"<C-w>j", opts)
@@ -11,8 +13,8 @@ set('n','<leader>wl',"<C-w>l", opts)
 set('n','<leader>wh',"<C-w>h", opts)
 -------------------------------------------------------------------------
 -- Splitting Windows
-set('n','<leader>-',"<cmd> split <CR>", opts)
-set('n','<leader>=',"<cmd> vsplit <CR>", opts)
+set('n','<leader>w-',"<cmd> split <CR>", opts)
+set('n','<leader>w=',"<cmd> vsplit <CR>", opts)
 -------------------------------------------------------------------------
 -- Highlight the whole line
 set('n','V',"0v$", opts);
