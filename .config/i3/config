@@ -121,21 +121,22 @@ mode "resize" {
 bar {
         colors {
                 background #21252d
-
-                focused_workspace  #888888 #333333
-                active_workspace   #ffffff #333333
-                inactive_workspace #888888 #222222
-                urgent_workspace   #ffffff #900000
+                focused_workspace #4c7899 #285577 #ffffff
+                active_workspace #333333 #5f676a #ffffff
+                inactive_workspace #333333 #222222 #888888
+                urgent_workspace #2f343a #900000 #ffffff
+                binding_mode #2f343a #900000 #ffffff
         }
+
         status_command i3status
         position top
         font pango:JetbrainsMono Nerd Font 9
-        separator_symbol "--"
+        separator_symbol " "
         output primary
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #888888 #222222 #888888 #888888   #888888
+client.focused          #8ec87c #222222 #8ec87c #8ec87c   #8ec87c
 
 
 # gaps

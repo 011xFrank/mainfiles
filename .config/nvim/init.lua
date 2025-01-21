@@ -6,4 +6,4 @@ require("config.options")
 require("config.remaps")
 require("config.autocmds")
 
-vim.cmd("colorscheme vague")
+vim.cmd("colorscheme rose-pine-moon")
