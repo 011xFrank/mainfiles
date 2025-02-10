@@ -120,7 +120,7 @@ mode "resize" {
 
 bar {
         colors {
-                background #21252d
+                background #1d2021
                 focused_workspace #4c7899 #285577 #ffffff
                 active_workspace #333333 #5f676a #ffffff
                 inactive_workspace #333333 #222222 #888888
@@ -135,12 +135,8 @@ bar {
         output primary
 }
 
+
 # class                 border  backgr. text    indicator child_border
-client.focused          #8ec87c #222222 #8ec87c #8ec87c   #8ec87c
+client.focused          #1c6265 #222222 #1c6265 #1c6265   #1c6265
 
-
-# gaps
-# disable window titlebars
-for_window [class="^.*"] border pixel 2
-
-gaps inner 6
+gaps inner 1

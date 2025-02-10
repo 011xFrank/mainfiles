@@ -47,3 +47,9 @@ api.nvim_create_autocmd(
                 end,
         }
 )
+
+api.nvim_create_autocmd("VimEnter", {
+        callback = function ()
+                vim.api.nvim_set_hl(0, "Normal", { ctermbg = "none" })
+        end
+})
