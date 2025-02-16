@@ -12,7 +12,7 @@ api.nvim_create_autocmd(
         }
 )
 
--- This mean that when you open a file, you will be at the last position
+-- When you open a file, you will be at the last position
 api.nvim_create_autocmd(
         "BufReadPost",
         {

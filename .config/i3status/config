@@ -1,36 +1,79 @@
 general {
-        colors = false
-        interval = 2
-        color_good = "#919753"
-        color_degraded = "#EBCB8B"
-        color_bad = "#A35151"
-        markup = pango
+    interval 		= 1
+        colors 			= true
+        color_good      = '#88b090'
+        color_degraded  = '#ccdc90'
+        color_bad       = '#e89393'
 }
 
-### Widget List 
-order += "cpu_usage"
+order += "ipv6"
+#order += "run_watch VPN"
+order += "wireless _first_"
+order += "ethernet enp0s25"
 order += "volume master"
-order += "battery all"
+order += "battery 0"
+#order += "cpu_temperature 0"
+order += "cpu_usage 0"
+#order += "load"
 order += "tztime local"
 
-### Widget Settings
-cpu_usage {
-  format = "<span foreground='#F09E6A'></span><span background='#F09E6A' foreground='#000000'>   %usage </span><span foreground='#282828' background='#F09E6A'></span>"
+wireless _first_ {
+    format_up = "W: (%quality at %essid) %ip"
+    format_down = "W: down"
+
 }
 
-volume master {
-        format = "<span foreground='#458588'></span><span background='#458588' foreground='#000000'>   %volume </span><span foreground='#282828' background='#458588'></span>"
-        format_muted = "<span foreground='#458588'></span><span background='#458588' foreground='#000000>   muted </span><span foreground='#282828' background='#458588'></span>"
-        device = "pulse:alsa_output.pci-0000_00_1b.0.analog-stereo"
+ethernet enp0s25 {
+#if you use %speed, i3status requires root privileges
+    format_up = "%ip (%speed)"
+        format_down = ""
 }
 
-battery all {
-        format = "<span foreground='#96B098'></span><span foreground='#000000' background='#96B098'> %status %percentage </span><span foreground='#282828' background='#96B098'></span>"
-        status_chr = " "
-        status_bat = " "
+battery 0 {
+    format = "%status %percentage %remaining"
+        format_down = ""
+        last_full_capacity = true
+        integer_battery_capacity = true
+        low_threshold = 11
+        threshold_type = percentage
+        hide_seconds = true
+        status_chr = " "
+        status_bat = " "
+        status_unk = " "
         status_full = " "
 }
 
+run_watch VPN {
+    pidfile = "/var/run/vpnc/pid"
+}
+
 tztime local {
-        format = "<span foreground='#D55D6B'></span><span foreground='#000000' background='#D55D6B'>   %a, %d %b %R </span><span foreground='#282828' background='#D55D6B'></span>"
+    format = "%e %A %B -  %H:%M:%S"
+}
+
+load {
+    format = " %1min"
+}
+
+cpu_usage {
+    format = " %usage"
+}
+
+cpu_temperature 0 {
+    format = " %degrees°C"
+}
+
+disk "/" {
+    format = " %avail"
+        prefix_type	= custom
+        low_threshold = 20
+        threshold_type = percentage_avail
+}
+
+volume master {
+    format = "  %volume"
+        format_muted = " "
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
 }

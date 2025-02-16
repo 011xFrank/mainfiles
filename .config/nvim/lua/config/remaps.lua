@@ -38,9 +38,3 @@ set("n", "<leader>a", "ggVG", opts)
 set('n','<ESC>',"<cmd> nohlsearch <CR>", opts)
 set('n','<leader>r',"<cmd> source <CR>", opts)
 -------------------------------------------------------------------------
-set("n","p", function ()
-        local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-        vim.cmd('put')
-        vim.api.nvim_win_set_cursor(0, {row + 1, col})
-end)
--------------------------------------------------------------------------
