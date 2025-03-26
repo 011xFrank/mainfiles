@@ -1,86 +1,60 @@
 return {
-    --[[
     {
-        "rose-pine/neovim", name = "rose-pine",
-        config = function ()
-            require("rose-pine").setup({
-                variant = "auto", -- auto, main, moon, or dawn
-                dark_variant = "main", -- main, moon, or dawn
-                dim_inactive_windows = false,
-                extend_background_behind_borders = true,
+        'rose-pine/neovim',
+        config = function()
+            require('rose-pine').setup({
+                --- @usage 'auto'|'main'|'moon'|'dawn'
+                variant = 'moon',
+                --- @usage 'main'|'moon'|'dawn'
+                dark_variant = 'main',
+                bold_vert_split = false,
+                dim_nc_background = false,
+                disable_background = false,
+                disable_float_background = false,
+                disable_italics = true,
 
-                enable = {
-                    terminal = true,
-                    legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-                    migrations = true, -- Handle deprecated options automatically
-                },
-
-                styles = {
-                    bold = true,
-                    italic = true,
-                    transparency = true,
-                },
-
+                --- @usage string hex value or named color from rosepinetheme.com/palette
                 groups = {
-                    border = "muted",
-                    link = "iris",
-                    panel = "surface",
+                    background = 'base',
+                    background_nc = '_experimental_nc',
+                    panel = 'surface',
+                    panel_nc = 'base',
+                    border = 'highlight_med',
+                    comment = 'muted',
+                    link = 'iris',
+                    punctuation = 'subtle',
 
-                    error = "love",
-                    hint = "iris",
-                    info = "foam",
-                    note = "pine",
-                    todo = "rose",
-                    warn = "gold",
+                    error = 'love',
+                    hint = 'iris',
+                    info = 'foam',
+                    warn = 'gold',
 
-                    git_add = "foam",
-                    git_change = "rose",
-                    git_delete = "love",
-                    git_dirty = "rose",
-                    git_ignore = "muted",
-                    git_merge = "iris",
-                    git_rename = "pine",
-                    git_stage = "iris",
-                    git_text = "rose",
-                    git_untracked = "subtle",
-
-                    h1 = "iris",
-                    h2 = "foam",
-                    h3 = "rose",
-                    h4 = "gold",
-                    h5 = "pine",
-                    h6 = "foam",
+                    headings = {
+                        h1 = 'iris',
+                        h2 = 'foam',
+                        h3 = 'rose',
+                        h4 = 'gold',
+                        h5 = 'pine',
+                        h6 = 'foam',
+                    }
+                    -- or set all headings at once
+                    -- headings = 'subtle'
                 },
 
-                palette = {
-                    -- Override the builtin palette per variant
-                    -- moon = {
-                    --     base = '#18191a',
-                    --     overlay = '#363738',
-                    -- },
-                },
-
+                -- Change specific vim highlight groups
+                -- https://github.com/rose-pine/neovim/wiki/Recipes
                 highlight_groups = {
-                    -- Comment = { fg = "foam" },
-                    -- VertSplit = { fg = "muted", bg = "muted" },
-                },
+                    ColorColumn = { bg = 'rose' },
 
-                before_highlight = function(group, highlight, palette)
-                    -- Disable all undercurls
-                    -- if highlight.undercurl then
-                    --     highlight.undercurl = false
-                    -- end
-                    --
-                    -- Change palette colour
-                    -- if highlight.fg == palette.pine then
-                    --     highlight.fg = palette.foam
-                    -- end
-                end,
+                    -- Blend colours against the "base" background
+                    CursorLine = { bg = 'foam', blend = 10 },
+                    StatusLine = { fg = 'love', bg = 'love', blend = 10 },
+                }
             })
 
-        end
-    },
-    ]]
+            -- Set colorscheme after options
+        end,
+    }
 
     --[[
     {
@@ -117,6 +91,7 @@ return {
     }
     ]]
 
+    --[[
     {
         'sainnhe/gruvbox-material',
         lazy = false,
@@ -126,4 +101,5 @@ return {
             vim.g.gruvbox_transparent_bg = true
         end
     }
+    ]]
 }

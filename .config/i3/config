@@ -130,11 +130,11 @@ bar {
 
         status_command i3status
         position top
-        font pango:JetbrainsMono Nerd Font 9
+        font pango:Iosevka Nerd Font 9
         separator_symbol "|"
         output primary
 }
 
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #484A47 #484A47 #88b090 #484A47   #484A47
+client.focused          #484A47 #222222 #88b090 #484A47   #484A47
