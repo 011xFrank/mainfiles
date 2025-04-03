@@ -1,6 +1,8 @@
 local opt = vim.opt
 
 opt.fileencoding = "utf-8"
+opt.list = true
+opt.listchars = {trail = '·'}
 opt.background = "dark"
 opt.clipboard:append("unnamedplus")
 opt.fillchars = { eob = " " }
