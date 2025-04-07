@@ -29,7 +29,7 @@ alias c="clear"
 alias g="git"
 alias lg="lazygit"
 
-alias n='nv'
+alias n='nvim'
 alias mkdir='mkdir -vp'
 alias mv='mv -iv'
 alias rm='trash -v'
@@ -52,6 +52,6 @@ alias la='eza -a'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if [ -z "$TMUX" ]; then
-  tmux attach -t default || tmux new -s default
-fi
+# if [ -z "$TMUX" ]; then
+  # tmux attach -t default || tmux new -s default
+# fi

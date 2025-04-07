@@ -13,6 +13,12 @@ return {
                 disable_float_background = false,
                 disable_italics = true,
 
+                styles = {
+                    bold = true,
+                    italic = true,
+                    transparency = true,
+                },
+
                 --- @usage string hex value or named color from rosepinetheme.com/palette
                 groups = {
                     background = 'base',

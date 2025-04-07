@@ -1,43 +1,50 @@
 return {
-  "williamboman/mason.nvim",
-  dependencies = "williamboman/mason-lspconfig.nvim",
-  config = function ()
-    local mason = require("mason")
-    local mason_lspconfig = require("mason-lspconfig")
+	"williamboman/mason.nvim",
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim"
+	},
+	config = function()
+		local mason = require("mason")
+		local mason_lspconfig = require("mason-lspconfig")
+		local mason_tool_installer = require("mason-tool-installer")
 
-    mason.setup({
-      ui = {
-        border = "double",
-        icons = {
-          package_pending = "󰝦",
-          package_installed = "󰄳",
-          package_uninstalled = " 󰚌",
-        },
+		mason.setup({
+			ui = {
+				border = "double",
+				icons = {
+					package_pending = "󰝦",
+					package_installed = "󰄳",
+					package_uninstalled = " 󰚌",
+				},
 
-        keymaps = {
-          toggle_server_expand = "<CR>",
-          install_server = "i",
-          update_server = "u",
-          check_server_version = "c",
-          update_all_servers = "U",
-          check_outdated_servers = "C",
-          uninstall_server = "X",
-          cancel_installation = "<C-c>",
-        },
-      },
+				keymaps = {
+					toggle_server_expand = "<CR>",
+					install_server = "i",
+					update_server = "u",
+					check_server_version = "c",
+					update_all_servers = "U",
+					check_outdated_servers = "C",
+					uninstall_server = "X",
+					cancel_installation = "<C-c>",
+				},
+			},
+		})
 
-    })
+		mason_lspconfig.setup({
+			ensure_installed = {
+				"lua_ls",
+				"clangd",
+				"pylsp",
+			},
+		})
 
-    mason_lspconfig.setup ({
-      ensure_installed = {
-        "lua_ls",
-        "clangd",
-        "pyright"
-      },
-
-      max_concurrent_installers = 10,
-
-      automatic_installation = false,
-    })
-  end
+		mason_tool_installer.setup({
+			ensure_installed = {
+				"pylint",
+				"ruff",
+				"black"
+			}
+		})
+	end,
 }
