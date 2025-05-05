@@ -3,7 +3,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:JetbrainsMono Nerd Font 8
+font pango:victormono nerd font, Bold Italic 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -32,27 +32,18 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 exec_always nitrogen --restore
 exec --no-startup-id picom
+exec --no-startup-id python3 /home/doodah/i3wm-Battery-Notifications/i3-battery-notification.py
 
 bindsym $mod+Return exec kitty
-bindsym $mod+b exec firefox
+# bindsym $mod+b exec firefox
+bindsym $mod+b exec brave-browser
 bindsym $Mod+f exec nautilus
-bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono Nerd Font-10" -b
+bindsym $mod+space exec --no-startup-id dmenu_run -fn "VictorMono Nerd Font-9:Italic" -b
 bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop 
 
 bindsym $mod+q kill
 bindsym $mod+Shift+q exec shutdown
 bindsym $mod+Shift+f fullscreen toggle 
-
-
-## Screenshots
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
-
-## Clipboard Screenshots
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # change focus
 bindsym $mod+Left focus left
@@ -126,11 +117,12 @@ bar {
                 inactive_workspace #333333 #222222 #888888
                 urgent_workspace #2f343a #900000 #ffffff
                 binding_mode #2f343a #900000 #ffffff
+                statusline #bca897
         }
 
         status_command i3status
         position top
-        font pango:JetbrainsMono Nerd Font 8
+        font pango:VictorMono Nerd Font, semi Bold Italic 8
         separator_symbol "|"
         output primary
 }
