@@ -1,0 +1,45 @@
+animations: true;
+animation-stiffness = 250
+animation-window-mass = 1
+animation-dampening = 28
+animation-clamping = false
+
+animation-for-open-window = "zoom"; #open window
+animation-for-desktop-switch-in = "slide-left"; # Animation when switching into a new desktop
+animation-for-desktop-switch-out = "slide-right"; # Animation when switching out of the current desktop
+
+backend = "glx";
+glx-no-stencil = true;
+glx-copy-from-front = false;
+use-damage = true;
+glx-no-rebind-pixmap = true;
+
+active-opacity = 1;
+inactive-opacity = 1;
+frame-opacity = 1;
+
+fading = false;
+fade-in-step = 0.07;
+fade-out-step = 0.07;
+fade-exclude = [];
+
+opacity-rule = [
+        "90:class_g = 'Kitty'",
+        "70:class_g = 'Kitty'"
+]
+
+blur:
+{
+        method = "dual_kawase";
+        strength = 3;
+}
+
+wintypes:
+{
+        normal = {blur-background = true};
+        splash = {blur-background = false};
+}
+
+rules = (
+	{ match = "fullscreen"; corner-radius = 0; },
+)
