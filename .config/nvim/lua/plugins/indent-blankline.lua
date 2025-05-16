@@ -12,7 +12,7 @@ return {
 			},
 			scope = { enabled = false },
 			exclude = {
-				filetypes = { "python", "cpp", "c", "sh", "asm", "make", "gitconfig", "rust", "text" },
+				filetypes = {"lua", "python", "cpp", "c", "sh", "asm", "make", "gitconfig", "rust", "text" },
 			},
 		})
 	end,

@@ -131,7 +131,7 @@ bar {
 # class                 border  backgr. text    indicator child_border
 client.focused          #A48A79  #222222 #A48A79 #A48A79  #A48A79 
 
-gaps inner 10
+gaps inner 9
 
 for_window [tiling_from="user"] border pixel 0
 for_window [tiling_from="auto"] border pixel 0
