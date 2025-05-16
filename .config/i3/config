@@ -35,11 +35,10 @@ exec --no-startup-id picom
 exec --no-startup-id python3 /home/doodah/i3wm-Battery-Notifications/i3-battery-notification.py
 
 bindsym $mod+Return exec kitty
-# bindsym $mod+b exec firefox
 bindsym $mod+b exec brave-browser
 bindsym $Mod+f exec nautilus
 bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono NF-9:Bold" -b
-bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop 
+bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'JetbrainsMono NF-9:Bold' -b"
 
 bindsym $mod+q kill
 bindsym $mod+Shift+q exec shutdown
