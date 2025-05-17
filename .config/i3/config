@@ -32,7 +32,6 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 exec_always nitrogen --restore
 exec --no-startup-id picom
-exec --no-startup-id python3 /home/doodah/i3wm-Battery-Notifications/i3-battery-notification.py
 
 bindsym $mod+Return exec kitty
 bindsym $mod+b exec brave-browser
