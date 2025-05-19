@@ -104,5 +104,5 @@ return {
 		require("lspconfig.ui.windows").default_options = { border = "border" }
 
 		----------------------------------------------------------------------------------
-	end,
+	end
 }

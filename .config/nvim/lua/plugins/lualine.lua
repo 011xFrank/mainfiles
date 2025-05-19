@@ -1,42 +1,36 @@
 return {
     "nvim-lualine/lualine.nvim",
     config = function ()
+        local kanagawa_paper = require("lualine.themes.kanagawa-paper-ink")
+
         require('lualine').setup {
             options = {
-                theme = 'auto', -- or your preferred theme
-                component_separators = { left = '|', right = '|'},
-                section_separators = { left = '', right = ''},
+                theme = kanagawa_paper,
+                component_separators = '',
+                section_separators = { left = '', right = '' },
             },
             sections = {
-                lualine_a = {'mode'},
-                lualine_b = {
-                    {
-                        'filename',
-                        path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
-                    }
-                },
+                lualine_a = { { 'mode', separator = { left = '' }, right_padding = 2 } },
+                lualine_b = { 'filename', 'branch' },
                 lualine_c = {
-                    {
-                        function()
-                            -- Get active LSP clients
-                            local clients = vim.lsp.get_active_clients({ bufnr = 0 })
-                            if next(clients) == nil then
-                                return 'No LSP'
-                            end
-
-                            local client_names = {}
-                            for _, client in ipairs(clients) do
-                                table.insert(client_names, client.name)
-                            end
-                            return 'LSP: ' .. table.concat(client_names, ', ')
-                        end,
-                        icon = '', -- Optional icon
-                    }
+                    '%=', --[[ add your center components here in place of this comment ]]
                 },
-                lualine_x = {'filetype'},
-                lualine_y = {'progress'},
-                lualine_z = {'location'}
-            }
+                lualine_x = {},
+                lualine_y = { 'filetype', 'progress' },
+                lualine_z = {
+                    { 'location', separator = { right = '' }, left_padding = 2 },
+                },
+            },
+            inactive_sections = {
+                lualine_a = { 'filename' },
+                lualine_b = {},
+                lualine_c = {},
+                lualine_x = {},
+                lualine_y = {},
+                lualine_z = { 'location' },
+            },
+            tabline = {},
+            extensions = {},
         }
     end
 }
