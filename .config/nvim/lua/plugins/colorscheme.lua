@@ -1,21 +1,59 @@
 return {
-    --[[
-        "sainnhe/gruvbox-material",
-        priority = 1000,
+    {
+        "drewxs/ash.nvim",
         lazy = false,
+        priority = 1000,
+        config = function ()
+            require("ash").setup {
+                compile_path = vim.fn.stdpath("cache") .. "/ash",
+
+                transparent = true, -- transparent background
+                term_colors = true, -- terminal colors (e.g. g:terminal_color_x)
+                no_italic = false, -- disable italics
+                no_bold = false, -- disable bold
+                no_underline = false, -- disable underlines
+
+                -- override highlight groups [function/table]
+                -- highlights = function(colors)
+                    -- return {
+                        -- Comment = { fg = colors.red },
+                        -- CmpBorder = { fg = colors.none },
+                    -- }
+                -- end,
+
+                -- override style groups
+                -- e.g. comments = { "italic", "bold" }
+                styles = {
+                    comments = {"italic"},
+                    conditionals = {},
+                    loops = {},
+                    functions = {},
+                    keywords = {},
+                    strings = {},
+                    variables = {},
+                    numbers = {},
+                    booleans = {},
+                    properties = {},
+                    types = {},
+                    operators = {},
+                },
+            }
+        end
+    },
+
+    {
+        "sainnhe/gruvbox-material",
+        lazy = true,
         config = function ()
             vim.g.gruvbox_material_background = 'hard'
             vim.g.gruvbox_material_transparent_background = 2
-            vim.g.gruvbox_material_float_styleg = 'dim'
-
-            vim.cmd.colorscheme("gruvbox-material")
+            vim.g.gruvbox_material_float_style = 'dim'
         end
-    ]]
+    },
 
     {
         "thesimonho/kanagawa-paper.nvim",
-        lazy = false,
-        priority = 1000,
+        lazy = true,
         opts = {},
         config = function ()
             require("kanagawa-paper").setup({
@@ -57,7 +95,7 @@ return {
                 },
                 -- adjust overall color balance for each theme [-1, 1]
                 color_offset = {
-                    ink = { brightness = 0, saturation = 10 },
+                    ink = { brightness = 0, saturation = 0 },
                     canvas = { brightness = 0, saturation = 0 },
                 },
                 -- override highlight groups
@@ -88,7 +126,6 @@ return {
                     },
                 },
             })
-
         end
     }
 }

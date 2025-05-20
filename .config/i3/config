@@ -35,7 +35,7 @@ exec --no-startup-id picom
 
 bindsym $mod+Return exec kitty
 bindsym $mod+b exec brave-browser
-bindsym $Mod+f exec nautilus
+bindsym $Mod+f exec kitty spf 
 bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono NF-9:Bold" -b
 bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'JetbrainsMono NF-9:Bold' -b"
 
@@ -129,7 +129,7 @@ bar {
         }
 
         status_command i3status
-        position top
+        position bottom
         font pango:JetbrainsMono NF Bold 8
         separator_symbol " - "
         output primary

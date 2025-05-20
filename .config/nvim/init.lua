@@ -7,4 +7,6 @@ require("config.remaps")
 require("config.autocmds")
 
 
-vim.cmd.colorscheme("kanagawa-paper-ink")
+vim.cmd.colorscheme("ash")
+-- vim.cmd.colorscheme("gruvbox-material")
+-- vim.cmd.colorscheme("kanagawa-paper-ink")
