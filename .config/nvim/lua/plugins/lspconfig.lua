@@ -12,9 +12,6 @@ return {
 		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr
 
-			opts.desc = "Show LSP declaration"
-			keymap.set("n", "gd", vim.lsp.buf.declaration, opts)
-
 			opts.desc = "Show documentation for what is under cursor"
 			keymap.set("n", "K", vim.lsp.buf.hover, opts)
 

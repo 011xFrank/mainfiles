@@ -54,16 +54,16 @@ bindsym $mod+Shift+q exec shutdown
 bindsym $mod+Shift+f fullscreen toggle 
 
 # change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # move focused window
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # Define names for default workspaces for which we configure key bindings later on.
 set $ws1 "1"
@@ -119,13 +119,21 @@ mode "resize" {
 
 bar {
         colors {
-                background #1d2021
-                focused_workspace #484A47 #A48A79 #1E1A1D
-                active_workspace #333333 #5f676a #ffffff
-                inactive_workspace #333333 #222222 #888888
-                urgent_workspace #2f343a #900000 #ffffff
-                binding_mode #2f343a #900000 #ffffff
-                statusline #bca897
+                # background #1d2021
+                # focused_workspace #484A47 #A48A79 #1E1A1D
+                # active_workspace #333333 #5f676a #ffffff
+                # inactive_workspace #333333 #222222 #888888
+                # urgent_workspace #2f343a #900000 #ffffff
+                # binding_mode #2f343a #900000 #ffffff
+                # statusline #bca897
+
+                background           #0a0a0
+                focused_workspace    #31323c #a6adc3 #1e2122
+                active_workspace     #1e2122 #9c9eb4 #c0c0d0
+                inactive_workspace   #1e2122 #1e2122 #7f8497
+                urgent_workspace     #1e2122 #bf616a #ffffff
+                binding_mode         #1e2122 #d08770 #ffffff
+                statusline           #a6adc3
         }
 
         status_command i3status
