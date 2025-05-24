@@ -17,11 +17,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-alias neoconf='~/.config/nvim/'
-alias cprog='~/Desktop/C/'
-alias mainfiles='~/mainfiles/'
-alias neoconf='~/.config/nvim/'
-
 alias q="exit"
 alias tm="tmux"
 alias cat="batcat"
@@ -34,10 +29,14 @@ alias mkdir='mkdir -vp'
 alias mv='mv -iv'
 alias rm='trash -v'
 
+alias f='fzf'
+alias fn='n $(fzf)'
+alias fd='cd $(find . -type d | fzf)'
+alias fh='history | fzf'
+
 alias music='./.music.py'
 alias install='sudo apt install'
 alias uninstall='sudo apt purge'
-alias gh='history|grep'
 alias update='sudo apt-get update -y; sudo apt full-upgrade -y'
 alias r='source ~/.zshrc'
 alias netdiscover='sudo netdiscover'
@@ -49,9 +48,16 @@ alias ls='eza'
 alias l.='eza -d .*'
 alias la='eza -a'
 
+export FZF_DEFAULT_OPTS=""
+
+
+source <(fzf --zsh)
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # if [ -z "$TMUX" ]; then
   # tmux attach -t default || tmux new -s default
 # fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

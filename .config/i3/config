@@ -34,8 +34,8 @@ exec_always nitrogen --restore
 exec --no-startup-id picom
 
 bindsym $mod+Return exec kitty
-bindsym $mod+b exec brave-browser
-bindsym $Mod+f exec kitty spf 
+bindsym $mod+b exec firefox
+bindsym $Mod+f exec nautilus
 bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono NF-9:Bold" -b
 bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'JetbrainsMono NF-9:Bold' -b"
 
@@ -51,7 +51,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 bindsym $mod+q kill
 bindsym $mod+Shift+q exec shutdown
-bindsym $mod+Shift+f fullscreen toggle 
+bindsym $mod+Shift+f fullscreen toggle
 
 # change focus
 bindsym $mod+h focus left
@@ -65,11 +65,16 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+assign [class="kitty"] $ws1
+assign [class="firefox"] $ws2
+assign [class="okular"] $ws3
+assign [class="spotify"] $ws4
+
 # Define names for default workspaces for which we configure key bindings later on.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
+set $ws1 "1 ->   Terminal"
+set $ws2 "2 ->   Browser"
+set $ws3 "3 ->  PDFs"
+set $ws4 "4 ->   Spotify"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
