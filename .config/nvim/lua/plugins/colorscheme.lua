@@ -38,6 +38,8 @@ return {
                     operators = {},
                 },
             }
+
+            vim.cmd.colorscheme("ash")
         end
     },
 }

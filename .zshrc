@@ -18,7 +18,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 alias q="exit"
-alias tm="tmux"
+alias t="tmux"
 alias cat="batcat"
 alias c="clear"
 alias g="git"

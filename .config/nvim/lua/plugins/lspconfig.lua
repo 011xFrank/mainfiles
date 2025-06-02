@@ -12,15 +12,6 @@ return {
 		local on_attach = function(client, bufnr)
 			opts.buffer = bufnr
 
-			opts.desc = "Show documentation for what is under cursor"
-			keymap.set("n", "K", vim.lsp.buf.hover, opts)
-
-			opts.desc = "Restart LSP"
-			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
-
-			opts.desc = "Show line diagnostics"
-			keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
-
 			opts.desc = "See available code actions"
 			keymap.set({ "n", "v" }, "<leader><leader>", vim.lsp.buf.code_action, opts)
 
@@ -75,15 +66,15 @@ return {
 		lspconfig["pylsp"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			handlers = no_diagnostics,
+			-- handlers = no_diagnostics,
 			settings = {
 				pylsp = {
 					plugins = {
-						pycodestyle = { enabled = false },
-						pyflakes    = { enabled = false },
-						pylint      = { enabled = false },
-						mccabe      = { enabled = false },
-						rope_completion = { enabled = false },
+						pycodestyle = { enabled = false},
+						pyflakes    = { enabled = true},
+						pylint      = { enabled = false},
+						mccabe      = { enabled = false},
+						rope_completion = { enabled = true},
 					}
 				}
 			}

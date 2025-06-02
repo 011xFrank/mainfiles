@@ -68,13 +68,12 @@ bindsym $mod+Shift+l move right
 assign [class="kitty"] $ws1
 assign [class="firefox"] $ws2
 assign [class="okular"] $ws3
-assign [class="spotify"] $ws4
 
 # Define names for default workspaces for which we configure key bindings later on.
 set $ws1 "1 ->   Terminal"
 set $ws2 "2 ->   Browser"
 set $ws3 "3 ->  PDFs"
-set $ws4 "4 ->   Spotify"
+set $ws4 "4 -> Other"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -124,14 +123,6 @@ mode "resize" {
 
 bar {
         colors {
-                # background #1d2021
-                # focused_workspace #484A47 #A48A79 #1E1A1D
-                # active_workspace #333333 #5f676a #ffffff
-                # inactive_workspace #333333 #222222 #888888
-                # urgent_workspace #2f343a #900000 #ffffff
-                # binding_mode #2f343a #900000 #ffffff
-                # statusline #bca897
-
                 background           #0a0a0
                 focused_workspace    #31323c #a6adc3 #1e2122
                 active_workspace     #1e2122 #9c9eb4 #c0c0d0
@@ -150,12 +141,6 @@ bar {
 
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #A48A79  #222222 #A48A79 #A48A79  #A48A79 
+client.focused          #7f8497  #222222 #7f8497 #7f8497   #7f8497
 
-gaps inner 10
-
-for_window [tiling_from="user"] border pixel 0
-for_window [tiling_from="auto"] border pixel 0
-for_window [floating_from="user"] border pixel 0
-
-for_window [class=“^.*”] border pixel 0
+for_window [class=“^.*”] border pixel 2

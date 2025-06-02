@@ -2,7 +2,7 @@ local opt = vim.opt
 
 opt.fileencoding = "utf-8"
 opt.list = true
-opt.listchars = {trail = '-', tab = '···', space = ' '}
+opt.listchars = {trail = '-', tab = '--', space = ' '}
 opt.background = "dark"
 opt.clipboard:append("unnamedplus")
 opt.fillchars = { eob = " " }
@@ -19,7 +19,6 @@ opt.smartcase = true
 opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = true
-opt.undofile = true
 
 opt.updatetime = 200
 opt.scrolloff = 10
@@ -43,8 +42,8 @@ opt.ruler = false
 
 opt.swapfile = false
 opt.backup = false
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 
 -- Enable Vim's settings
 vim.opt.compatible = false

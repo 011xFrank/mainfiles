@@ -31,19 +31,13 @@ return {
 			},
 		})
 
-		mason_lspconfig.setup({
-			ensure_installed = {
-				"lua_ls",
-				"clangd",
-				"pylsp",
-			},
-		})
-
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"pylint",
-				"ruff",
-				"black"
+				"black",
+                "pylsp",
+                "lua_ls",
+                "clangd"
 			}
 		})
 	end,
