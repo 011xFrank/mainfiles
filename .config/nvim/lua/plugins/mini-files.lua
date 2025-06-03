@@ -1,65 +1,42 @@
 return {
-    'echasnovski/mini.files', version = false,
-    lazy = false,
-    opts = {},
-    config = function ()
-        require("mini.files").setup({
-            -- Customization of shown content
-            content = {
-                -- Predicate for which file system entries to show
-                filter = nil,
-                -- What prefix to show to the left of file system entry
-                prefix = nil,
-                -- In which order to show file system entries
-                sort = nil,
-            },
-
-            -- Module mappings created only inside explorer.
-            -- Use `''` (empty string) to not create one.
-            mappings = {
-                close       = 'q',
-                go_in       = 'l',
-                go_in_plus  = 'L',
-                go_out      = 'h',
-                go_out_plus = 'H',
-                mark_goto   = "'",
-                mark_set    = 'm',
-                reset       = '<BS>',
-                reveal_cwd  = '@',
-                show_help   = 'g?',
-                synchronize = '=',
-                trim_left   = '<',
-                trim_right  = '>',
-            },
-
-            -- General options
-            options = {
-                -- Whether to delete permanently or move into module-specific trash
-                permanent_delete = true,
-                -- Whether to use for editing directories
-                use_as_default_explorer = true,
-            },
-
-            -- Customization of explorer windows
-            windows = {
-                -- Maximum number of windows to show side by side
-                max_number = 1,
-                -- Whether to show preview of file/directory under cursor
-                preview = false,
-                -- Width of focused window
-                width_focus = 50,
-                -- Width of non-focused window
-                width_nofocus = 15,
-                -- Width of preview window
-                width_preview = 25,
-            },
-        })
-
-
-        local set = vim.keymap.set
-        local opts = { noremap = true, silent = true }
-
-        set('n','<leader>n',"<cmd> lua MiniFiles.open() <CR>", opts)
+    "echasnovski/mini.files",
+    opts = {
+        windows = {
+            max_number = 1,
+            preview = false,
+            width_focus = 50,
+            width_preview = 30,
+        },
+        options = {
+            -- Whether to use for editing directories
+            -- Disabled by default in LazyVim because neo-tree is used for that
+            use_as_default_explorer = true,
+        },
+    },
+    keys = {
+        {
+            "<leader>n",
+            function()
+                -- Check if mini.files is currently open
+                if require("mini.files").close() then
+                    -- If it was open and successfully closed, we're done
+                    return
+                end
+                -- If it wasn't open, or close failed (e.g., no mini.files buffer), then open it
+                require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+            end,
+            desc = "Open mini.files (Directory of Current File)",
+        },
+        {
+            "<leader>N",
+            function()
+                require("mini.files").open(vim.uv.cwd(), true)
+            end,
+            desc = "Open mini.files (cwd)",
+        },
+    },
+    config = function(_, opts)
+        require("mini.files").setup(opts)
 
         local nsMiniFiles = vim.api.nvim_create_namespace("mini_files_git")
         local autocmd = vim.api.nvim_create_autocmd
