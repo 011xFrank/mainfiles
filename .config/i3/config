@@ -143,4 +143,6 @@ bar {
 # class                 border  backgr. text    indicator child_border
 client.focused          #7f8497  #222222 #7f8497 #7f8497   #7f8497
 
-for_window [class=“^.*”] border pixel 2
+gaps inner 3
+
+for_window [class=“^.*”] border pixel 0

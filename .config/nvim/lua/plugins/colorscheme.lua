@@ -1,6 +1,5 @@
 return {
-    {
-        "drewxs/ash.nvim",
+        "drwxs/ash.nvim",
         lazy = false,
         priority = 1000,
         config = function ()
@@ -12,14 +11,6 @@ return {
                 no_italic = false, -- disable italics
                 no_bold = false, -- disable bold
                 no_underline = false, -- disable underlines
-
-                -- override highlight groups [function/table]
-                highlights = function(colors)
-                    return {
-                        Comment = { fg = colors.red },
-                        CmpBorder = { fg = colors.none },
-                    }
-                end,
 
                 -- override style groups
                 -- e.g. comments = { "italic", "bold" }
@@ -38,8 +29,5 @@ return {
                     operators = {},
                 },
             }
-
-            vim.cmd.colorscheme("ash")
         end
-    },
 }
