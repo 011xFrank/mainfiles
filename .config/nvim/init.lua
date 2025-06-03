@@ -9,4 +9,4 @@ require("config.options")
 require("config.remaps")
 require("config.autocmds")
 
-vim.cmd.colorscheme ("ash")
+-- vim.cmd('highlight LineNr guifg=#7f8497')
