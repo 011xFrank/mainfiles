@@ -29,7 +29,6 @@ alias mkdir='mkdir -vp'
 alias mv='mv -iv'
 alias rm='trash -v'
 
-alias f='fzf'
 alias fn='n $(fzf)'
 alias fd='cd $(find . -type d | fzf)'
 alias fh='history | fzf'
@@ -48,16 +47,6 @@ alias ls='eza'
 alias l.='eza -d .*'
 alias la='eza -a'
 
-export FZF_DEFAULT_OPTS=""
-
-
 source <(fzf --zsh)
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# if [ -z "$TMUX" ]; then
-  # tmux attach -t default || tmux new -s default
-# fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
