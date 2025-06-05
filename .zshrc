@@ -31,14 +31,11 @@ alias rm='trash -v'
 
 alias fn='n $(fzf)'
 alias fd='cd $(find . -type d | fzf)'
-alias fh='history | fzf'
 
-alias music='./.music.py'
 alias install='sudo apt install'
 alias uninstall='sudo apt purge'
 alias update='sudo apt-get update -y; sudo apt full-upgrade -y'
 alias r='source ~/.zshrc'
-alias netdiscover='sudo netdiscover'
 alias cht='tldr'
 alias clone='git clone'
 
