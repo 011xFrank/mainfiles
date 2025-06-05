@@ -10,12 +10,12 @@ return {
 		local opts = { noremap = true, silent = true }
 
 		local on_attach = function(client, bufnr)
-			opts.buffer = bufnr
-
-			opts.desc = "See available code actions"
+            opts.buffer = bufnr
+            keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+            keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
+            keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+            keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
 			keymap.set({ "n", "v" }, "<leader><leader>", vim.lsp.buf.code_action, opts)
-
-			opts.desc = "Smart rename"
 			keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 		end
 
@@ -33,12 +33,6 @@ return {
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 		local lspconfig = require("lspconfig")
-
-		local no_diagnostics = {
-			['textDocument/publishDiagnostics'] = function (_, _, _, _, _)
-				return
-			end
-		}
 
 		lspconfig["clangd"].setup({
 			capabilities = capabilities,
@@ -82,14 +76,14 @@ return {
 
 		----------------------------------------------------------------------------------
 
-		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "border" })
+		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "double" })
 
 		vim.lsp.handlers["textDocument/signatureHelp"] =
-			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "border" })
+			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "double" })
 
-		vim.diagnostic.config({ float = { border = "border" } })
+		vim.diagnostic.config({ float = { border = "double" } })
 
-		require("lspconfig.ui.windows").default_options = { border = "border" }
+		require("lspconfig.ui.windows").default_options = { border = "double" }
 
 		----------------------------------------------------------------------------------
 	end
