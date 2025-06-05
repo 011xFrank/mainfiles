@@ -150,7 +150,7 @@ bar {
 
 # class                 border  backgr. text    indicator child_border
 # client.focused          #7f8497  #222222 #7f8497 #7f8497   #7f8497    #Ash Theme
-client.focused              #a89984 #3c3836 #a89984 #a89984    #a89984  #gruvbox theme
+client.focused          #9EBD6E #3c3836 #9EBD6E #9EBD6E    #9EBD6E  #gruvbox theme
 
 gaps inner 10
 
