@@ -1,8 +1,8 @@
 general {
     interval        = 1
     colors          = true
-    color_good      = '#b8bb26'   # sage - soft green, comfortable for "OK" state
-    color_degraded  = '#d7a61b'   # warm amber-gold, gently warns without strain
+    color_good      = '#7f9477'   # sage - soft green, comfortable for "OK" state
+    color_degraded  = '#d0b97d'   # warm amber-gold, gently warns without strain
     color_bad       = '#bf616a'   # crimson - subdued red, noticeable but not harsh
 }
 

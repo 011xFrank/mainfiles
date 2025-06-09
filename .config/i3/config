@@ -123,21 +123,21 @@ mode "resize" {
 
 bar {
         colors {
-                background               #282828
-                focused_workspace        #504945 #fabd2f #282828
-                active_workspace         #3c3836 #b8bb26 #ebdbb2
-                inactive_workspace       #3c3836 #3c3836 #a89984
-                urgent_workspace         #3c3836 #fb4934 #fbf1c7
-                binding_mode             #3c3836 #fe8019 #fbf1c7
-                statusline               #ebdbb2
+                # background               #282828
+                # focused_workspace        #504945 #fabd2f #282828
+                # active_workspace         #3c3836 #b8bb26 #ebdbb2
+                # inactive_workspace       #3c3836 #3c3836 #a89984
+                # urgent_workspace         #3c3836 #fb4934 #fbf1c7
+                # binding_mode             #3c3836 #fe8019 #fbf1c7
+                # statusline               #ebdbb2
 
-                # background           #0a0a0
-                # focused_workspace    #31323c #a6adc3 #1e2122
-                # active_workspace     #1e2122 #9c9eb4 #c0c0d0
-                # inactive_workspace   #1e2122 #1e2122 #7f8497
-                # urgent_workspace     #1e2122 #bf616a #ffffff
-                # binding_mode         #1e2122 #d08770 #ffffff
-                # statusline           #a6adc3
+                background           #0a0a0
+                focused_workspace    #31323c #a6adc3 #1e2122
+                active_workspace     #1e2122 #9c9eb4 #c0c0d0
+                inactive_workspace   #1e2122 #1e2122 #7f8497
+                urgent_workspace     #1e2122 #bf616a #ffffff
+                binding_mode         #1e2122 #d08770 #ffffff
+                statusline           #a6adc3
         }
 
         status_command i3status
@@ -149,8 +149,8 @@ bar {
 
 
 # class                 border  backgr. text    indicator child_border
-# client.focused          #7f8497  #222222 #7f8497 #7f8497   #7f8497    #Ash Theme
-client.focused          #d7a61b #3c3836 #d7a61b  #d7a61b     #d7a61b  #gruvbox theme
+client.focused          #7f8497  #222222 #7f8497 #7f8497   #7f8497    #Ash Theme
+# client.focused          #d7a61b #3c3836 #d7a61b  #d7a61b     #d7a61b  #gruvbox theme
 
 gaps inner 10
 

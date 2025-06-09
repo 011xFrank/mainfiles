@@ -29,8 +29,22 @@ alias mkdir='mkdir -vp'
 alias mv='mv -iv'
 alias rm='trash -v'
 
-alias fn='n $(fzf)'
-alias fd='cd $(find . -type d | fzf)'
+fn() {
+    local selected_file
+    selected_file=$(fzf)
+    if [ -n "$selected_file" ]; then
+        n "$selected_file"
+    fi
+}
+
+
+fd() {
+    local selected_directory
+    selected_directory=$(find . -type d \( -path '*/.git' -prune \) -o -print 2>/dev/null | fzf)
+    if [ -n "$selected_directory" ]; then
+        cd "$selected_directory"
+    fi
+}
 
 alias install='sudo apt install'
 alias uninstall='sudo apt purge'
