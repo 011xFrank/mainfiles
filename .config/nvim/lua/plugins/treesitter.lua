@@ -1,22 +1,50 @@
-return  {
-    "nvim-treesitter/nvim-treesitter",
-    build = function()
-        require("nvim-treesitter.install").update({ with_sync = true })()
-    end,
-    config = function ()
-        require'nvim-treesitter.configs'.setup {
-            ensure_installed = { "toml","json","asm","make","bash","c","cpp","python", "lua", "vim", "vimdoc", "query" },
-            sync_install = false,
-            auto_install = true,
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            },
-            indent = { -- Configure indentation for Lua files
-                enable = true,
-                default_indent = 4,  -- Adjust this to 8 for 8 spaces
-                lowercase = false,
-            },
-        }
-    end
+return {
+	"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate",
+	build = function()
+		require("nvim-treesitter.install").update { with_sync = true }()
+	end,
+	event = "VeryLazy",
+	config = function()
+		require("nvim-treesitter.configs").setup {
+			ensure_installed = {
+				"arduino",
+				"php",
+				"astro",
+				"bash",
+				"c",
+				"clojure",
+				"cpp",
+				"css",
+				"elixir",
+				"gdscript",
+				"gleam",
+				"go",
+				"haskell",
+				"heex",
+				"html",
+				"hyprlang",
+				"java",
+				"javascript",
+				"json",
+				"lua",
+				"make",
+				"markdown",
+				"markdown_inline",
+				"nix",
+				-- "ocaml",
+				"python",
+				"rust",
+				"sql",
+				"svelte",
+				"tcl",
+				"tsx",
+				"typescript",
+				"typst",
+				"verilog",
+				"yaml",
+			},
+			sync_install = false,
+			highlight = { enable = true },
+		}
+	end, 
 }

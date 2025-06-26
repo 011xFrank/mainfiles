@@ -1,15 +1,21 @@
-require "core.lazy"
-require "core.options"
-require "core.keymaps"
-require "core.autocmds"
+vim.g.mapleader = " "
+vim.g.localmapleader = " "
+
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+
+require("config.lazy")
+require("config.options")
+require("config.remaps")
+require("config.autocmds")
 
 local function color_scheme(color)
     color = color or "gruvbox-material"
     vim.cmd.colorscheme (color)
 end
 
-color_scheme("gruvbox-material")
--- color_scheme("ash")
+-- color_scheme("gruvbox-material")
+color_scheme("ash")
 
 local function set_floating_window_transparency()
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })

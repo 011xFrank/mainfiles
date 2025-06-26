@@ -6,7 +6,6 @@ return {
         config = function()
             vim.g.gruvbox_material_better_performance = 1
             vim.g.gruvbox_material_foreground = "material"
-            vim.g.gruvbox_material_transparent_background = 1
             vim.g.gruvbox_material_background = "soft"
             vim.g.gruvbox_material_ui_contrast = "low"
             vim.g.gruvbox_material_float_style = "dim"
@@ -34,6 +33,12 @@ return {
                     end
                 end,
             })
+
+            -- To make the content area transparent
+            -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+
+            -- To make the border transparent
+            -- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
         end,
     },
 

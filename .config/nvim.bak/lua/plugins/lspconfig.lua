@@ -9,13 +9,14 @@ return {
 		local keymap = vim.keymap
 		local opts = { noremap = true, silent = true }
 
+
 		local on_attach = function(client, bufnr)
-            opts.buffer = bufnr
-            keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-            keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
-            keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-            keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-			keymap.set({ "n", "v" }, "<leader><leader>", vim.lsp.buf.code_action, opts)
+			opts.buffer = bufnr
+			keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+			keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
+			keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+			keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+			-- keymap.set({ "n", "v" }, "<leader><leader>", vim.lsp.buf.code_action, opts)
 			keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 		end
 
@@ -74,12 +75,69 @@ return {
 			}
 		})
 
+
+		-- configure html server
+		lspconfig["html"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure css server
+		lspconfig["cssls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure tailwindcss server
+		lspconfig["tailwindcss"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- configure emmet language server
+		lspconfig["emmet_language_server"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "php", "vue", "css", "html", "javascript", "ts_ls", "less", "sass", "scss" },
+		})
+
+		lspconfig["phpactor"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["intelephense"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		lspconfig["ts_ls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			init_options = {
+				plugins = {
+					{
+						name = "@vue/typescript-plugin",
+						-- location = vue_language_server_path,
+						languages = { "vue" },
+					},
+				},
+			},
+			filetypes = {
+				"javascript",
+				"typescript",
+				"javascriptreact",
+				"typescriptreact",
+				"vue",
+			},
+		})
+
 		----------------------------------------------------------------------------------
 
 		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "double" })
 
 		vim.lsp.handlers["textDocument/signatureHelp"] =
-			vim.lsp.with(vim.lsp.handlers.signature_help, { border = "double" })
+		vim.lsp.with(vim.lsp.handlers.signature_help, { border = "double" })
 
 		vim.diagnostic.config({ float = { border = "double" } })
 

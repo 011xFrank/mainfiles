@@ -1,6 +1,5 @@
 return {
     "echasnovski/mini.files",
-    lazy = false,
     opts = {
         windows = {
             max_number = 1,

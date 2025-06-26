@@ -22,6 +22,8 @@ alias tm="tmux"
 alias cat="batcat"
 alias c="clear"
 alias g="git"
+alias gl="git log --oneline --decorate --graph --all"
+alias gs="git status -s"
 alias lg="lazygit"
 
 alias n='nvim'
@@ -40,7 +42,7 @@ fn() {
 
 fd() {
     local selected_directory
-    selected_directory=$(find . -type d \( -path '*/.git' -prune \) -o -print 2>/dev/null | fzf)
+    selected_directory=$(find ~/ -type d \( -path '*/.git' -prune \) -o -print 2>/dev/null | fzf)
     if [ -n "$selected_directory" ]; then
         cd "$selected_directory"
     fi
