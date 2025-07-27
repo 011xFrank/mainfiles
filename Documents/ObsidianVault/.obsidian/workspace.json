@@ -4,17 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "deba57a334096ca0",
+        "id": "ff6744c6ee411ac3",
         "type": "tabs",
         "children": [
           {
-            "id": "a06a32887a724920",
+            "id": "5183d63ba99067d0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "excalidraw",
+              "state": {
+                "file": "Projects/PHP/task-manager-app/Drawing 2025-07-02 13.36.26.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2025-07-02 13.36.26.excalidraw"
             }
           }
         ]
@@ -162,8 +164,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a06a32887a724920",
+  "active": "5183d63ba99067d0",
   "lastOpenFiles": [
+    "Projects/PHP/task-manager-app/Drawing 2025-07-02 13.36.26.excalidraw.md",
+    "Projects/PHP/task-manager-app/Untitled.canvas",
+    "Projects/PHP/task-manager-app",
+    "Projects/PHP",
+    "Projects",
     "Programming/C/Declarations/1. Declaration Syntax.md",
     "Programming/C/Declarations",
     "Books/Computer Arch. a Programmers Persp./Chapter 1 - A tour of Computer Systeem/1.5 - Caches Matter.md",
@@ -196,14 +203,10 @@
     "Programming/C/History of the C language.md",
     "Books/Computer Arch. a Programmers Persp./Chapter 1 - A tour of Computer Systeem",
     "Books/Computer Arch. a Programmers Persp.",
-    "Books",
     "Extras/Images/singly-LL6.png",
     "Extras/Images/singly-LL5.png",
     "Extras/Images/singly-LL4.png",
     "Extras/Excalidraw/Drawing 2024-07-09 23.01.07.excalidraw.md",
-    "Programming/Data Structures & Algorithms/LINKED LISTS/Intro to Linked Lists.md",
-    "Notes/Linux",
-    "Notes/Programming/Bash Scripting/Basic Bash Shell Commands",
     "Pasted image 20240709183404.png",
     "Extras/Images/singly-LL3.png",
     "Extras/Images/singly-LL3.png",

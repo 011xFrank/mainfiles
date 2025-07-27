@@ -25,6 +25,7 @@ alias g="git"
 alias gl="git log --oneline --decorate --graph --all"
 alias gs="git status -s"
 alias lg="lazygit"
+alias s='sudo'
 
 alias n='nvim'
 alias mkdir='mkdir -vp'
@@ -63,3 +64,5 @@ alias la='eza -a'
 source <(fzf --zsh)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/home/doodah/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/doodah/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"

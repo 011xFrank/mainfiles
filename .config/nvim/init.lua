@@ -8,8 +8,10 @@ local function color_scheme(color)
     vim.cmd.colorscheme (color)
 end
 
-color_scheme("gruvbox-material")
--- color_scheme("ash")
+-- color_scheme("gruvbox-material")
+color_scheme("ash")
+-- color_scheme("vague")
+-- color_scheme("catppuccin")
 
 local function set_floating_window_transparency()
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })

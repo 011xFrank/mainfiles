@@ -14,4 +14,34 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
-require("lazy").setup "plugins"
+require("lazy").setup({
+	spec = { import = "plugins"},
+	ui = {
+		border = "double",
+		icons = {
+			cmd = " ",
+			config = "",
+			event = " ",
+			favorite = " ",
+			ft = " ",
+			init = " ",
+			import = " ",
+			keys = " ",
+			lazy = "󰒲 ",
+			loaded = " ",
+			not_loaded = " ",
+			plugin = " ",
+			runtime = "󱑂 ",
+			require = "󰢱 ",
+			source = " ",
+			start = "  ",
+			task = "✔ ",
+			list = {
+				"●",
+				"➜",
+				"★",
+				"‒",
+			},
+		}
+	},
+})

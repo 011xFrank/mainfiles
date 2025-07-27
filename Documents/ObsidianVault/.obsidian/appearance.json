@@ -1,5 +1,6 @@
 {
   "cssTheme": "Material Gruvbox",
   "monospaceFontFamily": "Iosevka Nerd Font",
-  "showViewHeader": true
+  "showViewHeader": true,
+  "theme": "obsidian"
 }

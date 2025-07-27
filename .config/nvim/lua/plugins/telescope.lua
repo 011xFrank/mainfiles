@@ -10,17 +10,16 @@ return {
 	config = function()
 		local telescope = require("telescope")
 
-        telescope.setup({
-            extensions = {
-                fzf = {
-                    fuzzy = true,                    -- false will only do exact matching
-                    override_generic_sorter = true,  -- override the generic sorter
-                    override_file_sorter = true,     -- override the file sorter
-                    case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                    -- the default case_mode is "smart_case"
-                }
-            },
-            defaults = {
+		telescope.setup({
+			extensions = {
+				fzf = {
+					fuzzy = true,                    -- false will only do exact matching
+					override_generic_sorter = true,  -- override the generic sorter
+					override_file_sorter = true,     -- override the file sorter
+					case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+				}
+			},
+			defaults = {
 				vimgrep_arguments = {
 					"rg",
 					"-L",
@@ -55,7 +54,7 @@ return {
 				generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
 				path_display = { "truncate" },
 				winblend = 0,
-				border = {},
+				border = true,
 				borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 				color_devicons = true,
 				set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
