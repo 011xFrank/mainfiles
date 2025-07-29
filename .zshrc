@@ -32,6 +32,8 @@ alias mkdir='mkdir -vp'
 alias mv='mv -iv'
 alias rm='trash -v'
 
+alias restart-nginx='./nginx.restart.sh'
+
 fn() {
     local selected_file
     selected_file=$(fzf)
