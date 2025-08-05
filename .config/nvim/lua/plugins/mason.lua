@@ -33,9 +33,9 @@ return {
 		mason_tool_installer.setup({
 			ensure_installed = {
 				-- Python tools
-				"pylint",
-				"black",
-				"pylsp",
+				-- "pylint",
+				-- "black",
+				-- "pylsp",
 				
 				-- Web Development Language Servers
 				"html-lsp",           -- HTML language server

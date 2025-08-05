@@ -27,14 +27,14 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym XF86MonBrightnessUp exec brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 10%-
 
 exec_always nitrogen --restore
 exec --no-startup-id picom
 
 bindsym $mod+Return exec kitty
-bindsym $mod+b exec google-chrome
+bindsym $mod+b exec firefox
 bindsym $Mod+f exec nautilus
 bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono NF-9:Bold" -b
 bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'JetbrainsMono NF-9:Bold' -b"
@@ -49,9 +49,12 @@ bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t ima
 bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
-bindsym $mod+q kill
-bindsym $mod+Shift+q exec shutdown
+exec_always --no-startup-id bash -c "~/scripts/battery-monitor.sh > /tmp/battery-monitor.log 2>&1"
+
+bindsym $mod+shift+q exec --no-startup-id zenity --question --text="Are you sure you want to SHUTDOWN?" && systemctl poweroff
+bindsym $mod+Shift+p exec --no-startup-id zenity --question --text="Are you sure you want to REBOOT?" && systemctl reboot
 bindsym $mod+Shift+f fullscreen toggle
+bindsym $mod+q kill
 
 # change focus
 bindsym $mod+h focus left
@@ -66,7 +69,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 assign [class="kitty"] $ws1
-assign [class="google-chrome"] $ws2
+assign [class="firefox"] $ws2
 assign [class="okular"] $ws3
 
 # Define names for default workspaces for which we configure key bindings later on.

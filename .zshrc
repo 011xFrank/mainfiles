@@ -57,14 +57,24 @@ alias update='sudo apt-get update -y; sudo apt full-upgrade -y'
 alias r='source ~/.zshrc'
 alias cht='tldr'
 alias clone='git clone'
+alias sn='sudo -E nvim'
 
 alias eza='eza --icons=always --group-directories-first -lh'
 alias ls='eza'
 alias l.='eza -d .*'
 alias la='eza -a'
 
-source <(fzf --zsh)
+alias status='systemctl status'
+alias start='sudo systemctl start'
+alias stop='sudo systemctl stop'
+alias restart='sudo systemctl restart'
+alias rnginx='./restart_nginx.sh'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source <(fzf --zsh)
+
 export PATH="/home/doodah/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/doodah/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+export PATH="/home/frank/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/frank/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"

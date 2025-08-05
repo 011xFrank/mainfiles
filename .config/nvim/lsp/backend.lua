@@ -1,4 +1,4 @@
-return {
+local ts_ls = {
     cmd = { 'typescript-language-server', '--stdio' },
     root_markers = { 'package.json', 'tsconfig.json', 'jsconfig.json', '.git' },
     filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "vue" },
@@ -10,4 +10,8 @@ return {
             },
         },
     },
+}
+
+return {
+    ts_ls = ts_ls
 }

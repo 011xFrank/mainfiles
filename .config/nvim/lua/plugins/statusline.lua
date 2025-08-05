@@ -2,9 +2,7 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function ()
-
     -- Bubbles config with Dimmed Gruvbox Theme (Cleaned)
-
     -- stylua: ignore
     local colors = {
       blue       = '#458588',

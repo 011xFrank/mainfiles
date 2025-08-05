@@ -40,6 +40,7 @@ return {
 
     {
         "drewxs/ash.nvim",
+        enabled = false,
         lazy = false,
         priority = 1000,
         config = function ()
@@ -74,8 +75,6 @@ return {
 
     {
         "thesimonho/kanagawa-paper.nvim",
-        lazy = false,
-        enabled = false,
         priority = 1000,
         opts = {},
         config = function ()
@@ -100,9 +99,9 @@ return {
                     -- style for comments
                     comment = { italic = true },
                     -- style for functions
-                    functions = { italic = true},
+                    functions = { italic = false},
                     -- style for keywords
-                    keyword = { italic = true, bold = false },
+                    keyword = { italic = false, bold = false },
                     -- style for statements
                     statement = { italic = false, bold = false },
                     -- style for types
@@ -155,6 +154,7 @@ return {
     {
         "vague2k/vague.nvim",
         enabled = false,
+        lazy = false,
         config = function()
             -- NOTE: you do not need to call setup if you don't want to.
             require("vague").setup({
@@ -173,7 +173,7 @@ return {
                     functions = "none",
                     headings = "bold",
                     operators = "none",
-                    strings = "italic",
+                    strings = "none",
                     variables = "none",
 
                     -- keywords

@@ -43,7 +43,7 @@ api.nvim_create_autocmd(
         "TextYankPost",
         {
                 callback = function()
-                        vim.highlight.on_yank()
+                        vim.hl.on_yank()
                 end,
         }
 )
@@ -53,3 +53,8 @@ api.nvim_create_autocmd("VimEnter", {
                 vim.api.nvim_set_hl(0, "Normal", { ctermbg = "none" })
         end
 })
+
+-- Set StatusLine background to none
+api.nvim_set_hl(0, "StatusLine", { bg = "NONE", ctermbg = "NONE" })
+-- Set StatusLineNC (non-current window statusline) background to none
+api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", ctermbg = "NONE" })
