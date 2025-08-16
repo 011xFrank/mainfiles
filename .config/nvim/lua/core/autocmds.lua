@@ -54,7 +54,11 @@ api.nvim_create_autocmd("VimEnter", {
         end
 })
 
--- Set StatusLine background to none
-api.nvim_set_hl(0, "StatusLine", { bg = "NONE", ctermbg = "NONE" })
--- Set StatusLineNC (non-current window statusline) background to none
-api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", ctermbg = "NONE" })
+
+--- Lua
+vim.o.autowriteall = true
+vim.api.nvim_create_autocmd({ 'InsertLeavePre', 'TextChanged', 'TextChangedP' }, {
+    pattern = '*', callback = function()
+        vim.cmd('silent! write')
+    end
+})

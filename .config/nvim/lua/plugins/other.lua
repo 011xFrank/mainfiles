@@ -1,5 +1,8 @@
 return {
     {
+        'echasnovski/mini.icons', version = '*'
+    },
+    {
         "tpope/vim-sleuth"
     },
 

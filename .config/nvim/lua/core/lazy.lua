@@ -15,7 +15,8 @@ vim.g.mapleader = " "
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 require("lazy").setup({
-	spec = { import = "plugins"},
+	change_detection = { enabled = false, notify = false },
+	spec = { import = "plugins" },
 	ui = {
 		border = "double",
 		icons = {

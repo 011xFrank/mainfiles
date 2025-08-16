@@ -71,8 +71,8 @@ alias restart='sudo systemctl restart'
 alias rnginx='./restart_nginx.sh'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 source <(fzf --zsh)
+
 
 export PATH="/home/doodah/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/doodah/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
