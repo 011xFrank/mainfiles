@@ -37,7 +37,6 @@ bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 10%-
 # Enable touchpad tapping on startup
 exec_always --no-startup-id xinput set-prop "SYNA30A6:00 06CB:CDEC Touchpad" "libinput Tapping Enabled" 1
 
-exec --no-startup-id xrandr --output 'eDP-1' --mode '1280x720'
 exec --no-startup-id xrandr --output eDP-1 --gamma 0.6:0.6:0.6
 
 exec_always nitrogen --restore
