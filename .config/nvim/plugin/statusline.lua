@@ -1,8 +1,3 @@
--- Enhanced statusline plugin for Neovim
--- Place this file in: ~/.config/nvim/plugin/statusline.lua
--- Format: <icon> <path> @ <branch> [git-indicators] <diagnostics>
-
--- Prevent loading twice
 if vim.g.loaded_custom_statusline then
     return
 end
@@ -168,7 +163,7 @@ local function get_harpoon_status()
             item.value == current_file_relative or
             item.value == vim.fn.expand('%:p') or
             item.value == vim.fn.expand('%') then
-            return " 📌" .. i
+            return "  --  [" .. i .. "]"
         end
     end
     return ""
