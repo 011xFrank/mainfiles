@@ -6,7 +6,6 @@ general {
     color_bad       = '#bf616a'   # crimson - subdued red, noticeable but not harsh
 }
 
-order += "wireless _first_"
 order += "battery 0"
 order += "cpu_usage 0"
 order += "cpu_temperature 0"

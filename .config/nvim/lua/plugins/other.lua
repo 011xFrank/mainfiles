@@ -21,7 +21,7 @@ return {
 
     {
         "meznaric/key-analyzer.nvim",
-        config = function ()
+        config = function()
             require("key-analyzer").setup()
         end
     },
@@ -37,7 +37,7 @@ return {
 
     {
         "mbbill/undotree",
-        config = function ()
+        config = function()
             vim.keymap.set('n', '<F7>', vim.cmd.UndotreeToggle)
         end
     },
@@ -46,7 +46,7 @@ return {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {},
-        config = function ()
+        config = function()
             require("ibl").setup({
                 indent = {
                     char = '┆'
@@ -61,7 +61,7 @@ return {
     {
         "numToStr/Comment.nvim",
         lazy = false,
-        config = function ()
+        config = function()
             local comment = require("Comment")
 
             comment.setup({
@@ -81,11 +81,11 @@ return {
         ---@type Flash.Config
         opts = {},
         keys = {
-            { "<leader>s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-            { "<leader>S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-            { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-            { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-            { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+            { "<leader>s", mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+            { "<leader>S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+            { "r",         mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+            { "R",         mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+            { "<c-s>",     mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
         },
     },
 
@@ -94,21 +94,21 @@ return {
         opts = {
             -- options
         },
-        config = function ()
+        config = function()
             require('fidget').setup(
                 {
                     notification = {
                         window = {
-                            normal_hl = "Comment",      -- Base highlight group in the notification window
-                            winblend = 0,             -- Background color opacity in the notification window
-                            border = "none",            -- Border around the notification window
-                            zindex = 45,                -- Stacking priority of the notification window
-                            max_width = 0,              -- Maximum width of the notification window
-                            max_height = 0,             -- Maximum height of the notification window
-                            x_padding = 1,              -- Padding from right edge of window boundary
-                            y_padding = 0,              -- Padding from bottom edge of window boundary
-                            align = "bottom",           -- How to align the notification window
-                            relative = "editor",        -- What the notification window position is relative to
+                            normal_hl = "Comment", -- Base highlight group in the notification window
+                            winblend = 0,          -- Background color opacity in the notification window
+                            border = "none",       -- Border around the notification window
+                            zindex = 45,           -- Stacking priority of the notification window
+                            max_width = 0,         -- Maximum width of the notification window
+                            max_height = 0,        -- Maximum height of the notification window
+                            x_padding = 1,         -- Padding from right edge of window boundary
+                            y_padding = 0,         -- Padding from bottom edge of window boundary
+                            align = "bottom",      -- How to align the notification window
+                            relative = "editor",   -- What the notification window position is relative to
                         },
                     },
                 }
@@ -134,7 +134,7 @@ return {
 
     {
         "RRethy/vim-illuminate",
-        config = function ()
+        config = function()
             -- default configuration
             require('illuminate').configure({
                 -- providers: provider used to get references in the buffer, ordered by priority
@@ -191,6 +191,14 @@ return {
                 case_insensitive_regex = false,
                 -- disable_keymaps: disable default keymaps
                 disable_keymaps = false,
+            })
+            vim.api.nvim_create_autocmd('ColorScheme', {
+                pattern = '*',
+                callback = function()
+                    vim.api.nvim_set_hl(0, 'IlluminatedWordText', { underline = true })
+                    vim.api.nvim_set_hl(0, 'IlluminatedWordRead', { underline = true })
+                    vim.api.nvim_set_hl(0, 'IlluminatedWordWrite', { underline = true })
+                end,
             })
         end
     }

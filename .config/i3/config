@@ -38,6 +38,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 10%-
 exec_always --no-startup-id xinput set-prop "SYNA30A6:00 06CB:CDEC Touchpad" "libinput Tapping Enabled" 1
 
 exec --no-startup-id xrandr --output eDP-1 --gamma 0.6:0.6:0.6
+exec --no-startup-id xrandr --output eDP-1 --brightness 0.6
 
 exec_always nitrogen --restore
 exec --no-startup-id picom
@@ -84,8 +85,8 @@ assign [class="okular"] $ws3
 # Define names for default workspaces for which we configure key bindings later on.
 set $ws1 "1 ->   Terminal"
 set $ws2 "2 ->   Browser"
-set $ws3 "3 ->  PDFs"
-set $ws4 "4 -> Other"
+set $ws3 "3 ->  PDF"
+set $ws4 "4 -> 󰀻 Other"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"

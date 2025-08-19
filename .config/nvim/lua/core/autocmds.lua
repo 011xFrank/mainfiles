@@ -31,7 +31,7 @@ local cursorGrp = api.nvim_create_augroup("CursorLine", { clear = true })
 
 api.nvim_create_autocmd(
         { "InsertLeave", "WinEnter" },
-        { pattern = "*", command = "set cursorline", group = cursorGrp,}
+        { pattern = "*", command = "set cursorline", group = cursorGrp, }
 )
 api.nvim_create_autocmd(
         { "InsertEnter", "WinLeave" },
@@ -49,7 +49,7 @@ api.nvim_create_autocmd(
 )
 
 api.nvim_create_autocmd("VimEnter", {
-        callback = function ()
+        callback = function()
                 vim.api.nvim_set_hl(0, "Normal", { ctermbg = "none" })
         end
 })
@@ -58,7 +58,10 @@ api.nvim_create_autocmd("VimEnter", {
 --- Lua
 vim.o.autowriteall = true
 vim.api.nvim_create_autocmd({ 'InsertLeavePre', 'TextChanged', 'TextChangedP' }, {
-    pattern = '*', callback = function()
-        vim.cmd('silent! write')
-    end
+        pattern = '*',
+        callback = function()
+                vim.cmd('silent! write')
+        end
 })
+
+

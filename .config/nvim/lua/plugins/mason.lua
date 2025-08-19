@@ -29,37 +29,38 @@ return {
 				},
 			},
 		})
-		
+
 		mason_tool_installer.setup({
 			ensure_installed = {
 				-- Python tools
 				-- "pylint",
 				-- "black",
 				-- "pylsp",
-				
+
 				-- Web Development Language Servers
-				"html-lsp",           -- HTML language server
-				"css-lsp",            -- CSS language server
+				"html-lsp",        -- HTML language server
+				"css-lsp",         -- CSS language server
 				"typescript-language-server", -- JavaScript/TypeScript
-				"eslint-lsp",         -- JavaScript/TypeScript linting
+				"eslint-lsp",      -- JavaScript/TypeScript linting
 				"emmet-language-server", -- Emmet abbreviations
 				"tailwindcss-language-server", -- Tailwind CSS
-				
+
 				-- JavaScript/TypeScript Formatters & Linters
-				"prettier",           -- Code formatter for JS/TS/HTML/CSS
-				"eslint_d",           -- Fast ESLint daemon
-				"js-debug-adapter",   -- JavaScript debugger
-				
+				"prettier", -- Code formatter for JS/TS/HTML/CSS
+				"eslint_d", -- Fast ESLint daemon
+				"js-debug-adapter", -- JavaScript debugger
+
 				-- CSS Tools
-				"stylelint",          -- CSS linter
-				"stylelint-lsp",      -- Stylelint language server
-				
+				"stylelint", -- CSS linter
+				"stylelint-lsp", -- Stylelint language server
+
 				-- Other Language Servers
 				"lua-language-server",
 				"clangd",
-				
+
 				-- PHP language server
-				"intelephense",       -- PHP language server
+				"intelephense", -- PHP language server
+				"phpactor"
 			}
 		})
 	end,

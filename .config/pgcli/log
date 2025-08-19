@@ -71,3 +71,6 @@
 2025-08-16 01:56:51,354 (30837/MainThread) pgcli.pgstyle ERROR - Unhandled style / class name: background
 2025-08-16 02:33:56,407 (30837/MainThread) pgcli.pgexecute ERROR - sql: '/q', error: SyntaxError('syntax error at or near "/"\nLINE 1: /q\n        ^')
 2025-08-16 02:33:56,411 (30837/MainThread) pgcli.pgexecute ERROR - traceback: 'Traceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/pgcli/pgexecute.py", line 395, in run\n    yield self.execute_normal_sql(sql) + (sql, True, False)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/pgcli/pgexecute.py", line 445, in execute_normal_sql\n    cur.execute(split_sql)\n  File "/usr/lib/python3/dist-packages/pgcli/pgexecute.py", line 90, in execute\n    super().execute(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/psycopg/cursor.py", line 732, in execute\n    raise ex.with_traceback(None)\npsycopg.errors.SyntaxError: syntax error at or near "/"\nLINE 1: /q\n        ^\n'
+2025-08-18 14:57:04,505 (65160/MainThread) pgcli.main INFO - Default pager found in PAGER environment variable: "less"
+2025-08-18 14:57:04,506 (65160/MainThread) pgcli.main WARNING - import keyring failed: ModuleNotFoundError("No module named 'keyring'").
+2025-08-18 14:57:04,507 (65160/MainThread) pgcli.pgstyle ERROR - Unhandled style / class name: background
