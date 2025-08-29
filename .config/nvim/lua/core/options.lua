@@ -2,7 +2,7 @@ local opt = vim.opt
 
 opt.fileencoding = "utf-8"
 opt.list = true
-opt.listchars = {trail = '-', tab = '--', space = ' '}
+opt.listchars = { trail = '-', tab = '--', space = ' ' }
 opt.background = "dark"
 opt.clipboard:append("unnamedplus")
 opt.fillchars = { eob = " " }
@@ -28,10 +28,10 @@ opt.timeoutlen = 400
 
 -- Indenting
 opt.expandtab = true
-opt.shiftwidth = 4
+opt.shiftwidth = 2
 opt.smartindent = true
-opt.tabstop = 4
-opt.softtabstop = 4
+opt.tabstop = 2
+opt.softtabstop = 2
 opt.autoindent = true
 
 -- Numbers

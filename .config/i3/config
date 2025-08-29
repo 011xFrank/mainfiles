@@ -37,13 +37,10 @@ bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 10%-
 # Enable touchpad tapping on startup
 exec_always --no-startup-id xinput set-prop "SYNA30A6:00 06CB:CDEC Touchpad" "libinput Tapping Enabled" 1
 
-exec --no-startup-id xrandr --output eDP-1 --gamma 0.6:0.6:0.6
-exec --no-startup-id xrandr --output eDP-1 --brightness 0.6
-
 exec_always nitrogen --restore
 exec --no-startup-id picom
 
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
 bindsym $Mod+f exec nautilus
 bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono NF-9:Bold" -b
@@ -78,14 +75,14 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-assign [class="kitty"] $ws1
+assign [class="alacritty"] $ws1
 assign [class="firefox"] $ws2
 assign [class="okular"] $ws3
 
 # Define names for default workspaces for which we configure key bindings later on.
 set $ws1 "1 ->   Terminal"
 set $ws2 "2 ->   Browser"
-set $ws3 "3 ->  PDF"
+set $ws3 "3 ->   PDF"
 set $ws4 "4 -> 󰀻 Other"
 set $ws5 "5"
 set $ws6 "6"
@@ -136,10 +133,10 @@ mode "resize" {
 
 bar {
         colors {
-                background               #282828
-                focused_workspace        #504945 #8ec07c #282828
+                background               #0c0904
+                focused_workspace        #504945 #fe8019 #282828
                 active_workspace         #3c3836 #b8bb26 #ebdbb2
-                inactive_workspace       #3c3836 #3c3836 #a89984
+                inactive_workspace       #0c0904 #0c0904 #a89984
                 urgent_workspace         #3c3836 #fb4934 #fbf1c7
                 binding_mode             #3c3836 #fe8019 #fbf1c7
                 statusline               #ebdbb2
@@ -163,7 +160,7 @@ bar {
 
 # class                 border  backgr. text    indicator child_border
 # client.focused          #7f8497  #222222 #7f8497 #7f8497   #7f8497    #Ash Theme
-client.focused          #8ec07c  #3c3836 #8ec07c #8ec07c #8ec07c   #gruvbox theme
+client.focused          #fe8019   #3c3836 #fe8019  #fe8019  #fe8019    #gruvbox theme
 
 gaps inner 7
 

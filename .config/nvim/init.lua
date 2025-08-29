@@ -2,11 +2,12 @@ require("core")
 
 local function color_scheme(color)
     color = color or "gruvbox-material"
-    vim.cmd.colorscheme (color)
+    vim.cmd.colorscheme(color)
 end
 
-color_scheme("gruvbox-material")
--- color_scheme("ash")
+-- color_scheme("gruvbox-material")
+-- color_scheme("everforest")
+color_scheme("ash")
 -- color_scheme("vague")
 -- color_scheme("rose-pine-moon")
 -- color_scheme("kanagawa-paper-ink")

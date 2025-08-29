@@ -44,6 +44,7 @@ return {
 
     {
         "lukas-reineke/indent-blankline.nvim",
+        enabled = false,
         main = "ibl",
         opts = {},
         config = function()
@@ -201,5 +202,7 @@ return {
                 end,
             })
         end
-    }
+    },
+
+    { { "shortcuts/no-neck-pain.nvim", version = "*" } }
 }

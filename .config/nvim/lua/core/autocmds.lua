@@ -64,4 +64,8 @@ vim.api.nvim_create_autocmd({ 'InsertLeavePre', 'TextChanged', 'TextChangedP' },
         end
 })
 
-
+-- Resize splits when the window is resized
+api.nvim_create_autocmd("VimResized", {
+        pattern = "*",
+        command = "wincmd =",
+})

@@ -1,7 +1,7 @@
 return {
     {
         "sainnhe/gruvbox-material",
-        -- enabled = false,
+        enabled = false,
         lazy = false,
         priority = 1000,
         config = function()
@@ -19,8 +19,8 @@ return {
 
             local function set_highlights()
                 local highlights_groups = {
-                    Normal = {bg = "#000000"},
-                    Cursor = {bg = "#ffffff"},
+                    Normal = { bg = "#000000" },
+                    Cursor = { bg = "#ffffff" },
                 }
 
                 for group, styles in pairs(highlights_groups) do
@@ -40,17 +40,17 @@ return {
 
     {
         "drewxs/ash.nvim",
-        enabled = false,
+        -- enabled = false,
         lazy = false,
         priority = 1000,
-        config = function ()
+        config = function()
             require("ash").setup {
                 compile_path = vim.fn.stdpath("cache") .. "/ash",
 
-                transparent = true, -- transparent background
-                term_colors = true, -- terminal colors (e.g. g:terminal_color_x)
-                no_italic = false, -- disable italics
-                no_bold = false, -- disable bold
+                transparent = true,   -- transparent background
+                term_colors = true,   -- terminal colors (e.g. g:terminal_color_x)
+                no_italic = false,    -- disable italics
+                no_bold = false,      -- disable bold
                 no_underline = false, -- disable underlines
 
                 -- override style groups
@@ -60,8 +60,8 @@ return {
                     conditionals = {},
                     loops = {},
                     functions = {},
-                    keywords = {"bold"},
-                    strings = {"italic"},
+                    keywords = { "bold" },
+                    strings = { "italic" },
                     variables = {},
                     numbers = {},
                     booleans = {},
@@ -78,7 +78,7 @@ return {
         enabled = false,
         priority = 1000,
         opts = {},
-        config = function ()
+        config = function()
             require("kanagawa-paper").setup({
                 -- enable undercurls for underlined text
                 undercurl = true,
@@ -100,7 +100,7 @@ return {
                     -- style for comments
                     comment = { italic = true },
                     -- style for functions
-                    functions = { italic = false},
+                    functions = { italic = false },
                     -- style for keywords
                     keyword = { italic = false, bold = false },
                     -- style for statements
@@ -222,36 +222,115 @@ return {
                 -- Override colors
                 colors = {
                     -- Backgrounds
-                    bg = "#0f0e15",           -- Dimmer than your current and Rose Pine's base
-                    fg = "#b8b5cb",           -- Dimmer version of Rose Pine Text
-                    floatBorder = "#5d5c70",  -- Muted and slightly darker than Rose Pine Muted
-                    line = "#1a1920",         -- Darker version of a subtle line color
-                    comment = "#535069",      -- Darker, desaturated purple-gray, like Rose Pine Muted but dimmer
+                    bg = "#0f0e15",          -- Dimmer than your current and Rose Pine's base
+                    fg = "#b8b5cb",          -- Dimmer version of Rose Pine Text
+                    floatBorder = "#5d5c70", -- Muted and slightly darker than Rose Pine Muted
+                    line = "#1a1920",        -- Darker version of a subtle line color
+                    comment = "#535069",     -- Darker, desaturated purple-gray, like Rose Pine Muted but dimmer
 
                     -- Syntax / Semantic Highlighting (inspired by Rose Pine hues, but dimmed)
-                    builtin = "#7c9baa",      -- Dimmed Rose Pine Foam/Pine blend
-                    func = "#a66b7d",         -- Dimmed Rose Pine Love/Rose
-                    string = "#b98c6b",       -- Dimmed Rose Pine Gold
-                    number = "#af8051",       -- Dimmer Gold/Orange
-                    property = "#9b9aac",     -- Dimmer Subtle/Text
-                    constant = "#8e8eaf",     -- Dimmer Iris/Text
-                    parameter = "#9b7f9d",    -- Dimmer Iris/Love
-                    operator = "#78879b",     -- Dimmer Pine/Subtle
-                    keyword = "#5b7a91",      -- Dimmer Pine
+                    builtin = "#7c9baa",   -- Dimmed Rose Pine Foam/Pine blend
+                    func = "#a66b7d",      -- Dimmed Rose Pine Love/Rose
+                    string = "#b98c6b",    -- Dimmed Rose Pine Gold
+                    number = "#af8051",    -- Dimmer Gold/Orange
+                    property = "#9b9aac",  -- Dimmer Subtle/Text
+                    constant = "#8e8eaf",  -- Dimmer Iris/Text
+                    parameter = "#9b7f9d", -- Dimmer Iris/Love
+                    operator = "#78879b",  -- Dimmer Pine/Subtle
+                    keyword = "#5b7a91",   -- Dimmer Pine
 
                     -- Visual States
-                    visual = "#2b2f34",       -- A very dark, subtle selection color
-                    search = "#303d4f",       -- Darker search highlight
+                    visual = "#2b2f34", -- A very dark, subtle selection color
+                    search = "#303d4f", -- Darker search highlight
 
                     -- Feedback / Indicators
-                    error = "#bf5069",        -- Dimmer Rose Pine Love
-                    warning = "#cc9d63",      -- Dimmer Rose Pine Gold
-                    hint = "#677fc1",         -- Dimmer Rose Pine Iris
-                    plus = "#6b8c56",         -- Dimmed green (adjusting your original)
-                    delta = "#cc9d63",        -- Same as warning for consistency, or adjust as needed
-                    type = "#7a9097",         -- Dimmer Foam/Subtle
+                    error = "#bf5069",   -- Dimmer Rose Pine Love
+                    warning = "#cc9d63", -- Dimmer Rose Pine Gold
+                    hint = "#677fc1",    -- Dimmer Rose Pine Iris
+                    plus = "#6b8c56",    -- Dimmed green (adjusting your original)
+                    delta = "#cc9d63",   -- Same as warning for consistency, or adjust as needed
+                    type = "#7a9097",    -- Dimmer Foam/Subtle
                 }
             })
         end
     },
+
+    {
+        "neanias/everforest-nvim",
+        enabled = false,
+        version = false,
+        lazy = false,
+        priority = 1000, -- make sure to load this before all the other start plugins
+        -- Optional; default configuration will be used if setup isn't called.
+        config = function()
+            require("everforest").setup({
+                ---Controls the "hardness" of the background. Options are "soft", "medium" or "hard".
+                ---Default is "medium".
+                background = "medium",
+                ---How much of the background should be transparent. 2 will have more UI
+                ---components be transparent (e.g. status line background)
+                transparent_background_level = 2,
+                ---Whether italics should be used for keywords and more.
+                italics = false,
+                ---Disable italic fonts for comments. Comments are in italics by default, set
+                ---this to `true` to make them _not_ italic!
+                disable_italic_comments = false,
+                ---By default, the colour of the sign column background is the same as the as normal text
+                ---background, but you can use a grey background by setting this to `"grey"`.
+                sign_column_background = "none",
+                ---The contrast of line numbers, indent lines, etc. Options are `"high"` or
+                ---`"low"` (default).
+                ui_contrast = "low",
+                ---Dim inactive windows. Only works in Neovim. Can look a bit weird with Telescope.
+                ---
+                ---When this option is used in conjunction with show_eob set to `false`, the
+                ---end of the buffer will only be hidden inside the active window. Inside
+                ---inactive windows, the end of buffer filler characters will be visible in
+                ---dimmed symbols. This is due to the way Vim and Neovim handle `EndOfBuffer`.
+                dim_inactive_windows = false,
+                ---Some plugins support highlighting error/warning/info/hint texts, by
+                ---default these texts are only underlined, but you can use this option to
+                ---also highlight the background of them.
+                diagnostic_text_highlight = false,
+                ---Which colour the diagnostic text should be. Options are `"grey"` or `"coloured"` (default)
+                diagnostic_virtual_text = "coloured",
+                ---Some plugins support highlighting error/warning/info/hint lines, but this
+                ---feature is disabled by default in this colour scheme.
+                diagnostic_line_highlight = false,
+                ---By default, this color scheme won't colour the foreground of |spell|, instead
+                ---colored under curls will be used. If you also want to colour the foreground,
+                ---set this option to `true`.
+                spell_foreground = false,
+                ---Whether to show the EndOfBuffer highlight.
+                show_eob = true,
+                ---Style used to make floating windows stand out from other windows. `"bright"`
+                ---makes the background of these windows lighter than |hl-Normal|, whereas
+                ---`"dim"` makes it darker.
+                ---
+                ---Floating windows include for instance diagnostic pop-ups, scrollable
+                ---documentation windows from completion engines, overlay windows from
+                ---installers, etc.
+                ---
+                ---NB: This is only significant for dark backgrounds as the light palettes
+                ---have the same colour for both values in the switch.
+                float_style = "bright",
+                ---Inlay hints are special markers that are displayed inline with the code to
+                ---provide you with additional information. You can use this option to customize
+                ---the background color of inlay hints.
+                ---
+                ---Options are `"none"` or `"dimmed"`.
+                inlay_hints_background = "none",
+                ---You can override specific highlights to use other groups or a hex colour.
+                ---This function will be called with the highlights and colour palette tables.
+                ---@param highlight_groups Highlights
+                ---@param palette Palette
+                on_highlights = function(highlight_groups, palette) end,
+                ---You can override colours in the palette to use different hex colours.
+                ---This function will be called once the base and background colours have
+                ---been mixed on the palette.
+                ---@param palette Palette
+                colours_override = function(palette) end,
+            })
+        end,
+    }
 }

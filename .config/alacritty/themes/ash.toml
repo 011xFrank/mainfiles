@@ -1,0 +1,25 @@
+# Color scheme based on the provided list.
+[colors]
+# Default colors
+primary = { background = "0x000000", foreground = "0x9c9eb4" }
+
+# Cursor colors
+cursor = { text = "0x1b1b1b", cursor = "0xa6adc3" }
+
+# Selection colors
+selection = { text = "0xa6adc3", background = "0x31323c" }
+
+# Normal colors
+normal = { black = "0x000000", red = "0xbf616a", green = "0x9db89c", yellow = "0xd08770", blue = "0x8796aa", magenta = "0xe77f88", cyan = "0x8dd3c3", white = "0x9c9eb4" }
+
+# Bright colors
+bright = { black = "0x555873", red = "0xe77f88", green = "0x8dd3c3", yellow = "0xf0c674", blue = "0x96a8ad", magenta = "0xbc735c", cyan = "0x79a0aa", white = "0xa6adc3" }
+
+# Indexed colors
+# The provided list contains an indexed color for 16, but this should be placed in the extended section.
+# alacritty doesn't support an `indexed_colors` section like this.
+# You can use `extended_colors` for these, or simply add them as part of the `normal` and `bright` sections if they have a name.
+# As the provided list just gives a number, we'll place it in the extended section.
+indexed_colors = [
+    { index = 16, color = "0xbc735c" }
+]

@@ -1,0 +1,28 @@
+import = [
+  "~/mainfiles/.config/alacritty/themes/ash.toml"
+]
+
+[font]
+# normal = { family = "caskaydiacove nfm", style = "Semibold" }
+# bold = { family = "caskaydiacove nfm", style = "Bold" }
+# italic = { family = "caskaydiacove nfm", style = "Italic" }
+# bold_italic = { family = "caskaydiacove nfm", style = "Bold Italic" }
+# size = 8.5
+# offset.x = 0
+# offset.y = 2
+
+normal = { family = "JetbrainsMono NF", style = "Bold" }
+bold = { family = "JetbrainsMono NF", style = "Bold" }
+italic = { family = "JetbrainsMono NF", style = "Italic" }
+bold_italic = { family = "JetbrainsMono NF", style = "Bold Italic" }
+size = 8
+offset.x = 0
+offset.y = 2
+
+
+[window]
+padding = { x = 10, y = 10 }
+opacity = 0.8
+
+[cursor]
+style = "block"

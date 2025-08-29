@@ -28,7 +28,7 @@ return {
             },
             {
                 "<leader>hc",
-                function ()
+                function()
                     harpoon:list():clear()
                 end
             }
