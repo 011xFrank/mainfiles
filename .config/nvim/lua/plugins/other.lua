@@ -2,6 +2,7 @@ return {
     {
         'echasnovski/mini.icons', version = '*'
     },
+
     {
         "tpope/vim-sleuth"
     },
@@ -204,5 +205,5 @@ return {
         end
     },
 
-    { { "shortcuts/no-neck-pain.nvim", version = "*" } }
+    { { "shortcuts/no-neck-pain.nvim", version = "*" } },
 }

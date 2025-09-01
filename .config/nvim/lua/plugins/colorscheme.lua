@@ -1,7 +1,7 @@
 return {
     {
         "sainnhe/gruvbox-material",
-        enabled = false,
+        -- enabled = false,
         lazy = false,
         priority = 1000,
         config = function()
@@ -40,7 +40,7 @@ return {
 
     {
         "drewxs/ash.nvim",
-        -- enabled = false,
+        enabled = false,
         lazy = false,
         priority = 1000,
         config = function()
