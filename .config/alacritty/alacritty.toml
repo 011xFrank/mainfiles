@@ -10,7 +10,7 @@ bold_italic = { family = "FiraCode Nerd Font", style = "Bold Italic" }
 size = 8
 offset.x = 0
 offset.y = 2
-glyph_offset.y = 2
+glyph_offset.y = 1
 
 
 [window]

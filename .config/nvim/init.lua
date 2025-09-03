@@ -5,7 +5,8 @@ local function color_scheme(color)
     vim.cmd.colorscheme(color)
 end
 
-color_scheme("gruvbox-material")
+-- color_scheme("gruvbox-material")
+color_scheme("gruvbox")
 -- color_scheme("everforest")
 -- color_scheme("ash")
 -- color_scheme("vague")
