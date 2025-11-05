@@ -1,21 +1,5 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="robbyrussell"
-
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-
-source $ZSH/oh-my-zsh.sh
 
 alias q="exit"
 alias tm="tmux"
@@ -73,8 +57,34 @@ alias rnginx='./restart_nginx.sh'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source <(fzf --zsh)
 
+# 1. Define colors (optional, but makes it much clearer)
+# ANSI Color Codes
+export ZSH_BLUE="%{$fg[blue]%}"
+export ZSH_GREEN="%{$fg[green]%}"
+export ZSH_RED="%{$fg[red]%}"
+export ZSH_YELLOW="%{$fg[yellow]%}"
+export ZSH_NO_COLOR="%{$reset_color%}"
 
-export PATH="/home/doodah/.config/herd-lite/bin:$PATH"
-export PHP_INI_SCAN_DIR="/home/doodah/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
-export PATH="/home/frank/.config/herd-lite/bin:$PATH"
-export PHP_INI_SCAN_DIR="/home/frank/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+# 2. Configure Git status info (Crucial for any modern prompt)
+# Load Zsh's built-in Git functions
+autoload -Uz vcs_info
+precmd_functions+=(vcs_info)
+setopt prompt_subst
+
+# Configure vcs_info to get the branch name/status
+zstyle ':vcs_info:*' formats ' on (%b%u%c)'
+zstyle ':vcs_info:*' actionformats ' on (%b|%a%u%c)'
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr '±' # +/- sign for unstaged changes
+zstyle ':vcs_info:*' stagedstr '!' # ! sign for staged changes
+# The final Git string will be $vcs_info_msg_0_
+
+# 3. Set the PROMPT variable
+# Components:
+# ${ZSH_GREEN}%n       -> Username
+# @${ZSH_BLUE}%m       -> @Hostname
+# ${ZSH_NO_COLOR}      -> Reset color
+# %~                   -> Current directory (truncated)
+# ${ZSH_YELLOW}%(1)..$vcs_info_msg_0_... -> Git status (only shows if in a git repo)
+# ${ZSH_GREEN}$       -> The prompt marker
+PROMPT='${ZSH_GREEN}%n@%m${ZSH_NO_COLOR}:%~${ZSH_YELLOW}${(#b)vcs_info_msg_0_}${ZSH_NO_COLOR} ${ZSH_GREEN}$ ${ZSH_NO_COLOR}'
