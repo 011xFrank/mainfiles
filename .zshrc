@@ -56,35 +56,3 @@ alias rnginx='./restart_nginx.sh'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source <(fzf --zsh)
-
-# 1. Define colors (optional, but makes it much clearer)
-# ANSI Color Codes
-export ZSH_BLUE="%{$fg[blue]%}"
-export ZSH_GREEN="%{$fg[green]%}"
-export ZSH_RED="%{$fg[red]%}"
-export ZSH_YELLOW="%{$fg[yellow]%}"
-export ZSH_NO_COLOR="%{$reset_color%}"
-
-# 2. Configure Git status info (Crucial for any modern prompt)
-# Load Zsh's built-in Git functions
-autoload -Uz vcs_info
-precmd_functions+=(vcs_info)
-setopt prompt_subst
-
-# Configure vcs_info to get the branch name/status
-zstyle ':vcs_info:*' formats ' on (%b%u%c)'
-zstyle ':vcs_info:*' actionformats ' on (%b|%a%u%c)'
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr '±' # +/- sign for unstaged changes
-zstyle ':vcs_info:*' stagedstr '!' # ! sign for staged changes
-# The final Git string will be $vcs_info_msg_0_
-
-# 3. Set the PROMPT variable
-# Components:
-# ${ZSH_GREEN}%n       -> Username
-# @${ZSH_BLUE}%m       -> @Hostname
-# ${ZSH_NO_COLOR}      -> Reset color
-# %~                   -> Current directory (truncated)
-# ${ZSH_YELLOW}%(1)..$vcs_info_msg_0_... -> Git status (only shows if in a git repo)
-# ${ZSH_GREEN}$       -> The prompt marker
-PROMPT='${ZSH_GREEN}%n@%m${ZSH_NO_COLOR}:%~${ZSH_YELLOW}${(#b)vcs_info_msg_0_}${ZSH_NO_COLOR} ${ZSH_GREEN}$ ${ZSH_NO_COLOR}'
