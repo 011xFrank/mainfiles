@@ -87,7 +87,7 @@ set $ws8 "8: 八"
 set $ws9 "9: 九"
 
 assign [class="Alacritty"] $ws1
-assign [class="firefox"] $ws2
+assign [class="firefox|Brave-browser"] $ws2
 assign [class="okular"] $ws3
 assign [class="Blueman-manager|org.gnome.Nautilus|fdm|Free Download Manager"] $ws4
 
