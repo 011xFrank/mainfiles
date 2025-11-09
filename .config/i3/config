@@ -38,13 +38,13 @@ bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 10%-
 exec_always --no-startup-id xinput set-prop "SYNA30A6:00 06CB:CDEC Touchpad" "libinput Tapping Enabled" 1
 
 exec_always nitrogen --restore
-exec --no-startup-id picom
+exec_always --no-startup-id ~/.config/i3/launch_picom.sh
 
+bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono NF-9:Bold" -p " " -sb "#a13641" -b
+bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'JetbrainsMono NF-9:Bold' -sb "#a13641" -b"
 bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
 bindsym $Mod+f exec nautilus
-bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono NF-9:Bold" -b
-bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'JetbrainsMono NF-9:Bold' -b"
 
 ## Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
@@ -59,7 +59,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 exec_always --no-startup-id bash -c "~/scripts/battery-monitor.sh > /tmp/battery-monitor.log 2>&1"
 
 bindsym $mod+shift+q exec --no-startup-id zenity --question --text="Are you sure you want to SHUTDOWN?" && systemctl poweroff
-bindsym $mod+Shift+p exec --no-startup-id zenity --question --text="Are you sure you want to REBOOT?" && systemctl reboot
+bindsym $mod+Shift+r exec --no-startup-id zenity --question --text="Are you sure you want to REBOOT?" && systemctl reboot
 bindsym $mod+Shift+f fullscreen toggle
 bindsym $mod+q kill
 
@@ -75,21 +75,21 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-assign [class="alacritty"] $ws1
-assign [class="firefox"] $ws2
-assign [class="okular"] $ws3
-
 # Define names for default workspaces for which we configure key bindings later on.
-set $ws1 "1 ->   Terminal"
-set $ws2 "2 ->   Browser"
-set $ws3 "3 ->   PDF"
-set $ws4 "4 -> 󰀻 Other"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 
+assign [class="Alacritty"] $ws1
+assign [class="firefox"] $ws2
+assign [class="okular"] $ws3
+assign [class="Blueman-manager|org.gnome.Nautilus|fdm|Free Download Manager"] $ws4
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -114,10 +114,10 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+r restart
 
 # resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
+bindsym $mod+s mode "resize"
 
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -131,38 +131,45 @@ mode "resize" {
 }
 
 
+# Colors (Fsociety Theme)
+set $dark_background      #0C0C0C
+set $light_text           #E5E5E5
+set $muted_blue_grey      #1A1A1A
+set $greenish_teal        #8FCF8F
+set $deep_red_purple      #a13641
+set $golden_yellow        #CFCF70
+set $separator_color      #2E2E2E
+
+
 bar {
         colors {
-                background               #0c0904
-                focused_workspace        #504945 #fe8019 #282828
-                active_workspace         #3c3836 #b8bb26 #ebdbb2
-                inactive_workspace       #0c0904 #0c0904 #a89984
-                urgent_workspace         #3c3836 #fb4934 #fbf1c7
-                binding_mode             #3c3836 #fe8019 #fbf1c7
-                statusline               #ebdbb2
+                background $dark_background
+                statusline $light_text
+                separator  $separator_color
 
-                # background           #0a0a0
-                # focused_workspace    #31323c #a6adc3 #1e2122
-                # active_workspace     #1e2122 #9c9eb4 #c0c0d0
-                # inactive_workspace   #1e2122 #1e2122 #7f8497
-                # urgent_workspace     #1e2122 #bf616a #ffffff
-                # binding_mode         #1e2122 #d08770 #ffffff
-                # statusline           #a6adc3
+                # class               border           background       text
+                focused_workspace     $deep_red_purple $deep_red_purple $dark_background
+                active_workspace      $muted_blue_grey $muted_blue_grey $light_text
+                inactive_workspace    $dark_background $dark_background $light_text
+                urgent_workspace      $deep_red_purple $deep_red_purple $light_text
+                binding_mode          $golden_yellow   $golden_yellow   $dark_background 
         }
 
         status_command i3status
         position bottom
-        font pango:JetbrainsMono NF Bold 8
-        separator_symbol " - "
+        font pango:JetbrainsMono NF Bold 7
+        separator_symbol "--"
         output primary
 }
 
+# class                 border           background       text             indicator        child_border
+client.focused          $deep_red_purple $deep_red_purple $dark_background $deep_red_purple $deep_red_purple
+client.focused_inactive $muted_blue_grey $muted_blue_grey $light_text      $muted_blue_grey $muted_blue_grey
+client.unfocused        $dark_background $dark_background $light_text      $dark_background $dark_background
+client.urgent           $deep_red_purple $deep_red_purple $light_text      $deep_red_purple $deep_red_purple
+client.placeholder      $dark_background $dark_background $light_text      $dark_background $dark_background
 
-# class                 border  backgr. text    indicator child_border
-# client.focused          #7f8497  #222222 #7f8497 #7f8497   #7f8497    #Ash Theme
-client.focused          #fe8019   #3c3836 #fe8019  #fe8019  #fe8019    #gruvbox theme
-
-gaps inner 7
+gaps inner 15
 
 new_window none
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2

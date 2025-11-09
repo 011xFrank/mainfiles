@@ -2,9 +2,7 @@
 sudo apt update; sudo apt dist-upgrade
 
 # Install:
-sudo apt install meson zsh trash-cli i3 bat git stow curl wget nodejs npm nitrogen eza neofetch vlc tmux neovim okular cmake tree zsh whois btop acpi net-tools netdiscover pip alacritty pulseaudio gcc light ripgrep fzf brightnessctl xdotool xclip maim lxappearance
-sudo snap install nvim
-pip3 install tldr
+sudo apt install tldr meson zsh trash-cli i3 bat git stow curl wget nodejs npm nitrogen neofetch vlc tmux neovim okular cmake tree zsh whois btop acpi net-tools netdiscover pip alacritty pulseaudio gcc light ripgrep fzf brightnessctl xdotool xclip maim lxappearance
 
 chsh -s $(which zsh)
 

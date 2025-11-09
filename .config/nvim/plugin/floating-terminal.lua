@@ -53,4 +53,4 @@ local toggle_terminal = function()
 end
 
 vim.api.nvim_create_user_command("Floaterminal", toggle_terminal, {})
-vim.keymap.set({"n","t"}, "<M-t>", toggle_terminal)
+vim.keymap.set({ "n", "t" }, "<M-t>", toggle_terminal)

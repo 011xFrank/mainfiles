@@ -1,5 +1,5 @@
 import = [
-  "~/mainfiles/.config/alacritty/themes/gruvbox.toml"
+  "~/mainfiles/.config/alacritty/themes/ash.toml"
 ]
 
 [font]
@@ -7,7 +7,7 @@ normal = { family = "FiraCode Nerd Font", style = "Medium" }
 bold = { family = "FiraCode Nerd Font", style = "Bold" }
 italic = { family = "FiraCode Nerd Font", style = "Italic" }
 bold_italic = { family = "FiraCode Nerd Font", style = "Bold Italic" }
-size = 8
+size = 7
 offset.x = 0
 offset.y = 2
 glyph_offset.y = 1
@@ -15,7 +15,7 @@ glyph_offset.y = 1
 
 [window]
 padding = { x = 10, y = 10 }
-opacity = 0.8
+opacity = 0.5
 
 [cursor]
 style = "block"

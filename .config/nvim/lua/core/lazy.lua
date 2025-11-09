@@ -16,7 +16,10 @@ vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 require("lazy").setup({
 	change_detection = { enabled = false, notify = false },
-	spec = { import = "plugins" },
+	spec = {
+    {import = "plugins"},
+    {import = "plugins.lsp"}
+  },
 	ui = {
 		border = "double",
 		icons = {
