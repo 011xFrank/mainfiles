@@ -63,7 +63,8 @@ git_setup(){
         ssh-keygen -t ed25519
         ssh_key=$(cat ~/.ssh/id_ed25519.pub)
         echo "your SSH key : ${ssh_key}"
-        echo "git setup done!!"
+        read -rp "Done setting up ssh key?" ssh_setup_done
+        echo "Your choice - ${ssh_setup_done} , git setup done!!"
     fi
 }
 
