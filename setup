@@ -16,10 +16,7 @@ system_updates(){
 
 install_default_packages(){
     echo "installing packages..."
-    packages="tldr meson zsh trash-cli i3 bat git stow curl wget nodejs npm nitrogen neofetch vlc tmux okular cmake tree zsh whois btop acpi net-tools netdiscover pip alacritty pulseaudio gcc light ripgrep brightnessctl xdotool xclip maim lxappearance"
-    for pkg in $packages;do
-        sudo apt install -y "${pkg}" || echo "Warning: ${pkg} failed to install"
-    done
+    sudo apt install -y tldr meson zsh trash-cli i3 bat git stow curl wget nodejs npm nitrogen neofetch vlc tmux okular cmake tree zsh whois btop acpi net-tools netdiscover pip alacritty pulseaudio gcc light ripgrep brightnessctl xdotool xclip maim lxappearance
     echo "done installing packages!!"
 }
 
