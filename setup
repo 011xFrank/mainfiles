@@ -112,6 +112,5 @@ if [[ "${auth}" == "y" ]];then
     fi
 
     echo "setup complete..Logging out so you can switch to i3 window manager..."
-    sleep 3
     pkill -u $(whoami)
 fi

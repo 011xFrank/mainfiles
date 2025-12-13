@@ -20,6 +20,6 @@ return {
 				}
 			},
 		},
-		"nvim/nvim-lspconfig"
+		-- "nvim/nvim-lspconfig"
 	}
 }
