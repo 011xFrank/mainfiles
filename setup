@@ -3,40 +3,26 @@
 system_updates(){
     echo "updating System..."
     sudo apt update -y
-    echo "Done updating system!!"
-
-    echo "upgrading packages..."
     sudo apt full-upgrade -y
-    echo "Done upgrading packages!!"
-
-    echo "upgrading distributon..."
     sudo apt dist-upgrade -y
-    echo "Done upgrading distribution!!"
+    echo "Update finished!!"
 }
 
 install_default_packages(){
     echo "installing packages..."
     sudo apt install -y tldr meson zsh trash-cli i3 bat git stow curl wget nodejs npm nitrogen neofetch vlc tmux okular cmake tree zsh whois btop acpi net-tools netdiscover pip alacritty pulseaudio gcc light ripgrep brightnessctl xdotool xclip maim lxappearance
-    echo "done installing packages!!"
-}
-
-change_shell_to_zsh(){
-    chsh -s $(which zsh)
+    echo "Packages Installed!!"
 }
 
 picom_installation(){
     echo "Installing picom..."
-    echo "Installing picom packages..."
     sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libev-dev libx11-xcb-dev libpcre3 libpcre3-dev
     echo "Cloning picom repo..."
     git clone https://github.com/jonaburg/picom
-    echo "changing directory to picom directory..."
     cd picom
     meson --buildtype=release . build
     sudo ninja -C build install
-    echo "exiting picom directory..."
     cd ~
-    echo "exited picom directory!!"
     echo "picom installation done!!"
 }
 
@@ -60,8 +46,8 @@ git_setup(){
         ssh-keygen -t ed25519
         ssh_key=$(cat ~/.ssh/id_ed25519.pub)
         echo "your SSH key : ${ssh_key}"
-        read -rp "Done setting up ssh key?" ssh_setup_done
-        echo "Your choice - ${ssh_setup_done} , git setup done!!"
+
+        read -rp "Done setting up ssh key? (y/n) : " ssh_setup_done
     fi
 }
 
@@ -82,20 +68,20 @@ mainfiles_setup(){
 }
 
 omz_setup(){
-    ZSH_CUSTOM="/home/$(whoami)/.oh-my-zsh/custom"
+    export CHSH=yes
+    export RUNZSH=yes
+    export KEEP_ZSHRC=yes
+    ZSH_CUSTOM="${HOME}/.oh-my-zsh/custom"
 
     echo "setting up oh my zsh..."
-    export RUNZSH=no  # Don't auto-switch to zsh
-    export CHSH=no    # Don't try to change shell
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-    echo "oh my zsh installed..."
 
     echo "setting up syntax highlighting..."
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-
     echo "setting up auto suggestions..."
     git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+    echo "oh my zsh setup finished..."
 }
 
 read -rp "Start setup? (y/n) ... " auth
@@ -105,12 +91,11 @@ if [[ "${auth}" == "y" ]];then
     git_setup
 
     if ssh -T git@github.com 2>&1 | grep -qi "You've successfully authenticated"; then
-        omz_setup
         mainfiles_setup
-        change_shell_to_zsh
         picom_installation
+        omz_setup
     fi
 
-    echo "setup complete..Logging out so you can switch to i3 window manager..."
+    echo "setup complete..Logging out so you can switch to i3wm ..."
     pkill -u $(whoami)
 fi
