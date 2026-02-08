@@ -27,8 +27,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight set +10%
-bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight set 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 # Sreen brightness controls
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -45,6 +45,7 @@ bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -f
 bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
 bindsym $Mod+f exec nautilus
+bindsym $Mod+o exec okular
 
 ## Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
@@ -132,7 +133,7 @@ mode "resize" {
 
 
 # Colors (Fsociety Theme)
-set $dark_background      #05060b
+set $dark_background      #000000
 set $light_text           #768174
 set $muted_blue_grey      #1A1A1A
 set $greenish_teal        #8FCF8F
@@ -170,7 +171,7 @@ client.unfocused        $dark_background $dark_background $light_text      $dark
 client.urgent           $deep_red_purple $deep_red_purple $light_text      $deep_red_purple $deep_red_purple
 client.placeholder      $dark_background $dark_background $light_text      $dark_background $dark_background
 
-gaps inner 15
+gaps inner 6
 
 new_window none
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0

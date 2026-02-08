@@ -20,6 +20,14 @@ return {
 				}
 			},
 		},
-		-- "nvim/nvim-lspconfig"
-	}
+	},
+	config = function()
+		require("mason").setup({
+			ui = {
+				border = {
+					"╔", "═", "╗", "║", "╝", "═", "╚", "║"
+				}
+			}
+		})
+	end
 }

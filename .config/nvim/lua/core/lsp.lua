@@ -1,6 +1,8 @@
-vim.lsp.enable("lua_ls");
 vim.lsp.enable("ts_ls");
 vim.lsp.enable("bashls");
+vim.lsp.enable("lua_ls");
+vim.lsp.enable("lua_ls");
+vim.lsp.enable("intelephense");
 
 local keymap = vim.keymap -- for conciseness
 vim.api.nvim_create_autocmd("LspAttach", {

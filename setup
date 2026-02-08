@@ -85,7 +85,7 @@ omz_setup(){
 }
 
 read -rp "Start setup? (y/n) ... " auth
-if [[ "${auth}" == "y" ]];then
+if [[ "${auth}" == "y" ]]; then
     system_updates
     install_default_packages
     git_setup
