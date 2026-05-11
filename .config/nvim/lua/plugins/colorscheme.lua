@@ -1,46 +1,26 @@
 return {
     {
-        "drewxs/ash.nvim",
-        lazy = false,
+        "ember-theme/nvim",
+        name = "ember",
         priority = 1000,
         config = function()
-            require("ash").setup {
-                compile_path = vim.fn.stdpath("cache") .. "/ash",
-
-                transparent = true,   -- transparent background
-                term_colors = true,   -- terminal colors (e.g. g:terminal_color_x)
-                no_italic = false,    -- disable italics
-                no_bold = false,      -- disable bold
-                no_underline = false, -- disable underlines
-
-                -- override style groups
-                -- e.g. comments = { "italic", "bold" }
-                styles = {
-                    comments = {},
-                    conditionals = {},
-                    loops = {},
+            require("ember").setup({
+                variant            = "ember", -- "ember", "ember-soft", "ember-light", "ember-auto"
+                styles             = {
+                    comments  = { italic = true },
+                    keywords  = { bold = true },
                     functions = {},
-                    keywords = { "bold" },
-                    strings = { "italic" },
-                    variables = {},
-                    numbers = {},
-                    booleans = {},
-                    properties = {},
-                    types = {},
-                    operators = {},
+                    types     = { bold = true },
                 },
-            }
-            vim.cmd.colorscheme("ash")
-        end
-    },
+                transparent        = true,          -- transparent editor background
+                transparent_floats = nil,           -- follows `transparent` by default; set explicitly to override
+                dark_variant       = "ember",       -- used by `ember-auto` when background = "dark"
+                light_variant      = "ember-light", -- used by `ember-auto` when background = "light"
+                on_colors          = nil,           -- function(palette) - modify palette before theme builds
+                on_highlights      = nil,           -- function(highlights, theme) - modify highlight groups
+            })
 
-    --[[
-    {
-        'sainnhe/gruvbox-material'
-        config = function()
-            vim.g.gruvbox_material_transparent_background = 1
-            vim.cmd.colorscheme("gruvbox-material")
-        end
+            vim.cmd("colorscheme ember")
+        end,
     }
-    ]]
 }

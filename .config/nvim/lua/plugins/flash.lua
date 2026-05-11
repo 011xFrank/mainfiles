@@ -52,4 +52,7 @@ return {
         { "R",         mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
         { "<c-s>",     mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
     },
+    config = function()
+        vim.api.nvim_set_hl(0, "FlashLabel", { bg = "#ff5d62", fg = "#ffffff", bold = true })
+    end
 }

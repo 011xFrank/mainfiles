@@ -27,15 +27,16 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+#bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+#bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 # Sreen brightness controls
-# bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-# bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Enable touchpad tapping on startup
 exec_always --no-startup-id xinput set-prop "SYNA30A6:00 06CB:CDEC Touchpad" "libinput Tapping Enabled" 1
+#exec_always --no-startup-id brightnessctl set 100%
 
 exec_always nitrogen --restore
 exec_always --no-startup-id ~/.config/i3/launch_picom.sh
@@ -59,7 +60,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 exec_always --no-startup-id bash -c "~/scripts/battery-monitor.sh > /tmp/battery-monitor.log 2>&1"
 
-bindsym $mod+shift+q exec --no-startup-id zenity --question --text="Are you sure you want to SHUTDOWN?" && systemctl poweroff
+bindsym $mod+shift+q exec --no-startup-id pkill -u $(whoami)
 bindsym $mod+Shift+r exec --no-startup-id zenity --question --text="Are you sure you want to REBOOT?" && systemctl reboot
 bindsym $mod+Shift+f fullscreen toggle
 bindsym $mod+q kill
@@ -90,7 +91,7 @@ set $ws9 "9: 九"
 assign [class="Alacritty"] $ws1
 assign [class="firefox|Brave-browser"] $ws2
 assign [class="okular"] $ws3
-assign [class="Blueman-manager|org.gnome.Nautilus|fdm|Free Download Manager"] $ws4
+assign [class="Blueman-manager|org.gnome.Nautilus|fdm|Free Download Manager|Spotify|spotify"] $ws4
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1

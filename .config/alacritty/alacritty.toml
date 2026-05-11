@@ -3,15 +3,14 @@ import = [
 ]
 
 [font]
-normal = { family = "JetbrainsMono Nerd Font", style = "Bold" }
-bold = { family = "JetbrainsMono Nerd Font", style = "Bold" }
-italic = { family = "JetbrainsMono Nerd Font", style = "Bold" }
-bold_italic = { family = "JetbrainsMono Nerd Font", style = "Bold" }
+normal = { family = "FiraCode Nerd Font", style = "Medium" }
+bold = { family = "FiraCode Nerd Font", style = "Bold" }
+italic = { family = "FiraCode Nerd Font", style = "Bold" }
+bold_italic = { family = "FiraCode Nerd Font", style = "Bold" }
 size = 7
 offset.x = 0
 offset.y = 2
 glyph_offset.y = 1
-
 
 [window]
 padding = { x = 10, y = 10 }
