@@ -44,7 +44,7 @@ exec_always --no-startup-id ~/.config/i3/launch_picom.sh
 bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono NF-9:Bold" -p " " -sb "#a13641" -b
 bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'JetbrainsMono NF-9:Bold' -sb "#a13641" -b"
 bindsym $mod+Return exec alacritty
-bindsym $mod+b exec firefox
+bindsym $mod+b exec brave-browser
 bindsym $Mod+f exec nautilus
 bindsym $Mod+o exec okular
 
@@ -91,7 +91,9 @@ set $ws9 "9: 九"
 assign [class="Alacritty"] $ws1
 assign [class="firefox|Brave-browser"] $ws2
 assign [class="okular"] $ws3
-assign [class="Blueman-manager|org.gnome.Nautilus|fdm|Free Download Manager|Spotify|spotify"] $ws4
+assign [class="Blueman-manager|org.gnome.Nautilus|fdm|Free Download Manager"] $ws4
+assign [class="install4j-burp-StartBurp|install4j-burp-StartBurp"] $ws4
+assign [class="Spotify|spotify"] $ws6
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1

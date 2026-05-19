@@ -40,6 +40,7 @@ alias start='sudo systemctl start'
 alias stop='sudo systemctl stop'
 alias restart='sudo systemctl restart'
 alias rnginx='./restart_nginx.sh'
+alias burp='./BurpSuite/BurpSuite &'
 
 fn() {
     local selected_file

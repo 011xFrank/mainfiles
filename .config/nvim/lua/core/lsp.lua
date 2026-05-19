@@ -1,8 +1,9 @@
 vim.lsp.enable("ts_ls");
 vim.lsp.enable("bashls");
 vim.lsp.enable("lua_ls");
-vim.lsp.enable("lua_ls");
 vim.lsp.enable("intelephense");
+vim.lsp.enable("pyright");
+vim.lsp.enable("clangd");
 
 local keymap = vim.keymap -- for conciseness
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -58,17 +59,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end,
 })
 
--- vim.lsp.inlay_hint.enable(true)
-
-local severity = vim.diagnostic.severity
+vim.lsp.inlay_hint.enable(true)
 
 vim.diagnostic.config({
         signs = {
                 text = {
-                        [severity.ERROR] = " ",
-                        [severity.WARN] = " ",
-                        [severity.HINT] = "󰠠 ",
-                        [severity.INFO] = " ",
+                        [vim.diagnostic.severity.ERROR] = " ",
+                        [vim.diagnostic.severity.WARN] = " ",
+                        [vim.diagnostic.severity.HINT] = "󰠠 ",
+                        [vim.diagnostic.severity.INFO] = " ",
                 },
         },
 })

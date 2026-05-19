@@ -23,7 +23,7 @@ picom_installation(){
     meson --buildtype=release . build
     sudo ninja -C build install
     cd ~
-    echo "picom installation done!!"
+    read -rp "Picom installation done" continue
 }
 
 git_setup(){
@@ -49,6 +49,8 @@ git_setup(){
 
         read -rp "Done setting up ssh key? (y/n) : " ssh_setup_done
     fi
+
+    read -rp "Git setup done" continue
 }
 
 mainfiles_setup(){
@@ -62,9 +64,9 @@ mainfiles_setup(){
     fi
 
     stow .
-
-    echo "mainfiles setup complete!!"
     cd ~
+
+    read -rp "mainfiles setup complete!!" continue
 }
 
 omz_setup(){
@@ -78,10 +80,16 @@ omz_setup(){
 
     git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
     git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
 
-    echo "oh my zsh setup finished..."
+    read -rp "omz setup finished..." continue
+}
+
+neovim_setup(){
+    read -rp "Download neovim app image..press and enter any key to continue > " continue
+    chmod u+x ~/Downloads/nvim-linux-x86_64.appimage
+    sudo mv ~/Downloads/nvim-linux-x86_64.appimage /usr/bin/nvim
+    read -rp "neovim setup done!!" continue
 }
 
 read -rp "Start setup? (y/n) ... " auth
@@ -94,8 +102,9 @@ if [[ "${auth}" == "y" ]]; then
         mainfiles_setup
         picom_installation
         omz_setup
+        neovim_setup
     fi
 
-    echo "setup complete..Logging out so you can switch to i3wm ..."
+    read -rp "setup complete..Logging out so you can switch to i3wm ..." continue
     pkill -u $(whoami)
 fi
