@@ -63,10 +63,10 @@ return {
                     ["<CR>"] = { "accept", "fallback" },
                 },
                 cmdline = {
-                    enabled = false,
+                    enabled = true,
                     completion = { menu = { auto_show = true } },
                     keymap = {
-                        ["<C-Space>"] = { "accept_and_enter", "fallback" },
+                        ["<C-Space>"] = { "select_and_accept", "fallback" },
                     },
                 },
                 completion = {

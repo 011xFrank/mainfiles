@@ -1,6 +1,16 @@
 return {
     {
+        "oskarnurm/koda.nvim",
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000, -- make sure to load this before all the other start plugins
+        config = function()
+            require("koda").setup({ transparent = true })
+            vim.cmd("colorscheme koda-dark")
+        end,
+    },
+    {
         "ember-theme/nvim",
+        enabled = false,
         name = "ember",
         priority = 1000,
         config = function()
@@ -20,7 +30,7 @@ return {
                 on_highlights      = nil,           -- function(highlights, theme) - modify highlight groups
             })
 
-            vim.cmd("colorscheme ember")
+            -- vim.cmd("colorscheme ember")
         end,
     }
 }
