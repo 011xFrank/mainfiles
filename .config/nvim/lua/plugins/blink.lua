@@ -8,10 +8,11 @@ return {
         event = "InsertEnter",
         version = "*",
         config = function()
-            vim.cmd('highlight Pmenu guibg=none')
-            vim.cmd('highlight PmenuExtra guibg=none')
-            vim.cmd('highlight FloatBorder guibg=none')
-            vim.cmd('highlight NormalFloat guibg=none')
+            -- local cmd = vim.cmd
+            -- cmd('highlight Pmenu guibg=none')
+            -- cmd('highlight PmenuExtra guibg=none')
+            -- cmd('highlight FloatBorder guibg=none')
+            -- cmd('highlight NormalFloat guibg=none')
             require("blink.cmp").setup({
                 snippets = { preset = "luasnip" },
                 signature = { enabled = true },
@@ -29,45 +30,11 @@ return {
                     ["<C-e>"] = { "hide", "fallback" },
 
                     -- Confirm selection (matching your C-Space behavior)
-                    ["<C-Space>"] = { "accept", "fallback" },
+                    ["<C-Space>"] = { "accept_and_enter", "fallback" },
 
                     -- Tab navigation (matching your Tab behavior)
-                    ["<Tab>"] = {
-                        function(cmp)
-                            if cmp.is_visible() then
-                                return cmp.select_next()
-                            elseif require("luasnip").expand_or_jumpable() then
-                                return require("luasnip").expand_or_jump()
-                            else
-                                return false -- fallback
-                            end
-                        end,
-                        "fallback"
-                    },
-
-                    -- Shift-Tab navigation (matching your S-Tab behavior)
-                    ["<S-Tab>"] = {
-                        function(cmp)
-                            if cmp.is_visible() then
-                                return cmp.select_prev()
-                            elseif require("luasnip").jumpable(-1) then
-                                return require("luasnip").jump(-1)
-                            else
-                                return false -- fallback
-                            end
-                        end,
-                        "fallback"
-                    },
-
-                    -- Enter key (matching your CR behavior - only confirm if manually selected)
-                    ["<CR>"] = { "accept", "fallback" },
-                },
-                cmdline = {
-                    enabled = true,
-                    completion = { menu = { auto_show = true } },
-                    keymap = {
-                        ["<C-Space>"] = { "select_and_accept", "fallback" },
-                    },
+                    ['<S-Tab>'] = { 'select_prev', 'fallback' },
+                    ['<Tab>'] = { 'select_next', 'fallback' },
                 },
                 completion = {
                     menu = {
@@ -98,8 +65,14 @@ return {
                             enabled = true,
                         },
                     },
+                    list = {
+                        selection = {
+                            preselect = true, auto_insert = false
+                        }
+                    }
                 },
             })
+
             require("luasnip.loaders.from_vscode").lazy_load()
         end,
     },

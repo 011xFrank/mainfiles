@@ -1,20 +1,22 @@
+[general]
 import = [
-  "~/mainfiles/.config/alacritty/themes/ash.toml"
+  "~/mainfiles/.config/alacritty/themes/koda.toml"
 ]
 
 [font]
-normal = { family = "FiraCode Nerd Font", style = "Medium" }
-bold = { family = "FiraCode Nerd Font", style = "Bold" }
-italic = { family = "FiraCode Nerd Font", style = "Bold" }
-bold_italic = { family = "FiraCode Nerd Font", style = "Bold" }
-size = 7
+normal = { family = "Maple Mono NF", style = "Semibold" }
+bold = { family = "Maple Mono NF", style = "Bold" }
+italic = { family = "Maple Mono NF", style = "Bold" }
+bold_italic = { family = "Maple Mono NF", style = "Bold" }
+size = 8
 offset.x = 0
 offset.y = 2
-glyph_offset.y = 1
 
 [window]
 padding = { x = 10, y = 10 }
-opacity = 0.8
+opacity = 0.97
+decorations = "none"
+startup_mode = "maximized"
 
 [cursor]
 style = "block"

@@ -4,7 +4,11 @@ return {
 		ensure_installed = {
 			"ts_ls",
 			"bashls",
-			"lua_ls"
+			"lua_ls",
+			"clangd",
+			"pyright",
+			"phpactor",
+			"intelephense"
 		}
 	},
 	dependencies = {

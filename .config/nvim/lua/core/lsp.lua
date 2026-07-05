@@ -4,6 +4,7 @@ vim.lsp.enable("lua_ls");
 vim.lsp.enable("intelephense");
 vim.lsp.enable("pyright");
 vim.lsp.enable("clangd");
+vim.lsp.enable("phpactor");
 
 local keymap = vim.keymap -- for conciseness
 vim.api.nvim_create_autocmd("LspAttach", {
