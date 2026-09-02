@@ -9,10 +9,16 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+#plugins=(
+#  git
+#  zsh-autosuggestions
+#  zsh-autocomplete
+#  zsh-syntax-highlighting
+# )
+
 plugins=(
   git
   zsh-autosuggestions
-  zsh-autocomplete
   zsh-syntax-highlighting
  )
 
@@ -51,7 +57,7 @@ alias burp='./BurpSuite/BurpSuite &'
 
 fn() {
     local selected_file
-    selected_file=$(fzf)
+    selected_file=$(fzf --select-1)
     if [ -n "$selected_file" ]; then
         n "$selected_file"
     fi
@@ -59,7 +65,7 @@ fn() {
 
 fd() {
     local selected_directory
-    selected_directory=$(find ~/ -type d \( -path '*/.git' -prune \) -o -print 2>/dev/null | fzf)
+    selected_directory=$(find ~/ -type d \( -path '*/.git' -prune \) -o -print 2>/dev/null | fzf --select-1)
     if [ -n "$selected_directory" ]; then
         cd "$selected_directory"
     fi
