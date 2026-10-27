@@ -1,3 +1,8 @@
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+  exec startx
+fi
+
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -26,11 +31,14 @@ source $ZSH/oh-my-zsh.sh
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export FZF_DEFAULT_OPTS='--color=gutter:#080607,bg+:#080607'
+export FZF_DEFAULT_OPTS='
+--color=gutter:#080607,bg+:#080607
+--bind "ctrl-space:accept"
+'
 
 alias q="exit"
 alias tm="tmux"
-alias cat="batcat"
+alias cat="bat"
 alias c="clear"
 alias g="git"
 alias gl="git log --oneline --decorate --graph --all"
@@ -54,6 +62,13 @@ alias stop='sudo systemctl stop'
 alias restart='sudo systemctl restart'
 alias rnginx='./restart_nginx.sh'
 alias burp='./BurpSuite/BurpSuite &'
+alias vu='pactl set-sink-volume @DEFAULT_SINK@ +20% && $refresh_i3status'
+alias telegram='./Downloads/td-setup-linux-x64-7.2.9/Telegram/Telegram &'
+alias run='./run'
+
+list-font() {
+    fc-list : family | sort -u | grep -i "$1"
+}
 
 fn() {
     local selected_file

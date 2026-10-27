@@ -39,19 +39,21 @@ exec_always --no-startup-id xinput set-prop "SYNA30A6:00 06CB:CDEC Touchpad" "li
 #exec_always --no-startup-id brightnessctl set 100%
 
 exec_always nitrogen --restore
-exec_always --no-startup-id ~/.config/i3/launch_picom.sh
+#exec_always --no-startup-id ~/.config/i3/launch_picom.sh
+exec --no-startup-id udiskie &
+exec --no-startup-id dunst &
 
-bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono NF-9:Bold" -p " " -sb "#a13641" -b
+bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono NF-9:Bold" -p " " -b
 bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'JetbrainsMono NF-9:Bold' -sb "#a13641" -b"
 bindsym $mod+Return exec alacritty
-bindsym $mod+b exec brave-browser
+bindsym $mod+b exec brave
 bindsym $Mod+f exec nautilus
 bindsym $Mod+o exec okular
 
 ## Screenshots
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date +%Y-%m-%d_%H-%M-%S).jpg"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date +%Y-%m-%d_%H-%M-%S).jpg"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date +%Y-%m-%d_%H-%M-%S).jpg"
 
 ## Clipboard Screenshots
 bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
@@ -61,6 +63,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 exec_always --no-startup-id bash -c "~/scripts/battery-monitor.sh > /tmp/battery-monitor.log 2>&1"
 
 bindsym $mod+shift+q exec --no-startup-id pkill -u $(whoami)
+bindsym $mod+Shift+s exec --no-startup-id systemctl poweroff -i
 bindsym $mod+Shift+r exec --no-startup-id zenity --question --text="Are you sure you want to REBOOT?" && systemctl reboot
 bindsym $mod+Shift+f fullscreen toggle
 bindsym $mod+q kill
@@ -78,15 +81,15 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Define names for default workspaces for which we configure key bindings later on.
-set $ws1 "1: 一"
-set $ws2 "2: 二"
-set $ws3 "3: 三"
-set $ws4 "4: 四"
-set $ws5 "5: 五"
-set $ws6 "6: 六"
-set $ws7 "7: 七"
-set $ws8 "8: 八"
-set $ws9 "9: 九"
+set $ws1 "1:一"
+set $ws2 "2:二"
+set $ws3 "3:三"
+set $ws4 "4:四"
+set $ws5 "5:五"
+set $ws6 "6:六"
+set $ws7 "7:七"
+set $ws8 "8:八"
+set $ws9 "9:九"
 
 assign [class="Alacritty"] $ws1
 assign [class="Brave-browser"] $ws2
@@ -140,7 +143,7 @@ set $dark_background      #000000
 set $light_text           #768174
 set $muted_blue_grey      #1A1A1A
 set $greenish_teal        #8FCF8F
-set $deep_red_purple      #a13641
+set $deep_red_purple      #ec5f67
 set $golden_yellow        #CFCF70
 set $separator_color      #2E2E2E
 
@@ -152,14 +155,15 @@ bar {
                 separator  $separator_color
 
                 # class               border           background       text
-                focused_workspace     $deep_red_purple $deep_red_purple $dark_background
+                focused_workspace     $muted_blue_grey $muted_blue_greyc $light_text
                 active_workspace      $muted_blue_grey $muted_blue_grey $light_text
                 inactive_workspace    $dark_background $dark_background $light_text
-                urgent_workspace      $deep_red_purple $deep_red_purple $light_text
-                binding_mode          $golden_yellow   $golden_yellow   $dark_background 
+                urgent_workspace      $deep_red_purple $deep_red_purple $muted_blue_grey
+                binding_mode          $golden_yellow   $golden_yellow   $dark_background
         }
 
         status_command i3status
+        #status_command ~/scripts/power_status.sh
         position bottom
         font pango:JetbrainsMono NF Bold 7
         separator_symbol "-"
@@ -168,7 +172,7 @@ bar {
 }
 
 # class                 border           background       text             indicator        child_border
-client.focused          $deep_red_purple $deep_red_purple $dark_background $deep_red_purple $deep_red_purple
+client.focused          $muted_blue_grey $deep_red_purple $dark_background $muted_blue_grey $muted_blue_grey
 client.focused_inactive $muted_blue_grey $muted_blue_grey $light_text      $muted_blue_grey $muted_blue_grey
 client.unfocused        $dark_background $dark_background $light_text      $dark_background $dark_background
 client.urgent           $deep_red_purple $deep_red_purple $light_text      $deep_red_purple $deep_red_purple
@@ -177,4 +181,4 @@ client.placeholder      $dark_background $dark_background $light_text      $dark
 gaps inner 6
 
 new_window none
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2

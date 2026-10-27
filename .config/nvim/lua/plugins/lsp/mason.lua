@@ -1,5 +1,22 @@
 return {
 	"williamboman/mason-lspconfig.nvim",
+	dependencies = {
+		{
+			"williamboman/mason.nvim",
+			opts = {
+				ui = {
+					border = {
+						"╔", "═", "╗", "║", "╝", "═", "╚", "║",
+					},
+					icons = {
+						package_pending = " ",
+						package_installed = "󰄳 ",
+						package_uninstalled = " ",
+					},
+				},
+			},
+		},
+	},
 	opts = {
 		ensure_installed = {
 			"ts_ls",
@@ -8,30 +25,8 @@ return {
 			"clangd",
 			"pyright",
 			"phpactor",
-			"intelephense"
-		}
-	},
-	dependencies = {
-		{
-			"williamboman/mason.nvim",
-			opts = {
-				ui = {
-					icons = {
-						package_pending = " ",
-						package_installed = "󰄳 ",
-						package_uninstalled = " ",
-					}
-				}
-			},
+			"intelephense",
+			"rust_analyzer", -- Fixed: underscore instead of hyphen
 		},
 	},
-	config = function()
-		require("mason").setup({
-			ui = {
-				border = {
-					"╔", "═", "╗", "║", "╝", "═", "╚", "║"
-				}
-			}
-		})
-	end
 }

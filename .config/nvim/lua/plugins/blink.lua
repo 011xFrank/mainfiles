@@ -30,11 +30,11 @@ return {
                     ["<C-e>"] = { "hide", "fallback" },
 
                     -- Confirm selection (matching your C-Space behavior)
-                    ["<C-Space>"] = { "accept_and_enter", "fallback" },
+                    ["<C-Space>"] = { "select_and_accept", "fallback" },
 
                     -- Tab navigation (matching your Tab behavior)
-                    ['<S-Tab>'] = { 'select_prev', 'fallback' },
-                    ['<Tab>'] = { 'select_next', 'fallback' },
+                    ['<C-k>'] = { 'select_prev', 'fallback' },
+                    ['<C-j>'] = { 'select_next', 'fallback' },
                 },
                 completion = {
                     menu = {

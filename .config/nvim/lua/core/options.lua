@@ -1,8 +1,14 @@
 local opt = vim.opt
 
+opt.foldcolumn = "1" -- show a fold column ("auto:9" for dynamic width)
+opt.foldenable = true
+opt.foldlevel = 99 -- start with everything open
+opt.foldlevelstart = 99
+opt.foldmethod = "indent"
+
 opt.fileencoding = "utf-8"
 opt.list = true
-opt.listchars = { trail = '-', tab = '--', space = ' ' }
+opt.listchars = { trail = "-", tab = "--", space = " " }
 opt.background = "dark"
 opt.clipboard:append("unnamedplus")
 opt.fillchars = { eob = " " }
@@ -49,7 +55,7 @@ opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.compatible = false
 
 -- Enable filetype plugins
-vim.cmd('filetype plugin on')
+vim.cmd("filetype plugin on")
 
 -- Enable syntax highlighting
-vim.cmd('syntax on')
+vim.cmd("syntax on")

@@ -4,13 +4,16 @@ import = [
 ]
 
 [font]
-normal = { family = "JetbrainsMono Nerd Font", style = "Bold" }
-bold = { family = "JetbrainsMono Nerd Font", style = "Bold" }
-italic = { family = "JetbrainsMono Nerd Font", style = "Bold" }
-bold_italic = { family = "JetbrainsMono Nerd Font", style = "Bold" }
-size = 7.5
+normal = { family = "FiraCode Nerd Font", style = "Medium" }
+bold = { family = "FiraCode Nerd Font", style = "Bold" }
+italic = { family = "FiraCode Nerd Font", style = "Italic" }
+bold_italic = { family = "FiraCode Nerd Font", style = "Bold" }
+size = 8
 offset.x = 0
-offset.y = 5
+offset.y = 2
+
+# Shifting the glyph down by 2 pixels centers it perfectly within the 4px extra height
+glyph_offset = { x = 0, y = 1 }
 
 [window]
 padding = { x = 10, y = 10 }
