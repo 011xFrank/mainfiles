@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 opt.foldcolumn = "1" -- show a fold column ("auto:9" for dynamic width)
-opt.foldenable = true
+opt.foldenable = false
 opt.foldlevel = 99 -- start with everything open
 opt.foldlevelstart = 99
 opt.foldmethod = "indent"

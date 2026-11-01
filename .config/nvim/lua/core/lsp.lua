@@ -53,7 +53,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end, opts) -- jump to next diagnostic in buffer
 
 		opts.desc = "Show documentation for what is under cursor"
-		keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+		keymap.set("n", "K", function()
+			vim.lsp.buf.hover({ border = "rounded" })
+		end, opts)
 
 		opts.desc = "Restart LSP"
 		keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
@@ -71,4 +73,12 @@ vim.diagnostic.config({
 			[vim.diagnostic.severity.INFO] = " ",
 		},
 	},
+})
+
+vim.lsp.buf.hover({
+	border = "rounded",
+})
+
+vim.lsp.buf.signature_help({
+	border = "rounded",
 })

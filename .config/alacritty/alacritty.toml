@@ -16,7 +16,7 @@ offset.y = 2
 glyph_offset = { x = 0, y = 1 }
 
 [window]
-padding = { x = 10, y = 10 }
+padding = { x = 0, y = 0 }
 opacity = 0.97
 decorations = "none"
 startup_mode = "maximized"
