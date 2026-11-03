@@ -80,7 +80,7 @@ fn() {
 
 fd() {
     local selected_directory
-    selected_directory=$(find ~/ -type d \( -path '*/.git' -prune \) -o -print 2>/dev/null | fzf --select-1)
+    selected_directory=$(find ~/ \( -path '*/.git' -prune \) -o \( -type d -print \) 2>/dev/null | fzf --select-1)
     if [ -n "$selected_directory" ]; then
         cd "$selected_directory"
     fi

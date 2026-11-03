@@ -9,9 +9,9 @@ vim.cmd("colorscheme vague")
 -- vim.cmd("colorscheme ember")
 -- vim.cmd("colorscheme ash")
 -- vim.cmd("colorscheme kanagawa-dragon")
+-- vim.cmd("colorscheme rose-pine")
 -- vim.cmd("colorscheme oxide")
 -- vim.cmd("colorscheme catppuccin-nvim")
---
 
 -- 1. Create a helper function to fetch active LSP servers for the current buffer
 _G.get_lsp_status = function()
