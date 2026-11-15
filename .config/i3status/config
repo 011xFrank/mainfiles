@@ -1,76 +1,67 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
 general {
-    interval        = 5
-    colors          = true
-    color_good      = '#7f9477'   # sage - soft green, comfortable for "OK" state
-    color_degraded  = '#d0b97d'   # warm amber-gold, gently warns without strain
-    color_bad       = '#bf616a'   # crimson - subdued red, noticeable but not harsh
+        colors = true
+        interval = 5
 }
 
-order += "wireless wlp0s20f3"
-order += "ethernet enp0s0"
-order += "battery 0"
-order += "cpu_usage 0"
-order += "cpu_temperature 0"
-order += "memory"
 order += "volume master"
+order += "battery all"
 order += "disk /"
+order += "memory"
+order += "load"
 order += "tztime local"
 
-wireless wlp0s20f3 {
-    format_up = "W: (%quality at %essid) %ip"
-    format_down = "W: down"
+wireless _first_ {
+        format_up = "W: (%quality at %essid) %ip"
+        format_down = "W: down"
 }
 
-ethernet enp0s0 {
-    # if you use %speed, i3status requires root privileges
-    format_up = "%ip (%speed)"
-    format_down = ""
-}
-
-battery 0 {
-    format = "%status %percentage %remaining"
-    format_down = ""
-    last_full_capacity = true
-    integer_battery_capacity = true
-    low_threshold = 11
-    threshold_type = percentage
-    hide_seconds = true
-    status_chr = " "
-    status_bat = " "
-    status_unk = " "
-    status_full = " "
-}
-
-cpu_usage {
-    format = " %usage"
-}
-
-cpu_temperature 0 {
-    format = " %degrees°C"
-}
-
-memory {
-    format = " %used"
-    threshold_degraded = "10%"
-    threshold_critical = "5%"
-    unit = "Gi"
+ethernet _first_ {
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
 }
 
 volume master {
-    format = " %volume"
-    format_muted = " "
-    device = "default"
-    mixer = "Master"
-    mixer_idx = 0
+        format = "%volume"
+        format_muted = "♪ muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
 }
 
+battery all {
+        format = "%status %percentage %remaining %emptytime"
+        format_down = "No battery"
+        last_full_capacity = true
+        integer_battery_capacity = true
+        status_chr = "CHARGING"
+        status_bat = "BATTERY"
+        status_unk = "UNKNOWN SOURCE"
+        status_full = "FULL"
+        low_threshold = 15
+        threshold_type = time
+}
 disk "/" {
-    format = " %avail"
-    prefix_type = custom
-    low_threshold = 20
-    threshold_type = percentage_avail
+        format = "%avail"
+}
+
+load {
+        format = "%1min"
+}
+
+memory {
+        format = "%used / %available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-    format = "%e %A %B -  %H:%M:%S"
+        format = "%d-%m-%Y %H:%M:%S"
 }

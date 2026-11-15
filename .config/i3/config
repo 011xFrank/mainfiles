@@ -20,6 +20,8 @@ exec --no-startup-id dex --autostart --environment i3
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+exec --no-startup-id xrdb -merge ~/.Xresources
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -39,13 +41,13 @@ exec_always --no-startup-id xinput set-prop "SYNA30A6:00 06CB:CDEC Touchpad" "li
 #exec_always --no-startup-id brightnessctl set 100%
 
 exec_always nitrogen --restore
-#exec_always --no-startup-id ~/.config/i3/launch_picom.sh
+exec_always --no-startup-id ~/.config/i3/launch_picom.sh
 exec --no-startup-id udiskie &
 exec --no-startup-id dunst &
 
 bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'JetbrainsMono NF-9:Bold' -sb "#a13641" -b"
 bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono NF-9:Bold" -p " " -nb "#222222" -nf "#bbbbbb" -sb "#1A1A1A" -sf "#eeeeee" -b
-bindsym $mod+Return exec alacritty
+#bindsym $mod+t exec alacritty
 bindsym $mod+b exec brave
 bindsym $Mod+f exec nautilus
 bindsym $Mod+o exec okular
@@ -166,7 +168,7 @@ bar {
         #status_command ~/scripts/power_status.sh
         position bottom
         font pango:JetbrainsMono NF Bold 7
-        separator_symbol "-"
+        separator_symbol "||"
         output primary
         strip_workspace_numbers yes
 }
@@ -178,7 +180,7 @@ client.unfocused        $dark_background $dark_background $light_text      $dark
 client.urgent           $deep_red_purple $deep_red_purple $light_text      $deep_red_purple $deep_red_purple
 client.placeholder      $dark_background $dark_background $light_text      $dark_background $dark_background
 
-gaps inner 6
+gaps inner 0
 
-new_window none
+#new_window none
 for_window [class="^.*"] border pixel 2

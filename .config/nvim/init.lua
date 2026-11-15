@@ -5,31 +5,22 @@ require("core.lsp")
 require("core.options")
 
 -- vim.cmd("colorscheme koda-dark")
-vim.cmd("colorscheme vague")
 -- vim.cmd("colorscheme ember")
--- vim.cmd("colorscheme ash")
--- vim.cmd("colorscheme kanagawa-dragon")
--- vim.cmd("colorscheme rose-pine")
+-- vim.cmd("colorscheme rose-pine-moon")
 -- vim.cmd("colorscheme oxide")
--- vim.cmd("colorscheme catppuccin-nvim")
 
--- 1. Create a helper function to fetch active LSP servers for the current buffer
-_G.get_lsp_status = function()
-	-- Use get_clients (Neovim 0.10+) with a fallback to get_active_clients for older versions
-	local get_clients = vim.lsp.get_clients or vim.lsp.get_active_clients
-	local clients = get_clients({ bufnr = 0 })
+vim.g.gruvbox_material_transparent_background = 2
 
-	if #clients == 0 then
-		return "No LSP" -- Displayed if no language server is attached
-	end
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "gruvbox-material",
+	callback = function()
+		local groups = { "NormalFloat", "FloatBorder", "FloatTitle" }
+		for _, g in ipairs(groups) do
+			vim.api.nvim_set_hl(0, g, { bg = "NONE" })
+		end
+		-- Optional: keep the border visible
+		vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE", fg = "#928374" })
+	end,
+})
 
-	local names = {}
-	for _, client in ipairs(clients) do
-		table.insert(names, client.name)
-	end
-
-	return "LSP: " .. table.concat(names, ", ")
-end
-
--- 2. Set the statusline combining the full path (%F) and the LSP status
-vim.opt.statusline = "%F %m %r %= %{v:lua.get_lsp_status()}   %y   %l:%c   %p%%"
+vim.cmd.colorscheme("gruvbox-material")
