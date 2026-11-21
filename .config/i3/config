@@ -47,9 +47,9 @@ exec --no-startup-id dunst &
 
 bindsym $mod+Shift+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'JetbrainsMono NF-9:Bold' -sb "#a13641" -b"
 bindsym $mod+space exec --no-startup-id dmenu_run -fn "JetbrainsMono NF-9:Bold" -p " " -nb "#222222" -nf "#bbbbbb" -sb "#1A1A1A" -sf "#eeeeee" -b
-#bindsym $mod+t exec alacritty
 bindsym $mod+b exec brave
 bindsym $Mod+f exec nautilus
+bindsym $Mod+t exec alacritty
 bindsym $Mod+o exec okular
 
 ## Screenshots
@@ -83,22 +83,21 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # Define names for default workspaces for which we configure key bindings later on.
-set $ws1 "1:一"
-set $ws2 "2:二"
-set $ws3 "3:三"
-set $ws4 "4:四"
-set $ws5 "5:五"
-set $ws6 "6:六"
-set $ws7 "7:七"
-set $ws8 "8:八"
-set $ws9 "9:九"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
 
 assign [class="Alacritty"] $ws1
 assign [class="Brave-browser"] $ws2
 assign [class="okular"] $ws3
-assign [class="Blueman-manager|org.gnome.Nautilus|fdm|Free Download Manager"] $ws4
-assign [class="install4j-burp-StartBurp|install4j-burp-StartBurp"] $ws4
-assign [class="Spotify|spotify"] $ws6
+assign [class="Strata|strata|Blueman-manager|org.gnome.Nautilus|fdm|Free Download Manager|Nautilus|nautilus"] $ws4
+assign [class="install4j-burp-StartBurp|install4j-burp-StartBurp|vlc|Vlc"] $ws5
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -157,7 +156,7 @@ bar {
                 separator  $separator_color
 
                 # class               border           background       text
-                focused_workspace     $muted_blue_grey $muted_blue_greyc $light_text
+                focused_workspace     $dark_background $dark_background $golden_yellow
                 active_workspace      $muted_blue_grey $muted_blue_grey $light_text
                 inactive_workspace    $dark_background $dark_background $light_text
                 urgent_workspace      $deep_red_purple $deep_red_purple $muted_blue_grey
@@ -168,9 +167,9 @@ bar {
         #status_command ~/scripts/power_status.sh
         position bottom
         font pango:JetbrainsMono NF Bold 7
-        separator_symbol "||"
+        #separator_symbol "||"
         output primary
-        strip_workspace_numbers yes
+        #strip_workspace_numbers yes
 }
 
 # class                 border           background       text             indicator        child_border

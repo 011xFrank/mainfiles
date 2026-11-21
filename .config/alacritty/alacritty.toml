@@ -1,29 +1,26 @@
 [font]
-size = 9
-glyph_offset = { x = 0, y = 1 }
+size = 10
+glyph_offset = { x = 0, y = 0 }
+offset = { x = 0, y = 0 }
 
 [font.normal]
-family = "FiraCode Nerd Font"
-style = "Medium"
+family = "Iosevka Nerd Font"
+style = "Semibold"
 
 [font.bold]
-family = "FiraCode Nerd Font"
-style = "Medium"
+family = "Iosevka Nerd Font"
+style = "Bold"
 
 [font.italic]
-family = "FiraCode Nerd Font"
-style = "Retina"
+family = "Iosevka Nerd Font"
+style = "Italic"
 
 [font.bold_italic]
-family = "FiraCode Nerd Font"
+family = "Iosevka Nerd Font"
 style = "Bold Italic"
 
-[font.offset]
-x = 0
-y = 2
-
 [window]
-#padding = { x = 0, y = 0 }
+padding = { x = 0, y = 0 }
 opacity = 0.9
 decorations = "none"
 startup_mode = "maximized"
@@ -32,4 +29,70 @@ startup_mode = "maximized"
 style = "block"
 
 [colors]
-primary = { background = "#0d0b00" }
+primary = { background = "#0d0b00", foreground = "#e0def4" }
+
+[colors.cursor]
+text = "#e0def4"
+cursor = "#56526e"
+
+[colors.vi_mode_cursor]
+text = "#e0def4"
+cursor = "#56526e"
+
+[colors.search.matches]
+foreground = "#908caa"
+background = "#393552"
+
+[colors.search.focused_match]
+foreground = "#232136"
+background = "#ea9a97"
+
+[colors.hints.start]
+foreground = "#908caa"
+background = "#2a273f"
+
+[colors.hints.end]
+foreground = "#6e6a86"
+background = "#2a273f"
+
+[colors.line_indicator]
+foreground = "None"
+background = "None"
+
+[colors.footer_bar]
+foreground = "#e0def4"
+background = "#2a273f"
+
+[colors.selection]
+text = "#e0def4"
+background = "#44415a"
+
+[colors.normal]
+black = "#393552"
+red = "#eb6f92"
+green = "#3e8fb0"
+yellow = "#f6c177"
+blue = "#9ccfd8"
+magenta = "#c4a7e7"
+cyan = "#ea9a97"
+white = "#e0def4"
+
+[colors.bright]
+black = "#6e6a86"
+red = "#eb6f92"
+green = "#3e8fb0"
+yellow = "#f6c177"
+blue = "#9ccfd8"
+magenta = "#c4a7e7"
+cyan = "#ea9a97"
+white = "#e0def4"
+
+[colors.dim]
+black = "#6e6a86"
+red = "#eb6f92"
+green = "#3e8fb0"
+yellow = "#f6c177"
+blue = "#9ccfd8"
+magenta = "#c4a7e7"
+cyan = "#ea9a97"
+white = "#e0def4"
