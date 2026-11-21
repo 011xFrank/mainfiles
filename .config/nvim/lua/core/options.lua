@@ -6,9 +6,6 @@ opt.foldlevel = 99 -- start with everything open
 opt.foldlevelstart = 99
 opt.foldmethod = "indent"
 
-opt.list = true
-opt.listchars:append({ leadmultispace = "│ ", tab = "│ " })
-
 opt.fileencoding = "utf-8"
 opt.list = true
 opt.listchars = { trail = "-", tab = "--", space = " " }
@@ -44,8 +41,8 @@ opt.softtabstop = 2
 opt.autoindent = true
 
 -- Numbers
-opt.number = true
-opt.relativenumber = true
+opt.number = false
+opt.relativenumber = false
 opt.numberwidth = 2
 opt.ruler = false
 

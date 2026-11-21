@@ -75,9 +75,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		keymap.set("n", "K", function()
 			vim.lsp.buf.hover({ border = "rounded" })
 		end, opts)
-
-		opts.desc = "Restart LSP"
-		keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
 	end,
 })
 
@@ -86,10 +83,10 @@ vim.lsp.inlay_hint.enable(false)
 vim.diagnostic.config({
 	signs = {
 		text = {
-			[vim.diagnostic.severity.ERROR] = " ",
-			[vim.diagnostic.severity.WARN] = " ",
-			[vim.diagnostic.severity.HINT] = "󰠠 ",
-			[vim.diagnostic.severity.INFO] = " ",
+			[vim.diagnostic.severity.ERROR] = ",",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.HINT] = "󰠠",
+			[vim.diagnostic.severity.INFO] = "",
 		},
 	},
 })

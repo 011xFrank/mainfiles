@@ -5,7 +5,7 @@ offset = { x = 0, y = 0 }
 
 [font.normal]
 family = "Iosevka Nerd Font"
-style = "Semibold"
+style = "Bold"
 
 [font.bold]
 family = "Iosevka Nerd Font"
@@ -20,8 +20,8 @@ family = "Iosevka Nerd Font"
 style = "Bold Italic"
 
 [window]
-padding = { x = 0, y = 0 }
-opacity = 0.9
+padding = { x = 5, y = 5 }
+opacity = 0.85
 decorations = "none"
 startup_mode = "maximized"
 

@@ -98,7 +98,20 @@ alias run='./run'
 alias rr='cargo run'
 alias rb='cargo build'
 
+alias dev='bash $HOME/scripts/tmux-dev.sh'
+
 # --- Functions ---------------------------------------------------------------
+fs() {
+  local s
+  s=$(tmux list-sessions -F '#{session_name}' 2>/dev/null \
+      | fzf --reverse --prompt='session> ') || return
+  if [ -n "$TMUX" ]; then
+    tmux switch-client -t "$s"
+  else
+    tmux attach -t "$s"
+  fi
+}
+
 list-font() {
   fc-list : family | sort -u | grep -i "$1"
 }
