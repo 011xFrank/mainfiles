@@ -8,7 +8,7 @@ opt.foldmethod = "indent"
 
 opt.fileencoding = "utf-8"
 opt.list = true
-opt.listchars = { trail = "-", tab = "--", space = " " }
+opt.listchars = { trail = "-", tab = "  ", space = " " }
 opt.background = "dark"
 opt.clipboard:append("unnamedplus")
 opt.fillchars = { eob = " " }

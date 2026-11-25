@@ -1,14 +1,5 @@
 local api = vim.api
 
--- Enable spell checking for certain file types
-api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = { "*.txt", "*.md", "*.tex" },
-	callback = function()
-		vim.opt.spell = true
-		vim.opt.spelllang = "en,de"
-	end,
-})
-
 -- When you open a file, you will be at the last position
 api.nvim_create_autocmd("BufReadPost", {
 	callback = function()
@@ -22,7 +13,6 @@ api.nvim_create_autocmd("BufReadPost", {
 
 -- Show cursor line only in active window
 local cursorGrp = api.nvim_create_augroup("CursorLine", { clear = true })
-
 api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, { pattern = "*", command = "set cursorline", group = cursorGrp })
 api.nvim_create_autocmd(
 	{ "InsertEnter", "WinLeave" },
@@ -60,16 +50,12 @@ api.nvim_create_autocmd("VimResized", {
 vim.diagnostic.config({
 	-- Show error/warning text inline next to the code
 	virtual_text = true,
-
 	-- Show icons in the sign column (left gutter)
 	signs = true,
-
 	-- Underline the problematic code
 	underline = true,
-
 	-- Update diagnostics even while typing (set to false if you prefer updating only on save)
 	update_in_insert = false,
-
 	-- Sort diagnostics by severity (errors first, then warnings)
 	severity_sort = true,
 })

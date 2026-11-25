@@ -5,7 +5,7 @@ return {
 			require("vague").setup({
 				transparent = true, -- If true, background is not set
 				bold = true, -- Disable bold globally
-				italic = false, -- Disable italic globally
+				italic = true, -- Disable italic globally
 				on_highlights = function(hl, colors) end,
 				colors = {
 					bg = "#141415",

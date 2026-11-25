@@ -1,9 +1,8 @@
-# i3 config file (v4)
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:JetbrainsMono NF Medium 8
+font pango:JetbrainsMono NF Bold 7
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -41,7 +40,7 @@ exec_always --no-startup-id xinput set-prop "SYNA30A6:00 06CB:CDEC Touchpad" "li
 #exec_always --no-startup-id brightnessctl set 100%
 
 exec_always nitrogen --restore
-exec_always --no-startup-id ~/.config/i3/launch_picom.sh
+#exec_always --no-startup-id ~/.config/i3/launch_picom.sh
 exec --no-startup-id udiskie &
 exec --no-startup-id dunst &
 
@@ -139,8 +138,6 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-
-# Colors (Fsociety Theme)
 set $dark_background      #000000
 set $light_text           #768174
 set $muted_blue_grey      #1A1A1A
@@ -165,16 +162,14 @@ bar {
         }
 
         status_command i3status
-        #status_command ~/scripts/power_status.sh
         position bottom
         font pango:JetbrainsMono NF Bold 7
-        #separator_symbol "||"
+        separator_symbol "||"
         output primary
-        #strip_workspace_numbers yes
 }
 
 # class                 border           background       text             indicator        child_border
-client.focused          $muted_blue_grey $deep_red_purple $dark_background $muted_blue_grey $muted_blue_grey
+client.focused          $muted_blue_grey $deep_red_purple $dark_background $muted_blue_grey $light_text
 client.focused_inactive $muted_blue_grey $muted_blue_grey $light_text      $muted_blue_grey $muted_blue_grey
 client.unfocused        $dark_background $dark_background $light_text      $dark_background $dark_background
 client.urgent           $deep_red_purple $deep_red_purple $light_text      $deep_red_purple $deep_red_purple
@@ -182,5 +177,4 @@ client.placeholder      $dark_background $dark_background $light_text      $dark
 
 gaps inner 0
 
-#new_window none
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
